@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "store-locations-page": {
+      "type": "store-locations-page",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "store-locations-page"
+  ]
+}

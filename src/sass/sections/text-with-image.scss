@@ -1,0 +1,80 @@
+.text-with-image {
+  max-width: 140rem;
+  margin: 5rem auto;
+  padding: 0 10rem;
+  @media (max-width: 1024px) {
+    padding: 0 5rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+    margin: 2rem auto;
+  }
+  .text-with-image__heading {
+    font-size: 3rem;
+    position: relative;
+    text-transform: uppercase;
+    width: max-content;
+    font-family: "bodoni-urw medium";
+    color: black;
+    font-weight: 550;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+    &::after {
+      content: "";
+      background-color: rgb(var(--primary-color));
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.5rem;
+    }
+  }
+  .text-with-image__container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5rem;
+    @media (max-width: 1024px) {
+      gap: 3rem;
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 2rem;
+    }
+    .text-with-image__image {
+      width: 100%;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+      }
+    }
+    .text-with-image__content {
+      font-family: "bodoni-urw Book";
+      font-size: 2rem;
+      line-height: 1.4;
+      color: black;
+      @media (max-width: 768px) {
+        line-height: 1.2;
+        font-size: 1.6rem;
+      }
+      p, ul, li {
+        margin: 0;
+      }
+      ul {
+        padding: 1rem 8rem;
+        @media (max-width: 768px) {
+          padding: 1rem 4rem;
+        }
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  .text-with-image__container.image-first .text-with-image__image {
+    order: -1;
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "1662648682dde45f41": {
+      "type": "main-product",
+      "custom_css": [
+        ".pdp-layout .product__title h1 {font-size: 17px !important;}"
+      ],
+      "settings": {
+        "pdp_layout": "two_column",
+        "show_free_shipping": false,
+        "enable_sticky_info": true,
+        "gallery_layout": "stacked",
+        "media_size": "large",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable_timer": false,
+        "timer_text": "OFFER ENDS IN:",
+        "timer_clock": "",
+        "padding_top_bottom": 20,
+        "padding_left_right": 20,
+        "timer_position": "auto",
+        "timer_background": "",
+        "availability_threshold": 7,
+        "title_pre_order": "Pre Order",
+        "title_available_now": "Available Now!",
+        "msg_pre_order": "Earliest Date Based on your Selected Delivery Preference [[ date ]]",
+        "msg_available_now": "Earliest Date Based on your Selected Delivery Preference [[ date ]]",
+        "msg_sd": "Please contact your nearest store or customer service for contact availability",
+        "zip_position": "below"
+      }
+    },
+    "16638573070462b09a": {
+      "type": "related-products",
+      "settings": {
+      }
+    },
+    "16638572536595beaa": {
+      "type": "shoptelligence-widget",
+      "settings": {
+        "enable": true
+      }
+    }
+  },
+  "order": [
+    "1662648682dde45f41",
+    "16638573070462b09a",
+    "16638572536595beaa"
+  ]
+}

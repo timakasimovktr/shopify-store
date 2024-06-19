@@ -1,0 +1,38 @@
+<ul class="customer__delivery-fees">
+
+    <h3 class="customer__delivery-fees-heading">
+        {{- s.delivery_header -}}
+    </h3>
+
+    {% for block in section.blocks %}
+        {% assign b = block.settings %}
+        {%- capture checkFirstItem -%}
+            {%- if forloop.first == true -%}
+                customer__delivery-item--first
+            {%- endif -%}
+        {%- endcapture -%}
+
+        <li class="customer__delivery-item {{ checkFirstItem }}">
+
+            {% if b.fee_line_heading != blank %}
+                <span class="customer__delivery-item-heading">
+                    {{- b.fee_line_heading -}}
+
+                    {%- if b.fee_line_note != blank -%}
+                        <span class="customer__delivery-item-note">
+                            {{ b.fee_line_note }}
+                        </span>
+                    {%- endif -%}
+
+                </span>
+            {%- endif -%}
+
+            {%- if b.fee_line_price != blank -%}
+                <span class="customer__delivery-item-price">
+                    {{- b.fee_line_price -}}
+                </span>
+            {%- endif -%}
+
+        </li>
+    {% endfor %}
+</ul>

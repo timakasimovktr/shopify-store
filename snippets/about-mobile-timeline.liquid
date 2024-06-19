@@ -1,0 +1,30 @@
+<div class="timeline__block">
+		<div class="timeline__divider">
+			<div class="timeline-dot timeline-dot--mobile">
+				<div class="timeline-dot__inner">
+				</div>
+			</div>
+		</div>
+	<div class="timeline__block-inner{% if isLight %} timeline__block-inner--light{% endif %}{% if year contains '1963' %} column-reverse{% endif %}">
+		{% if img %}
+			<div class="timeline__image-wrap">
+				<div class="timeline__image">
+					<img srcset="{{ img | img_url: '790x' }} 1x, {{ img | img_url: 'master' }} 2x" loading="lazyload" alt="{{ img.alt }}" />
+				</div>
+			</div>
+		{% endif %}
+
+		<div class="timeline__desc">
+			<h4 class="timeline__year{% if year == '1979' %} shift-top{% endif %}">{{ year }}</h4>
+			<div class="timeline__text">
+				{% if desc contains '<p>' %}
+					{{ desc }}
+				{% else %}
+					<p>
+						{{ desc }}
+					</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

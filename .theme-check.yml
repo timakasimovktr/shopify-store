@@ -1,0 +1,203 @@
+root: .
+
+extends: :nothing
+
+require: []
+
+include_categories: []
+
+exclude_categories: []
+
+ignore:
+  - node_modules/*
+
+ConvertIncludeToRender:
+  enabled: false
+  ignore: []
+
+LiquidTag:
+  enabled: false
+  ignore: []
+  min_consecutive_statements: 5
+
+MissingTemplate:
+  enabled: false
+  ignore: []
+  ignore_missing: []
+
+NestedSnippet:
+  enabled: false
+  ignore: []
+  max_nesting_level: 3
+
+RequiredLayoutThemeObject:
+  enabled: false
+  ignore: []
+
+SpaceInsideBraces:
+  enabled: false
+  ignore: []
+
+SyntaxError:
+  enabled: false
+  ignore: []
+
+TemplateLength:
+  enabled: false
+  ignore: []
+  max_length: 600
+  # Exclude content of {% schema %} in line count
+  exclude_schema: true
+  # Exclude content of {% stylesheet %} in line count
+  exclude_stylesheet: true
+  # Exclude content of {% javascript %} in line count
+  exclude_javascript: true
+
+UnknownFilter:
+  enabled: false
+  ignore: []
+
+UnusedAssign:
+  enabled: false
+  ignore: []
+
+UnusedSnippet:
+  enabled: true
+  ignore: []
+
+MatchingSchemaTranslations:
+  enabled: false
+  ignore: []
+
+MatchingTranslations:
+  enabled: false
+  ignore: []
+
+DefaultLocale:
+  enabled: false
+  ignore: []
+
+TranslationKeyExists:
+  enabled: false
+  ignore: []
+
+ValidHTMLTranslation:
+  enabled: false
+  ignore: []
+
+ValidJson:
+  enabled: false
+  ignore: []
+
+ValidSchema:
+  enabled: false
+  ignore: []
+
+MissingRequiredTemplateFiles:
+  enabled: false
+  ignore: []
+
+UndefinedObject:
+  enabled: false
+  ignore: []
+  exclude_snippets: true
+  config_type: :default
+
+RequiredDirectories:
+  enabled: false
+  ignore: []
+
+DeprecatedFilter:
+  enabled: false
+  ignore: []
+
+DeprecateLazysizes:
+  enabled: false
+  ignore: []
+
+DeprecateBgsizes:
+  enabled: false
+  ignore: []
+
+MissingEnableComment:
+  enabled: false
+  ignore: []
+
+ParserBlockingJavaScript:
+  enabled: false
+  ignore: []
+
+ParserBlockingScriptTag:
+  enabled: false
+  ignore: []
+
+AssetPreload:
+  enabled: false
+  ignore: []
+
+AssetSizeJavaScript:
+  enabled: false
+  threshold_in_bytes: 10_000
+  ignore: []
+
+AssetSizeCSS:
+  enabled: false
+  threshold_in_bytes: 100_000
+  ignore: []
+
+AssetSizeCSSStylesheetTag:
+  enabled: false
+  threshold_in_bytes: 100_000
+  ignore: []
+
+ImgWidthAndHeight:
+  enabled: false
+  ignore: []
+
+RemoteAsset:
+  enabled: false
+  ignore: []
+
+AssetUrlFilters:
+  enabled: false
+  ignore: []
+
+ContentForHeaderModification:
+  enabled: false
+  ignore: []
+
+ImgLazyLoading:
+  enabled: false
+  ignore: []
+
+HtmlParsingError:
+  enabled: false
+  ignore: []
+
+AssetSizeAppBlockJavaScript:
+  enabled: false
+  ignore: []
+  threshold_in_bytes: 10_000
+
+AssetSizeAppBlockCSS:
+  enabled: false
+  ignore: []
+  threshold_in_bytes: 100_000
+
+AppBlockValidTags:
+  enabled: false
+  ignore: []
+
+PaginationSize:
+  enabled: false
+  ignore: []
+  min_size: 1
+  max_size: 50
+
+DeprecatedGlobalAppBlockType:
+  enabled: false
+
+SchemaJsonFormat:
+  enabled: false
+  start_level: 0
+  indent: '  '

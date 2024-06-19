@@ -1,0 +1,23 @@
+<div id="store">
+  <div id="google-map-container"></div>
+  <div id="store-information">
+    <h1 class="store__title">Title</h1>
+    <p class="store__address">Address 1</p>
+    <a class="store__directions" href="#">map + directions</a>
+    <a class="store__phone" href="#">888-999-000</a>
+
+    <h2 class="store__title-hours">Store Hours</h2>
+    <p class="store__hours">content</p>
+  </div>
+</div>
+
+{% render 'store-locations-js' %}
+
+{% schema %}
+{
+  "name": "Store Location",
+  "presets": [{
+    "name": "Store Location"
+  }]
+}
+{% endschema %}

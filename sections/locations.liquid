@@ -1,0 +1,112 @@
+{% assign classResize = 'location-page' %} {% assign classContainer = 'container' %} <section class="locations {{ classResize }}">
+  <div class="{{ classContainer }}">
+    <div class="locations__left">
+      <header class="hdr">
+        <h1 class="hdg">
+          <span>Store Locations</span>
+        </h1>
+        <p class="hdr__copy">Our goal continues to be providing the best customer service. <br /> Come in to one of our 18 Florida stores and see for yourself. </p>
+      </header>
+      <form onsubmit="searchLocation" class="locations-form" id="storesForm" action="/pages/store-locations">
+        <div class="input-placeholder">
+          <label for="locationsInput" class="screenreader">Enter your zip code</label>
+          <input type="text" name="zip" class="input locations-form__input" id="locationsInput" placeholder="Enter your zip code" />
+          <button type="button" class="locations-form__btn btn-icon" id="locationsBtn"> {% render 'icon' with icon_name: 'arrow', classes: 'input-continue__icon absolute-y-centered' %} <span class="screenreader">Submit</span>
+          </button>
+        </div>
+      </form> {% if classResize == 'location-home' %} <div class="desktop-and-tablet">
+        <a href="/pages/store-locations" class="locations-all link-arrow">see all</a>
+      </div> {% endif %}
+    </div>
+    <div class="locations__right">
+      <section id="shopify-section-global-locations" class="locations-wrapper">
+        {%- for i in (1..20) -%}
+          {%- liquid
+            assign store_location_index = 'store_location_' | append: i | append: '_'
+
+            assign name_index = store_location_index | append: 'name'
+            assign img_index = store_location_index | append: 'img'
+            assign address_index = store_location_index | append: 'address'
+            assign phone_index = store_location_index | append: 'phone'
+            assign hours_index = store_location_index | append: 'hours'
+            assign latitude_index = store_location_index | append: 'latitude'
+            assign longitude_index = store_location_index | append: 'longitude'
+            assign redirection_index = store_location_index | append: 'redirect_to_store_page'
+            assign store_page_index = store_location_index | append: 'store_page'
+            assign google_maps_index = store_location_index | append: 'google_maps'
+            assign custom_image_index = store_location_index | append: 'custom_image'
+
+            if settings[name_index] == blank
+              break
+            endif
+            
+            assign apiUrl = 'https://maps.googleapis.com/maps/api/staticmap?center='
+            assign apiOptions = '&zoom=17&size=500x500&markers=color:002f86%7C'
+
+            assign redirection_link = '/pages/' | concat: settings[store_page_index]
+            unless settings[redirection_index]
+              assign redirection_link = settings[google_maps_index]
+            endunless
+
+            assign custom_image_focal_point = 'center'
+
+            if settings[custom_image_index]
+              assign custom_image = settings[custom_image_index]
+              assign custom_image = settings[custom_image_index] | img_url: '530x'
+              assign custom_image_focal_point = settings[custom_image_index].presentation.focal_point
+            endif
+
+            assign lazyload_bg_attr = ''
+            if custom_image != blank
+              assign image_src = custom_image
+              assign lazyload_bg_attr = 'data-bg="' | append: image_src | append: '"'
+            else
+              continue
+            endif
+          -%}
+        
+          <article
+            class="location"
+            data-lat="{{ settings[latitude_index] }}"
+            data-lng="{{ settings[longitude_index] }}"
+            data-link="/pages/{{ settings[store_page_index] }}"
+            data-link="{{ redirection_link }}"
+          >
+            <div class="location__inner">
+              <section class="ir ir--location {{ mutate }}">
+                <div class="store-location-card__img-container lazyload" {{ lazyload_bg_attr }} style="object-position: {{ custom_image_focal_point }}; {{ google_maps_img_src }}"></div>
+              </section>
+              <section class="location__details">
+                <h4 class="location__hdg">{{ settings[name_index] }}</h4>
+                <address class="location__address">{{ settings[address_index] }}</address>
+                <span class="location__phone">{{- settings[phone_index] -}}</span>
+                <div class="location__hours">{{ settings[hours_index] }}</div>
+                <span class="location__directions">directions</span>
+              </section>
+            </div>
+          </article>
+        {%- endfor -%}
+      </section>
+    </div> {% if classResize == 'location-home' %} <div class="phone-only">
+      <a href="/pages/store-locations" class="locations-all link-arrow">see all</a>
+    </div> {% endif %}
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // LazyLoad update
+      window.ll?.update();
+    });
+  </script>
+</section>
+
+{% render 'locations-rules' %}
+
+{% schema %}
+{
+    "name": "Locations",
+    "presets": [{
+        "name": "Locations",
+        "category": "Locations"
+    }]
+}
+{% endschema %}

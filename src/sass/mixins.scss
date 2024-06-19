@@ -1,0 +1,10 @@
+@mixin unstyled-link($color: initial) {
+  text-decoration: none;
+
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $color;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "store-locations": {
+      "type": "store-locations",
+      "settings": {
+      }
+    },
+    "store-location": {
+      "type": "store-location",
+      "settings": {
+      }
+    },
+    "reviews": {
+      "type": "reviews",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "store-locations",
+    "store-location",
+    "reviews"
+  ]
+}

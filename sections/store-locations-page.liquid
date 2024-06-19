@@ -1,0 +1,128 @@
+{% assign s = section.settings %}
+{% comment %} page title {% endcomment %}
+{% assign page_title = page.title %}
+{% assign page_subtitle = page.metafields.store.subtitile.value %}
+{% assign store_image = page.metafields.store.image.value %}
+{% assign store_address = page.metafields.store.address.value %}
+{% assign store_phone = page.metafields.store.phone.value %}
+{% assign store_hours = page.metafields.store.hours.value %}
+{% assign store_description = page.content %}
+{% assign store_neighborhoods = page.metafields.store.neighborhoods %}
+{% assign store_map = page.metafields.store.map.value %}
+{% assign driving_directions = page.metafields.store.driving_directions.value %}
+{% assign driving_directions_url = page.metafields.store.driving_directions_url.value %}
+
+<section class="store-page" style="margin: calc({{ s.section_margin }}px + 21px) auto;">
+    <div class="heading">
+    {% if page_title %}
+        <h1>{{ page_title }}</h1>
+        </div>
+    {% endif %}    
+    {% if page_subtitle %}
+        <div class="subheading">
+            <h2>{{ page_subtitle }}</h2>
+        </div>
+    {% endif %}
+    {% if store_image or store_address%}
+        <div class="store-info-wrapper">
+            <div class="store-image">
+                {% if store_image %}
+                    <img loading="lazy" alt="{{ page_title }}" src="{{ store_image }}">
+                {% endif %}
+            </div>
+            <div class="store-info">
+                {% if store_address %}
+                    <div>
+                        <h3>Address</h3>
+                        <p>{{ store_address }}</p>
+                    </div>
+                {% endif %}
+                {% if store_phone %}
+                    <div id="phone_store">
+                    </div> 
+                {% endif %}
+                {% if store_hours %}
+                    <div>
+                        <h3>Store Hours</h3>
+                        <p>{{store_hours}}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    <div class="store-buttons">
+        {% if settings.store_button_1_text %}
+            <a href="{{ settings.store_button_1_url }}" title="{{ settings.store_button_1_text }}">{{ settings.store_button_1_text }}</a>
+        {% endif %}
+        {% if settings.store_button_2_text %}
+            <a href="{{ settings.store_button_2_url }}" title="{{ settings.store_button_2_text }}">{{ settings.store_button_2_text }}</a>
+        {% endif %}
+        {% if settings.store_button_3_text %}
+            <a href="{{ settings.store_button_3_url }}" title="{{ settings.store_button_3_text }}">{{ settings.store_button_3_text }}</a>
+        {% endif %}
+        {% if settings.store_button_4_text %}
+            <a href="{{ settings.store_button_4_url }}" title="{{ settings.store_button_4_text }}">{{ settings.store_button_4_text }}</a>          
+        {% endif %}
+    </div>
+    {% if store_description %}
+        <div class="store-description">
+            <h3>Store Description</h3>
+            <p>{{ store_description }}</p>
+        </div>
+    {% endif %}
+    <div class="store-neighborhoods">
+        {% if store_neighborhoods %}
+            <div class="neighborhoods">
+                <h3>Neighborhoods Nearby</h3>
+                {% assign neighborhoods = store_neighborhoods | split: ',' %}
+                {% for neighborhood in neighborhoods %}
+                    <div class="neighborhoods-title">
+                        {{ neighborhood }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="map">
+            {% if store_map %}
+                <img loading="lazy" alt="{{ page_title }}_map" src="{{ store_map }}">
+            {% endif %}
+            {% if driving_directions or driving_directions_url%}
+                <h3>Driving Directions</h3>
+                {% if driving_directions %}
+                    <p>{{ driving_directions }}</p>    
+                {% endif %}
+                {% if driving_directions_url %}
+                    <a href="{{ driving_directions_url }}" title="directions" underline>click here for directions</a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<script>
+    const phoneNumber = "{{ store_phone }}";
+    const formattedNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
+    const phoneTag = `<h3>Phone</h3><a href='tel:${formattedNumber}'' class='phone'>${formattedNumber}</a>`;
+    document.getElementById("phone_store").innerHTML = phoneTag;
+</script>
+
+{% schema %}
+    {
+      "name": "Store Locations Page",
+      "tag": "section",
+      "settings": [
+        {
+            "type": "range",
+            "id": "section_margin",
+            "label": "Section Margin",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "default": 20
+        }
+      ],
+      "presets": [{
+        "name": "Store Locations Page"
+      }]
+    }
+{% endschema %}

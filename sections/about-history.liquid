@@ -1,0 +1,52 @@
+{% assign s = section.settings %}
+
+<section class="about-history">
+  {% if s.history_header != blank %}
+    <h1 class="about-history__title">{{ s.history_header }}</h1>
+  {% endif %}
+
+  <div class="about-history__content">
+    <div class="about-history__image">
+      <img
+        src="{{ s.history_image | img_url: '600x' }}"
+        alt="{{ s.history_alt }}"
+        style="object-position: {{ s.history_image.presentation.focal_point }}" />
+    </div>
+    <div class="about-history__text">
+      {{ s.history_text }}
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "About History",
+    "class": "section",
+    "tag": "section",
+    "settings": [
+      {
+        "id": "history_header",
+        "type": "text",
+        "label": "Section Header"
+      }, {
+        "type": "image_picker",
+        "id": "history_image",
+        "label": "Image"
+      }, {
+        "type": "text",
+        "id": "history_alt",
+        "label": "Image ALT text"
+      }, {
+        "type": "html",
+        "id": "history_text",
+        "label": "Text/Description"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About History"
+      }
+    ]
+  }
+{% endschema %}

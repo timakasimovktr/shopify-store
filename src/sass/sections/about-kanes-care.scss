@@ -1,0 +1,215 @@
+.container {
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 5.5rem 10.4rem 5rem;
+  @media (max-width: 1400px) {
+    padding: 5.5rem 7.4285714286% 5rem;
+  }
+  @media (max-width: 768px) {
+    padding: 3rem 2rem;
+  }
+}
+.about-kanes-cares {
+  position: relative;
+  color: rgb(var(--text-primary-color));
+}
+.kanes-cares__hdg {
+  margin: 0 auto 2rem;
+  position: relative;
+  font-size: 5.2rem;
+  padding-bottom: 1.5rem;
+  text-align: center;
+  font-family: var(--font-heading-family);
+  color: rgb(var(--text-primary-color));
+  @media (max-width: 1024px) {
+    font-size: 3.8rem !important;
+  }
+  &::after {
+    background-color: rgb(var(--text-primary-color));
+    content: "";
+    height: 1px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0.4rem;
+    width: 18.3rem;
+    @media (max-width: 1024px) {
+      width: 11.5rem !important;
+      bottom: 0.9rem;
+    }
+  }
+}
+
+.kanes-cares__desc {
+  color: rgb(var(--text-primary-color));
+  margin: 0 auto;
+  max-width: 77.5rem;
+  font-family: nimbus-sans,sans-serif;
+  line-height: 2.3rem;
+  text-align: center;
+  @media (max-width: 1024px) {
+    max-width: 68.64rem;
+  }
+}
+
+.kanes-cares__menu-wrap {
+  padding: 2rem;
+  text-align: center;
+  @media (max-width: 1024px) {
+    margin: 0 auto;
+  }
+}
+
+.kanes-cares__care {
+  background: #f8f8f8;
+  flex: 1;
+  &:nth-child(2) {
+    margin-top: 1.8rem;
+    @media (max-width: 1024px) {
+      margin-top: 0;
+    }
+  }
+  .kanes-cares__menu {
+    display: block;
+    height: auto;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translateZ(0);
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    overflow: hidden;
+    @media (max-width: 1024px) {
+      height: 0;
+    }
+    &.active {
+      height: 32.3rem;
+    }
+  }
+}
+
+.kanes-cares__btn {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background: transparent;
+  position: relative;
+  width: 100%;
+  border: 0;
+  @media (max-width: 1024px) {
+    display: flex;
+  }
+  &.active i {
+    transform: rotate(90deg);
+  }
+  i {
+    transform: rotate(-90deg);
+    transition: transform .2s ease-in-out;
+  }
+  .kanes-cares__btn-title {
+    display: none;
+    @media (max-width: 1024px) {
+      display: block;
+      color: rgb(var(--text-primary-color));
+      font-size: 1.9rem;
+      text-transform: lowercase;
+    }
+  }
+  .kanes-cares__btn-icon svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #5c666f;
+  }
+}
+
+.kanes-cares__hdr {
+  padding-bottom: 5rem;
+  padding-top: 5.5rem
+}
+
+.kanes-cares__hdg::after {
+  bottom: .4rem;
+  width: 18.3rem
+}
+
+.kanes-cares__hdg {
+  font-size: 5.2rem;
+  padding-bottom: 1.5rem
+}
+
+.kanes-cares__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media (max-width: 1024px) {
+    background: #f8f8f8;
+    padding: 1rem 6.2rem;
+  }
+  @media (max-width: 768px) {
+    padding: 1rem 2rem;
+  }
+}
+
+.kanes-cares__item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2.88rem;
+  @media (max-width: 1024px) {
+    max-width: unset !important;
+    width: 100% !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.kanes-cares__item--2 {
+  max-width: 58.5rem;
+  width: calc(50% - 9px)
+}
+
+.kanes-cares__item--3 {
+  max-width: 38.5rem;
+  width: calc(33% - 9px)
+}
+
+.kanes-cares__item:last-child {
+  padding-bottom: 1.8rem
+}
+
+.kanes-cares__logo {
+  padding-bottom: 0
+}
+
+.kanes-cares__charity-desc {
+  margin-top: 6.08rem;
+  margin: 0 auto;
+  max-width: 52rem;
+  padding: 0 0 1rem;
+  text-align: center;
+}
+
+.kanes-cares__charity-desc p {
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  font-family: nimbus-sans,sans-serif;
+  color: #7d858b;
+}
+
+.kanes-cares__hr {
+  background: rgb(var(--primary-color));
+  margin: 0 auto 3rem;
+  width: 84%;
+}
+
+.kanes-cares__logo {
+  margin: 0 auto;
+  max-width: 28.8rem;
+  padding: 0 2rem;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 2 / 1;
+  }
+}

@@ -1,0 +1,104 @@
+<div id="filters-offcanvas">
+  <div class="offcanvas__header">
+    {% render 'icon' with icon_name: 'close', id: 'ss-filter-offcanvas__header__close' %}
+    {% render 'icon' with icon_name: 'filters' %}
+    <span>Filters</span>
+  </div>
+
+  <div class="offcanvas__content">
+    {% for filter in resource.filters %}
+      <div class="accordion_item">
+        <label class="js-acc-btn">
+          <div class="heading">{{ filter.label }}</div>
+          <div class="icon">
+            <div class="before"></div>
+            <div class="after"></div>
+          </div>
+        </label>
+        <div class="js-acc-menu" style="overflow: hidden; height:0;">
+          {% if filter.type == 'price_range' %}
+            <ul>
+              <li>
+                <div class="price-filter">
+                  <div>
+                    <span>$</span
+                    ><input
+                      placeholder="From"
+                      type="number"
+                      data-price-range="true"
+                      data-param-name="{{filter.param_name}}.gte"
+                      value="{% if filter.min_value.value %}{{filter.min_value.value }}{% endif %}"
+                      class="min"
+                    >
+                  </div>
+                  <div>
+                    <span>$</span
+                    ><input
+                      placeholder="To"
+                      type="number"
+                      data-price-range="true"
+                      data-param-name="{{filter.param_name}}.lte"
+                      value="{% if filter.max_value.value %}{{filter.max_value.value | divided_by: 100 }}{% endif %}"
+                      class="max"
+                    >
+                  </div>
+                </div>
+              </li>
+            </ul>
+          {% else %}
+            <ul>
+              {% for value in filter.values %}
+                <li>
+                  <input
+                    id="filter-{{ value.value }}"
+                    type="checkbox"
+                    data-param-name="{{ value.param_name }}"
+                    {% if value.active %}
+                      checked
+                    {% endif %}
+                    value="{{ value.value }}"
+                  >
+                  <label for="filter-{{ value.value }}" class="d-block">
+                    {{- value.label }}
+                    <span>
+                      {% unless value.count == 0 %}
+                        ({{ value.count }})
+                      {% endunless %}
+                    </span>
+                  </label>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <script>
+    const js_acc_btn = document.querySelectorAll('.js-acc-btn');
+    const js_acc_menu = document.querySelectorAll('.js-acc-menu');
+
+    for (let i = 0; i < js_acc_btn.length; i++) {
+      js_acc_btn[i].addEventListener('click', function () {
+        if (this.classList.contains('is-active')) {
+          this.classList.remove('is-active');
+          js_acc_menu[i].classList.remove('is-open');
+          this.querySelector('.after').style.transform = 'rotate(90deg)';
+          js_acc_menu[i].style.height = '0px';
+        } else {
+          this.classList.add('is-active');
+          js_acc_menu[i].classList.add('is-open');
+          const js_acc_height = js_acc_menu[i].scrollHeight;
+          js_acc_menu[i].style.height = js_acc_height + 'px';
+          this.querySelector('.after').style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+  </script>
+
+  <div class="offcanvas__footer">
+    <button class="filters-apply-btn filter-offcanvas__apply-btn button button__primary w-100">Apply Filters</button>
+    <button class="offcanvas__clear-btn button w-100">Clear All</button>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.kf-icon,
+.kf-icon::before {
+  display: inline-block;
+}
+.kf-icon:hover {
+  cursor: pointer;
+}
+.kf-icon::before {
+  content: ' ';
+  background-image: url(https://cdn.shopify.com/s/files/1/0075/2815/3206/files/sprite-icon-black-new-7.svg?v=1645563044);
+}
+
+.kf-icon__location,
+.kf-icon__location::before {
+  width: 14px;
+  height: 19px;
+}
+.kf-icon__location::before {
+  background-position: 0 -691px;
+}
+
+.kf-icon__reviews,
+.kf-icon__reviews::before {
+  width: 24px;
+  height: 20px;
+}
+.kf-icon__reviews::before {
+  background-size: 80px 388px;
+  background-position: 0 -257.344px;
+}
+
+.kf-icon__isotype,
+.kf-icon__isotype::before {
+  width: 91px;
+  height: 91px;
+}
+.kf-icon__isotype::before {
+  background-size: 514px 2480px;
+  background-position: 0 -517px;
+}

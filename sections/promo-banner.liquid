@@ -1,0 +1,74 @@
+{% assign s = section.settings %}
+
+{% assign bannerText = s.banner_text %}
+{% assign bannerUrl = s.banner_link %}
+{% assign isEnabled = s.enable %}
+
+<div class="promo-banner page-width">
+  {% if bannerText != blank and isEnabled and isEnabled != 'false' %}
+    <div class="promo-banner__news-banner promo-banner__news-banner--collection">
+      <div class="promo-banner__news-banner__inner">
+        <div class="promo-banner__news-banner__text">
+          <a href="{{ bannerUrl }}">
+            {{ bannerText }}<span class="promo-banner__news-banner__arrow-right">&#62;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  
+  {% if s.disclosure_enable %}
+    <div class="promo-banner__disclosure">
+      <a class="promo-banner__disclosure__text" href="{{ s.disclosure_link }}">
+        {{ s.disclosure_text }}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+{
+  "name": "Collection Promo Banner",
+  "settings" : [
+    {
+      "id": "banner_text",
+      "type": "html",
+      "label": "Banner HTML/Text"
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "Link To"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "default": true,
+      "label": "Enable Promo Banner?"
+    },
+    {
+      "id": "disclosure_text",
+      "type": "html",
+      "default": "Monthly payments shown with 12 Month Special Financing on purchases with a Kane's credit card. Limited time",
+      "label": "Banner HTML/Text"
+    },
+    {
+      "type": "url",
+      "id": "disclosure_link",
+      "label": "Link To"
+    },
+    {
+      "type": "checkbox",
+      "id": "disclosure_enable",
+      "default": true,
+      "label": "Enable Disclosure Text?"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo Banner"
+    }
+  ]
+}
+{% endschema %}

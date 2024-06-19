@@ -1,0 +1,163 @@
+{% assign free_shipping_vendors = "NOUR - NOURISON HOME" | split: "|" %}
+
+<div class="cart-items">
+  {% for item in cartItems %}
+    {% assign discount_amount = 0 %}
+    {% unless item.final_line_price == item.original_line_price %}
+      {% assign discount_amount = item.original_line_price | minus: item.final_line_price %}
+    {% endunless %}
+
+    {% if settings.currency_code_enbled %}
+      {% assign original_line_price_money = item.original_line_price | money_with_currency %}
+      {% assign final_line_price_money = item.final_line_price | money_with_currency %}
+      {% assign discount_amount_money = discount_amount | money_with_currency %}
+    {% else %}
+      {% assign original_line_price_money = item.original_line_price | money %}
+      {% assign final_line_price_money = item.final_line_price | money %}
+      {% assign discount_amount_money = discount_amount | money %}
+    {% endif %}
+
+    {% assign itemMetafieldsPackageSkusJson = item.product.metafields.product.package_skus_json %}
+    {% assign itemMetafieldsCoverages = item.product.metafields.product.coverages %}
+    {% assign packagedproductCoverages = false %}
+    {% for packaged_item_json in itemMetafieldsPackageSkusJson %}
+      {% assign packagedproductCoverages = all_products[packaged_item_json[1].product].metafields.product.coverages %}
+      {% if packagedproductCoverages %}
+        {% break %}
+      {% endif %}
+    {% endfor %} 
+
+    <div
+      class="cart-item {% if item.properties.warrantySetId or item.properties.warrantyUniqueId %}hidden{% endif %} {% if item.properties.productUniqueId or packagedproductCoverages or itemMetafieldsCoverages %} hasWarranty {% endif %}"
+      data-variant-id="{{ item.variant_id }}"
+      data-quantity="{{ item.quantity }}"
+      data-key="{{ item.key }}"
+      data-product-unique-id="{{ item.properties.productUniqueId }}"
+      data-line="{{ forloop.index }}"
+    >
+      <a href="{{ item.url }}" class="cart-item__img-container">
+        <img
+          loading="lazy"
+          class="cart-item__img"
+          src="{{ item | image_url: width: 300 }}"
+          alt="{{ item.title }}"
+        >
+      </a>
+      <div class="cart-item__info">
+        <a href="{{ item.product.url }}" title="{{ item.product.title }}" class="cart-item__info-title">{{ item.product.title }}</a>
+
+        <div class="cart-item__info-prices{% unless discount_amount == 0 %} discounted{% endunless %}">
+          <span class="cart-item__info-original-price">{{ original_line_price_money }}</span>
+          <span class="cart-item__info-price">{{ final_line_price_money }}</span>
+          <span class="cart-item__info-save-text">SAVE (-{{ discount_amount_money }})</span>
+        </div>
+
+        <div
+          class="cart-item__info-qty"
+          {% if item.properties.productUniqueId %}disabled{% endif %}
+        >
+          {% render 'icon' with icon_name:'close', classes:'cart-item__info-remove cart-action' %}
+          
+            <div class="info-qty {% unless item.properties.productUniqueId %} hidden {% endunless %}">
+              <span>Qty: {{ item.quantity }}</span>
+            </div>
+
+            <div class="info-qty-input {% if item.properties.productUniqueId %}hidden{% endif %}">
+              <a class="cart-item__info-qty-minus-input cart-action">-</a>
+              <input
+                type="number"
+                class="cart-item__info-qty-input cart-action"
+                value="{{ item.quantity }}"
+                data-prev-value="{{ item.quantity }}"
+              >
+              <a class="cart-item__info-qty-plus-input cart-action">+</a>
+            </div>          
+            {% render 'icon' with icon_name:'loader', classes: 'hidden qty-loader' -%}
+        </div> 
+
+        <div class="cart-item__availability">
+          {% if item.properties.freeShipping or free_shipping_vendors contains item.vendor %}
+            <span class="free-shipping">
+              {%- if item.properties.freeShipping %}
+                Free Shipping
+              {% else %}
+                Available Now - Delivery in {{ 'now' | date: '%s' | plus: 1209600 | date: '%d/%m/%Y' }}
+              {% endif -%}
+            </span>
+          {% else %}
+            <div class="cart-item__availability-loading hidden">Checking Availability {% render 'icon' with icon_name:'loader' -%}</div>
+            <span class="cart-item__availability-date"></span>
+          {% endif %}        
+        </div>
+
+        <a href="#" class="atw-wishlist-king-container" data-wk-product-id="{{ item.product.id }}">
+          <span class="atw-msg atw-msg--add">Save for Later</span>
+          <span class="atw-msg atw-msg--remove">Saved</span>
+        </a>       
+
+        <div
+          class="accordion {% unless packagedproductCoverages or itemMetafieldsCoverages %} hidden {% endunless %}"
+          accordion-manual-mount
+        >
+          <label class="accordion__header" for="warranty-accordion-{{forloop.index}}">
+            <h3 class="accordion__header-title h4">Protect your Investment</h3>
+            {% render 'icon' with icon_name: 'caret', classes: "accordion__header-icon" %}
+            <div class="warranty-option-loading-bar hidden"></div>
+          </label>
+          <input type="checkbox" id="warranty-accordion-{{forloop.index}}" class="accordion__input hidden">
+          <div
+            class="accordion__content {% unless item.properties.productUniqueId %}hidden{% endunless %}"
+            data-warranty-container
+          >
+            {% assign warrantyIds = '' %}
+            {% assign totalWarrantyPrice = 0 %}
+            {% if item.properties.isPackage or packagedproductCoverages %}
+            {% assign packaged_product = false %}
+            {% assign packagedProductQty = false %}
+              {% for packaged_item_json in itemMetafieldsPackageSkusJson %}
+                {% assign packaged_product = all_products[packaged_item_json[1].product] %}
+                {% assign packagedProductQty = packaged_item_json[1].qty %}
+                {% include 'calculate-warranties',
+                  product_metafields: packaged_product.metafields.product.coverages,
+                  totalWarrantyPrice: totalWarrantyPrice,
+                  warrantyIds: warrantyIds,
+                  quantity: packagedProductQty,
+                  lastLoop: forloop.last
+                %}
+              {% endfor %}
+            {% else %}
+              {% assign packagedProductQty = 1 %}
+              {% include 'calculate-warranties',
+                product_metafields: itemMetafieldsCoverages,
+                totalWarrantyPrice: totalWarrantyPrice,
+                warrantyIds: warrantyIds,
+                quantity: packagedProductQty,
+                lastLoop: forloop.last
+              %}
+            {% endif %}
+
+            <div class="warranty-input-container">
+              <input
+                class="warranty-input-container__input kf-input cart-action"
+                type="checkbox"
+                data-warranty-ids="{{ warrantyIds }}"
+                {% if item.properties.productUniqueId %}
+                 checked
+                {% endif %}
+              >
+              <span>
+                <span class="warranty-input-container__name">
+                  {{ currentVariant.title }}
+                  </span>
+                  -
+                <span class="warranty-input-container__price">{{ totalWarrantyPrice | money }}</span>
+              </span>
+              <div class="warranty-loader-container"> {% render 'icon' with icon_name:'loader', classes: 'hidden warranty-loader' -%}</div>
+              <a class="warranty-input-container__learn-more" href="#" data-warranty-name="{{ currentVariant.title }}">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

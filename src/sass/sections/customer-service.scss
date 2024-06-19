@@ -1,0 +1,648 @@
+.customer__delivery {
+    position: relative;
+    max-width: 1400px;
+    padding-left: 104px;
+    padding-right: 104px;
+    margin: 0 auto;
+    color: rgb(var(--text-primary-color));
+    line-height: 18px;
+    font-family: nimbus-sans, sans-serif;
+    font-size: 16px;
+    letter-spacing: normal;
+
+    .customer__header {
+        margin: 60px 0 35px;
+        text-align: center;
+        position: relative;
+        font-family: var(--font-heading-family);
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 42px;
+        color: rgb(var(--text-primary-color));
+
+        &::after {
+            background-color: rgb(var(--primary-color));
+            bottom: -8px;
+            content: "";
+            height: 1px;
+            position: absolute;
+            left: 0;
+            margin: 0 auto;
+            right: 0;
+            width: 192px;
+
+        }
+    }
+
+    h2 {
+        margin: 10px 0;
+        font-size: 34px;
+        font-family: var(--font-heading-family);
+        line-height: 41px;
+        color: rgb(var(--text-primary-color));
+    }
+
+    .customer__delivery-fees {
+        margin: 30px 0 40px 115px;
+        padding: 19px 88px 42px 36px;
+        max-width: 650px;
+        background-color: #f8f8f8;
+
+        .customer__delivery-fees-heading {
+            margin-top: 10px;
+            font-family: var(--font-heading-family);
+            line-height: 31px;
+            font-size: 27px;
+            color: rgb(var(--text-primary-color));
+            margin-bottom: 0;
+        }
+
+        .customer__delivery-item--first {
+            margin: 5px 0 18px;
+            padding-bottom: 0 !important;
+
+            .customer__delivery-item-heading {
+                color: #5c666f !important;
+            }
+        }
+
+        .customer__delivery-item {
+            color: rgb(var(--text-primary-color));
+            display: flex;
+            justify-content: space-between;
+            font-family: nimbus-sans, sans-serif;
+            font-size: 16px;
+            text-align-last: left;
+            line-height: 18px;
+            padding-bottom: 13px;
+
+            .customer__delivery-item-heading {
+                color: rgb(var(--text-primary-color));
+            }
+
+            .customer__delivery-item-note {
+                font-style: italic;
+                color: rgb(var(--text-primary-color));
+                font-size: 14px;
+            }
+        }
+    }
+
+}
+
+
+.customer__finance {
+    margin-top: 46px;
+    position: relative;
+    padding-left: 153px;
+    padding-right: 153px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    transition: padding .4s ease-in-out;
+
+    .phone-only {
+        display: none;
+    }
+
+    .lazyloaded {
+        opacity: 1;
+        transition: opacity .3s;
+    }
+
+    .customer__finance-background {
+        width: 100%;
+        height: 648px;
+    }
+
+    .customer__finance-content-wrapper {
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+
+        .customer__finance-header {
+            margin-bottom: 47px;
+            color: #fff;
+
+            .customer__header {
+                // bottom: -15px;
+                margin: 0 auto;
+                // margin: 1.8125rem 0 2.25rem;
+                position: relative;
+                text-align: center;
+                color: white;
+                font-size: 52px;
+                font-family: var(--font-heading-family);
+                line-height: 60px;
+
+                &:after {
+                    background-color: rgb(var(--text-primary-color));
+                    bottom: -12px;
+                    content: "";
+                    height: 1px;
+                    position: absolute;
+                    left: 0;
+                    margin: 0 auto;
+                    right: 0;
+                    width: 192px;
+                }
+            }
+
+        }
+
+        .customer__finance-card {
+            background-color: #002f86;
+            border-radius: 3px;
+            padding: 26px 30px 11px;
+            position: absolute;
+            text-align: center;
+            top: 125px;
+            transform: rotate(10deg);
+            margin-right: -4px;
+            right: 153px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .customer__finance-card--alt {
+            background-color: transparent;
+            max-width: 458px !important;
+        }
+
+        .customer__benefits {
+            max-width: 60%;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: white;
+
+            .customer__benefits-heading {
+                font-size: 32px;
+                margin-bottom: 5px;
+                color: white;
+                line-height: 39px;
+                font-family: var(--font-heading-family);
+                margin-top: 10px;
+            }
+
+            .customer__benefits-header {
+                margin-top: 0;
+                margin-bottom: 20px;
+                font-size: 16px;
+                line-height: 23px;
+            }
+
+            .customer__benefit:last-child {
+                padding-left: 25px !important;
+
+                .customer__disclaimer {
+                    margin-left: 0 !important;
+                }
+            }
+
+            .customer__benefit {
+                padding-bottom: 0;
+
+                svg {
+                    width: 18px;
+                    color: rgb(var(--primary-color));
+                    font-size: 16px;
+                }
+
+                .customer__benefit-copy {
+                    padding-left: 5px;
+                    margin-bottom: 7px;
+                    line-height: 22px;
+                    font-size: 16px;
+                    color: white;
+                    font-family: nimbus-sans, sans-serif;
+                    letter-spacing: normal;
+                }
+
+
+                .customer__disclaimer {
+                    font-size: 14px !important;
+                    line-height: 14px !important;
+                    margin-left: 25px !important;
+                }
+            }
+        }
+
+        .customer__finance-ctas {
+            display: flex;
+            padding-top: 20px;
+            width: 100%;
+            border-top: 1px solid rgb(255, 255, 255);
+            flex-direction: column;
+
+            a {
+                width: 100%;
+                text-decoration: none;
+                color: rgb(var(--primary-color));
+                font-family: ltc-bodoni-175, serif;
+                line-height: 23px;
+                padding-bottom: 7px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.mobile_clean{
+    display: none;
+    .acc-item-copy{
+        height: 0;
+        overflow: hidden;
+        transition: all .4s ease-in-out;
+    }
+    .acc-wrapper{
+        display: flex;
+        flex-direction: column;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+        .acc-items_mobile{
+            padding-left: 87px;
+            padding-right: 87px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background: #f8f8f8;
+            
+        }
+    }
+    #customerCleanHeader{
+        margin: 0 auto;
+        font-size: 35px;
+        line-height: 40px;
+        position: relative;
+        font-family: var(--font-heading-family);
+        margin-bottom: 48px;
+        color: rgb(var(--text-primary-color));
+    }
+    #customerCleanHeader:after {
+        background-color: rgb(var(--primary-color));
+        bottom: -8px;
+        content: "";
+        height: 1px;
+        position: absolute;
+        left: 0;
+        margin: 0 auto;
+        right: 0;
+        width: 182px;
+    }
+
+    li{
+        list-style-type: none;
+        button{
+            cursor: pointer;
+            width: 100%;
+            background: rgba(0, 0, 0, 0);
+            font-family: nimbus-sans, sans-serif;
+            color: rgb(var(--text-primary-color));
+            text-align-last: left;
+            border: none;
+            outline: none;
+            font-size: 19px;
+            line-height: 21px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+        }
+        button:after {
+            border-bottom: 0.0625rem solid #5c666f;
+            border-right: 0.0625rem solid #5c666f;
+            content: "";
+            height: 8px;
+            position: absolute;
+            right: 6px;
+            -webkit-transition: all ease-in-out .3s;
+            transition: all ease-in-out .3s;
+            top: 45%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 8px;
+        }
+    }
+}
+
+.customer__clean {
+    position: relative;
+
+    .acc-wrapper {
+        padding-left: 153px;
+        padding-right: 153px;
+        margin: 60px auto 87px;
+        display: flex;
+        max-width: 1400px;
+
+        .customer_acc_buttons {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+            flex-basis: calc(100% + 630px);
+            line-height: 19px;
+            font-family: nimbus-sans, sans-serif;
+            color: rgb(var(--text-primary-color));
+            max-width: 330px;
+
+            .customer__header {
+                margin-top: 0;
+                max-width: 200px;
+                margin: 50px 0 54px;
+                font-size: 52px;
+                color: rgb(var(--text-primary-color));
+                line-height: 60px;
+                font-family: var(--font-heading-family);
+            }
+
+            .acc__parent-heading {
+                color: rgb(var(--text-primary-color));
+                font-size: 16px;
+                line-height: 18px;
+                margin-top: 0;
+                margin-bottom: 13px;
+            }
+
+            .acc-item-header {
+                color: black;
+                padding: 10px 6px;
+                font-size: 14px;
+                line-height: 16px;
+                background: rgba(0, 0, 0, 0);
+                border: none;
+                outline: none;
+                text-align: left;
+                font-family: nimbus-sans, sans-serif;
+
+                &:hover {
+                  cursor: pointer;
+                }
+            }
+
+            #UV3-wood-and-leather-protection {
+                font-size: 16px !important;
+                letter-spacing: 0 !important;
+                line-height: 18px !important;
+                padding-left: 0 !important;
+                margin-top: 24px !important;
+            }
+        }
+
+        .acc-items {
+            color: #5c666f !important;
+            padding: 32px 50px;
+            background: #f8f8f8;
+            min-height: 563px;
+            margin-top: 10px;
+            .acc-item{
+                display: none;
+            }
+            .visible-acc-item{
+                display: block !important;
+            }
+            button {
+                font-size: 16px !important;
+                color: rgb(var(--text-primary-color));
+                font-weight: 700;
+                margin-bottom: 23px;
+                padding: 0;
+                background: rgba(0, 0, 0, 0);
+                border: none;
+                outline: none;
+            }
+
+            li {
+                list-style-type: none;
+                max-width: 670px;
+                .acc-item-copy {
+                    margin-top: 0;
+                    letter-spacing: none;
+                    color: rgb(var(--text-primary-color));
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .acc-items_mobile{
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+}
+@media only screen and (max-width: 820px) {
+    .mobile_clean{
+        display: block;
+    }
+    .desktop_clean{
+        display: none;
+    }
+}
+@media only screen and (max-width: 1191px) {
+    .customer__clean .acc-wrapper{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media only screen and (max-width: 478px) {
+    .customer__finance .customer__finance-content-wrapper .customer__finance-header .customer__header {
+        font-size: 36px !important;
+    }
+
+    .customer__finance .customer__finance-content-wrapper .customer__benefits .customer__benefits-heading {
+        font-size: 26px !important;
+    }
+
+    .customer__benefit-copy {
+        font-size: 14px !important;
+    }
+
+    .customer__finance .customer__finance-content-wrapper .customer__finance-header {
+        margin-bottom: 25px !important;
+    }
+}
+
+@media only screen and (max-width: 546px) {
+    .customer__finance .customer__finance-content-wrapper .customer__finance-header .customer__header {
+        font-size: 42px;
+    }
+
+    .customer__finance-content-wrapper {
+        top: 70px;
+    }
+
+    .customer__finance .customer__finance-content-wrapper .customer__finance-card {
+        top: -201px !important;
+    }
+
+    .customer__finance-ctas {
+        a {
+            font-size: 16px !important;
+            line-height: 14px !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 690px) {
+    .customer__finance .customer__finance-content-wrapper .customer__finance-card {
+        top: -245px;
+    }
+
+    .customer__finance {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .customer__finance-content {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+
+    .customer__benefits-header {
+        margin-bottom: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 882px) {
+    .customer__finance-content {
+        padding-left: 110px;
+        padding-right: 110px;
+    }
+
+    .customer__finance-backgrounds {
+        height: 750px !important;
+
+        img {
+            height: 100% !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 777px) {
+
+    .customer__finance-backgrounds {
+        height: 800px;
+    }
+
+    .customer__finance {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media only screen and (max-width: 1026px) {
+    .phone-only {
+        display: block !important;
+    }
+
+    .desktop-and-tablet {
+        display: none !important;
+    }
+
+    .customer__finance .customer__finance-content-wrapper {
+        top: 120px;
+    }
+
+    .customer__finance .customer__finance-content-wrapper .customer__finance-card--alt {
+        max-width: 400px !important;
+        min-width: 300px !important;
+    }
+
+    .customer__finance .customer__finance-content-wrapper .customer__benefits {
+        max-width: 100%;
+    }
+
+    .customer__finance .customer__finance-content-wrapper .customer__finance-card {
+        top: -268px;
+        right: 50% !important;
+        transform: translateX(50%);
+
+        .customer__finance-img {
+            transform: rotate(10deg);
+        }
+    }
+
+    .customer__finance {
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .customer__finance-backgrounds {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .customer__finance-content {
+        padding-left: 160px;
+        padding-right: 160px;
+    }
+
+    .customer__finance {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .customer__finance-card {
+        right: 60px !important;
+    }
+}
+
+@media only screen and (max-width: 1342px) {
+    .customer__finance-background {
+        height: 700px !important;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .customer__finance-content-wrapper {
+        top: 51px;
+    }
+
+    .customer__finance-header {
+        margin: -10px 0 45px;
+    }
+
+    .customer__finance-content {
+        padding: 0 18.7%;
+        top: 4px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .customer__delivery {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .customer__delivery {
+        padding-left: 40px;
+        padding-right: 40px;
+
+        .customer__header {
+            font-size: 40px;
+        }
+
+        h2 {
+            margin: 10px 0;
+            font-size: 22px;
+            font-family: var(--font-heading-family);
+            line-height: 41px;
+            color: rgb(var(--text-primary-color));
+        }
+
+        .customer__delivery-fees {
+            margin: 30px 0 40px 0px;
+            padding: 20px 30px 30px 30px;
+        }
+    }
+}

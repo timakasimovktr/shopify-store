@@ -1,0 +1,13 @@
+[environments.env1]
+theme = "123456789012"
+store = "my-store"
+password  = "shptka_123456"
+ignore = "sections/header.liquid"
+
+[environments.env2]
+store = "another-store"
+path = "./dist"
+ignore = ["sections/announcement-bar.liquid", "sections/header.liquid"]
+output = "json"
+live = true
+allow-live = true

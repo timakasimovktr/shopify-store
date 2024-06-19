@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "legal": {
+      "type": "legal",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "legal"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "cart": {
+      "type": "cart",
+      "custom_css": [
+        "span.cart-item__availability-date {color: #008555;}"
+      ],
+      "settings": {
+        "enable_payment_methods": true,
+        "payment_methods_title": "",
+        "enable_payment_methods_url": true,
+        "payment_method": "shopify:\/\/shop_images\/Screenshot_2023-06-28_at_11.15.03_AM.jpg",
+        "image_width": 55,
+        "payment_methods_url_text": "Learn More",
+        "payment_methods_url": "",
+        "availability_threshold_days": 7,
+        "pre_order_date_msg": "Pre Order. Available on [[ date ]]",
+        "available_now_date_msg": "Available Now",
+        "no_rates_msg": "No rates available"
+      }
+    },
+    "4efb2dbe-0a00-47ff-a5ef-84c6660e5095": {
+      "type": "related-products",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "cart",
+    "4efb2dbe-0a00-47ff-a5ef-84c6660e5095"
+  ]
+}

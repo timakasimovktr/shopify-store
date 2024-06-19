@@ -1,0 +1,10 @@
+{% comment %}
+Accepts:
+- is_free_shipping_vendor: boolean
+- availability_date
+{% endcomment %}
+
+<div class="product-availability">
+  <span id="product-availability-title">{{ section.settings.title_available_now }}</span>
+  <span id="product-availability-date">{{ section.settings.msg_pre_order | replace: "[[ date ]]", availability_date }}</span>
+</div>

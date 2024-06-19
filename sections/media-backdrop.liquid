@@ -1,0 +1,245 @@
+{% assign ss = section.settings %}
+{% assign headingBlock = section.blocks | where: "type", "heading" | map: "settings" | first %}
+{% assign textBlock = section.blocks | where: "type", "text" | map: "settings" | first %}
+{% assign btnBlocks = section.blocks | where: "type", "cta_btn" | map: "settings" %}
+
+<div 
+  class="media-backdrop__wrapper" 
+  data-layout="{{ ss.media_layout_type }}"
+  data-position="{{ ss.content_position }}"
+  data-alignment="{{ ss.content_alignment }}"
+  style="--text-color: {{ ss.text_color }}"
+>
+  <div class="media-backdrop__background-content">
+    <div class="media-backdrop__overlay" style="--overlay-opacity: {{ ss.overlay | divided_by: 100.0 }}">
+    </div>
+    {% if ss.media_type == "image" %}
+      <picture class="media-backdrop__img-content">
+        <source srcset="{{ ss.img_desktop | img_url: "1500x" }}" media="(min-width: 500px)">
+        <source srcset="{{ ss.img_mobile  | img_url: "800x"}}" >
+        <img src="{{ ss.img_desktop  | img_url: "1500x" }}" alt="{{ ss.img_desktop.alt }}" />
+      </picture>
+    {% else %}
+      {{ ss.video_desktop | video_tag: loop:true, autoplay:true, image_size: '400x' }}
+    {% endif %}
+  </div>
+  <div class="media-backdrop__main-content--wrapper">
+    <div class="media-backdrop__main-content">
+      {% if headingBlock.heading  %}
+        <h2 class="{{ headingBlock.size }}">{{ headingBlock.heading }}</h2>
+      {% endif %}
+      {% if textBlock.text %}
+        <p class="body">{{ textBlock.text }}</p>
+      {% endif %}
+      <div class="media-backdrop__ctas-wrapper">
+        {% for block in btnBlocks %}
+          {% if block.btn_label and block.btn_url %}
+            <a class="button button--primary" href="{{ block.btn_url }}">{{ block.btn_label }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Media Backdrop",
+  "class": "media-backdrop__section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "general"
+    },
+    {
+      "type": "range",
+      "id": "overlay",
+      "label": "Media content overlay",
+      "min": 0,
+      "max": 80,
+      "unit": "%",
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Layout settings"
+    },
+    {
+      "type": "select",
+      "id": "media_layout_type",
+      "label": "Media layout type",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full Edge"
+        },
+        {
+          "value": "contained",
+          "label": "Contained"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Main content position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Main content alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Media content settings"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Background content type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_desktop",
+      "label": "Background image | Desktop",
+      "info": "Recommended aspect ratio: 16:9 (width:height)"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_mobile",
+      "label": "Background image | Mobile",
+      "info": "Recommended aspect ratio: 9:16 (width:height)"
+    },
+    {
+      "type": "video",
+      "id": "video_desktop",
+      "label": "Background video | Desktop",
+      "info": "Recommended aspect ratio: 16:9 (width:height)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Heading size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            }
+          ],
+          "default": "h1"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "cta_btn",
+      "name": "Button",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "btn_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media Backdrop"
+    }
+  ]
+}
+{% endschema %}

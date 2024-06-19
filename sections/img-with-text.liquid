@@ -1,0 +1,59 @@
+<section class="img-with-text">
+  <h2 class="img-with-text__heading">{{section.settings.heading}}</h2>
+  <div class="img-with-text__container {{section.settings.first}}-first">
+    <div class="img-with-text__content">
+      {{section.settings.text}}
+    </div>
+    <div class="img-with-text__image">
+      <img
+        src="{{section.settings.img | img_url: 'master'}}"
+        alt="{{section.settings.img.alt}}"
+        style="object-position: {{ section.settings.img.presentation.focal_point }};"
+      />
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Image & Long text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "heading"
+      },
+      {
+        "type": "select",
+        "id": "first",
+        "label": "Image First ?",
+        "options" : [
+        {
+          "value" : "content",
+          "label": "Content"
+        },
+        {
+          "value" : "image",
+          "label": "Image"
+        }
+        ]
+      },
+      {
+        "id": "img",
+        "type": "image_picker",
+        "label": "Choose an Image 1"
+      },
+      {
+       "type": "richtext",
+       "id" : "text",
+       "label": "Text here"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image & Long text"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,83 @@
+<section class="homepage-banner">
+  <div class="page-width" style="padding:{{- section.settings.carousel_padding -}}px 0;">
+    <a class="image-wrapper" title="Banner Url" href="{{ section.settings.banner_link }}">
+      <img
+        loading="lazy"
+        class="desktop-image"
+        src="{{ section.settings.desktop_image | image_url: width: 1600 }}"
+        alt="Desktop Banner"
+        height="auto"
+        width="{{ section.settings.desktop_image_width }}%"
+      >
+      <img
+        loading="lazy"
+        class="mobile-image"
+        src="{{ section.settings.mobile_image | image_url: width: 720 }}"
+        alt="Mobile Banner"
+        height="auto"
+        width="{{ section.settings.mobile_image_width }}%"
+      >
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Homepage Banner",
+  "settings": [
+    {
+      "type": "range",
+      "id": "carousel_padding",
+      "label": "Set padding",
+      "info": "Set padding for carousel or gallery.",
+      "step": 1,
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "desktop_image_width",
+      "label": "Desktop Image Width",
+      "info": "Set width for desktop image.",
+      "step": 1,
+      "default": 100,
+      "min": 0,
+      "max": 100,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_width",
+      "label": "Mobile Image Width",
+      "info": "Set width for mobile image.",
+      "step": 1,
+      "default": 100,
+      "min": 0,
+      "max": 100,
+      "unit": "%"
+    },
+    {
+      "type": "url",
+      "id": "banner_link",
+      "label": "Banner Redirect Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Select Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Select Mobile Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Banner"
+    }
+  ]
+}
+{% endschema %}

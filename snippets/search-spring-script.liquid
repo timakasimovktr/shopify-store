@@ -1,0 +1,15 @@
+{% comment %}
+Search Spring
+{% endcomment %}
+
+{%- liquid 
+  assign ss_id = 'tk47yo'
+  assign collection_id_field = ''
+  assign search_spring_url = '//cdn.searchspring.net/search/v3/js/searchspring.catalog.js?'
+
+  if template == 'collection'
+    assign collection_id_field = '&background-filters.collection_id=' | append: collection.id
+  endif
+-%}
+
+<script src="{{search_spring_url}}{{ss_id}}{{collection_id_field}}"></script>

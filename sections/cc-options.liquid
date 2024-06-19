@@ -1,0 +1,98 @@
+{% if section.blocks.size > 0 %}
+  <section class="cc-opts page-width">
+    <div class="cc-opts__content">
+      {% for block in section.blocks %}
+          {% assign b = block.settings %}
+          <div class="cc-opts__col">
+            {% if b.image != blank %}
+              <div class="cc-opts__img-wrap">
+                <div class="cc-opts__img">
+                  {% render 'responsive-image'
+                    with classes: '',
+                    url: b.image | image_url,
+                    breakpoints_and_widths: '400:600,1000:1500,1400:2100'
+                    alt: b.title | escape
+                    lazyload: true
+                    focal_point: b.image.presentation.focal_point
+                  %}
+                </div>
+                <h3 class="cc-opts__title medium-hide large-up-hide">{{ b.title }}</h3>
+              </div>
+            {% else %}
+              <div class="cc-opts__icon-wrap">
+                {% if b.icon_file_name == 'room-transparent' %}
+                  <div class="cc-opts__icon-bg">
+                    <i class="icon icon--{{ b.icon_file_name }} cc-opts__icon"></i>
+                  </div>
+                {% else %}
+                  <i class="icon icon--{{ b.icon_file_name }} cc-opts__icon"></i>
+                {% endif %}
+
+                <h3 class="cc-opts__title medium-hide large-up-hide">{{ b.title }}</h3>
+              </div>
+            {% endif %}
+            <div class="cc-opts__text">
+              <h3 class="cc-opts__title small-hide">{{ b.title }}</h3>
+              <p class="cc-opts__desc">
+                {{ b.description }}
+              </p>
+              
+              {%- if b.description_link and b.description_link_title -%}
+                <a href="{{ b.description_link }}" class="cc-opts__link link-arrow" >{{ b.description_link_title }}</a>
+              {%- endif -%}
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "CC Options",
+  "max_blocks": 2,
+  "blocks": [
+  {
+    "type": "cc_section",
+    "name": "CC Options Section",
+    "settings": [
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Image",
+      "info": "Upload an Image to use instead of SVG Icon"
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title"
+    },
+    {
+      "id": "description",
+      "type": "textarea",
+      "label": "Description"
+    },
+    {
+      "id": "description_link",
+      "type": "url",
+      "label": "Link"
+    },
+    {
+      "id": "description_link_title",
+      "type": "text",
+      "label": "Link Text"
+    },
+    {
+      "id": "icon_file_name",
+      "type": "text",
+      "label": "Icon File Name"
+    }
+    ]
+  }
+  ],
+  "presets": [{
+    "name": "CC Options Section",
+    "category": "CC Options"
+  }]
+}
+{% endschema %}

@@ -1,0 +1,161 @@
+{% render 'synchrony-financing-options-data' %}
+
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{% render 'filter-actions' with search:true, sticky:false %}
+{% render 'filters-offcanvas', resource: search %}
+{% render 'sorting-offcanvas', resource: search %}
+
+<div class="filters-panel hidden"><div></div></div>
+
+<div class="quick-view-wrapper">
+  <div class="quick-view-container hidden"></div>
+  {% render 'icon' with icon_name: 'close-popup', classes: 'mobile hidden' %}
+</div>
+
+{%- paginate search.results by section.settings.products_per_page -%}
+<div class="page-width">
+  <div class="loading-overlay gradient"></div>
+
+    <div id="ssCatalog">
+      <ul id="product-grid"
+      data-id="{{ section.id }}"
+      data-result-mode='infinite'
+      {% if paginate.next %} data-has-next-page=true {% endif %}
+      class="grid product-grid grid--2-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop"
+      >
+        <div class="{% if search.results.size > 0 %} hidden {% endif %} page-width">
+          <div class="title-wrapper center">
+            <h2 class="title title--primary">
+              {{ 'sections.collection_template.empty' | t }}
+            </h2>
+          </div>
+        </div>
+        {% for product in search.results %}
+          {% assign hasFreeShipping = product.tags | map: 'FreeShipping' %}
+          {% unless product.featured_image == blank or product.tags contains "NFS" %}
+            <li class="product grid__item" data-variant-id="{{product.variants[0].id}}" data-handle="{{product.handle}}">
+              <div class="card-wrapper underline-links-hover">
+                <div class="card card--standard card--media">
+                  <div class="card__inner color-background-2 gradient ratio">
+                    <button class="quick-view__button" data-variant-id="{{ product.variants[0].id }}" data-quantity="1" data-free-shipping="{{hasFreeShipping}}" data-product-handle="{{ product.handle }}">Quick View</button>
+                    <a title="{{ product.title }}" href="{{ product.url }}" class="card__media">
+                      <div class="media media--transparent media--hover-effect">
+                        <img src="{{ product.featured_image | image_url: width: 1000 }}" alt="">
+                        {% if product.images[1] %}
+                          <img src="{{ product.images[1] | image_url: width: 1000 }}" alt="">
+                        {% endif %}
+                      </div>
+                      {% assign blocks = section.blocks | sort: 'settings.priority' | reverse %}
+  
+                      {% for block in blocks %}
+                        {% if block.type == 'tag' %}
+                          {% for tag in product.tags %}
+                            {% if tag == block.settings.product_tag %}
+                              <div class="card__tag" style="background-color: {{ block.settings.product_tag_background_color }}; color: {{ block.settings.product_tag_text_color }};">{{ block.settings.product_tag_label }}</div>
+                            {% endif %}
+                          {% endfor %}
+                        {% elsif block.type == 'collection' %}
+                          {% for collection in product.collections %}
+                            {% if collection.handle == block.settings.product_collection_handle %}
+                              <div class="card__tag" style="background-color: {{ block.settings.product_collection_background_color }}; color: {{ block.settings.product_collection_text_color }};">{{ block.settings.product_collection_label }}</div>
+                            {% endif %}
+                          {% endfor %}
+                        {% endif %}
+                      {% endfor %}
+                    </a>
+                    <a title="{{ product.title }}" href="{{ product.url }}" class="card__content"></a>
+                    <div class="card__add-to-wishlist-btn" data-wk-product-id="{{ product.id }}"></div>
+                  </div>
+                  <div class="card__content">
+                    <div class="card__information">
+                      <div class="card__information-inner">
+                        <h3 class="card__heading h5">
+                          <a title="{{ product.title }}" href="{{ product.url }}" class="full-unstyled-link">{{ product.title }}</a>
+                        </h3>
+                        <h5 class="cart__subheading">{{ product.metafields.product.collectionSubHeader }}</h5>
+                        <div class="card-information">
+                          <div class="price">
+                            <div class="price__container">
+                              <div class="price__sale">
+                                {% unless product.compare_at_price == product.price %}
+                                  <span>
+                                    <s class="price-item price-item--regular">{{ product.compare_at_price | money }}</s>
+                                  </span>
+                                {% endunless %}
+                                <span class="price-item price-item--sale price-item--last">{{ product.price | money }}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% render 'related-products-colors-selector' with product: product %}
+                      </div>
+                      <div>
+                        <button class="button button__primary add-to-cart" data-variant-id="{{ product.variants[0].id }}" data-quantity="1" data-free-shipping="{{hasFreeShipping}}">Add to Cart</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          {% endunless %}
+        {% endfor %}  
+      </ul>
+  
+      <div class="search-loading-warpper">
+        {% render 'icon' with icon_name: 'loader' classes: 'spinner-loading hidden' %}
+      </div>
+    </div>
+  </div>
+{% endpaginate %}
+
+{% render 'warranty-modals' %}
+
+{% render 'financing-popup-details' %}
+
+<script>
+  window.LC = window.LC || {};
+  window.LC.searchSpring = window.LC.searchSpring || {};
+  window.LC.searchSpring.perPage = parseInt(`{{ section.settings.products_per_page }}`);
+  window.LC.searchSpring.collectionId = parseInt(`{{ collection.id }}`);
+  window.LC.quickBuy = {{ section.settings.enable_quick_add | json }};
+  window.LC.sectionId = `{{ section.id }}`;
+</script>
+
+{% schema %}
+{
+  "name": "Search Results",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 24,
+      "step": 4,
+      "default": 16,
+      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
+    }
+  ],
+  "presets": [{
+    "name": "Search Results"
+  }]
+}
+{% endschema %}

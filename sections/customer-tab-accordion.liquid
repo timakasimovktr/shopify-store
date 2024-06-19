@@ -1,0 +1,177 @@
+{% assign s = section.settings %}
+<section class="customer__clean desktop_clean">
+	<span id="customerClean"></span>
+    <div class="container--small acc-wrapper">
+        <ul class="customer_acc_buttons">
+            <h2 id="customerCleanHeader" class="customer__header customer__small">{{- s.heading -}}</h2>
+
+            {% for block in section.blocks %}
+
+                {% assign bs = block.settings %}
+
+                {% case block.type %}
+
+                    {% when 'parent_header' %}
+
+                        <h4 id="accParentHeading" class="acc__parent-heading desktop-only">
+                            {{- bs.parent_header -}}
+                        </h4>
+
+                    {% else %}
+
+                        <button id="{{ bs.header | remove: '+' | remove: '&' | remove: '®' | replace: ' ', '-'}}"  class="acc-item-header js-acc-btn" type="button">
+                            {{- bs.header -}}
+                        </button>    
+
+                {% endcase %}
+
+            {% endfor %}
+
+        </ul>
+        <ul id="acc" class="acc-items">
+
+            {% for block in section.blocks %}
+
+        {% assign bs = block.settings %}
+
+            {% if bs.header and bs.copy != blank %}
+                <li class="acc-item">
+                    <button id="{{ bs.header | remove: '+' | remove: '&' | remove: '®' | replace: ' ', '-'}}" class="acc-item-header js-acc-btn" type="button">
+                        {{- bs.header -}}
+                    </button>
+                    <p class="acc-item-copy js-acc-body acc__menu {{ bs.header | remove: '+' | remove: '&' | remove: '®' | replace: ' ', '-' }}__copy">
+                        <span class="acc-item-header acc-item-header--desktop desktop-only">
+                            {{- bs.header -}}
+                        </span>
+                        {{- bs.copy -}}
+                    </p>
+                </li>
+
+            {% endif %}
+
+        {% endfor %}
+        
+        </ul>
+    </div>
+</section>
+<section class="customer__clean mobile_clean">
+	<span id="customerClean"></span>
+    <div class="container--small acc-wrapper">
+        <h2 id="customerCleanHeader" class="customer__header_mobile customer__small">{{- s.heading -}}</h2>
+        <ul id="acc" class="acc-items_mobile">
+
+            {% for block in section.blocks %}
+
+        {% assign bs = block.settings %}
+
+            {% if bs.header and bs.copy != blank %}
+                <li class="acc-item">
+                    <button id="{{ bs.header | remove: '+' | remove: '&' | remove: '®' | replace: ' ', '-'}}" class="acc-item-header js-acc-btn is-active" type="button">
+                        {{- bs.header -}}
+                    </button>
+                    <p class="acc-item-copy js-acc-body acc__menu {{ bs.header | remove: '+' | remove: '&' | remove: '®' | replace: ' ', '-' }}__copy">
+                        <span class="acc-item-header acc-item-header--desktop desktop-only">
+                            {{- bs.header -}}
+                        </span>
+                        {{- bs.copy -}}
+                    </p>
+                </li>
+
+            {% endif %}
+
+        {% endfor %}
+        
+        </ul>
+    </div>
+</section>
+
+<script>
+    var acc_btn = document.querySelectorAll(".desktop_clean .customer_acc_buttons .js-acc-btn");
+    var visible_acc_item = document.querySelectorAll(".desktop_clean .acc-wrapper .acc-item");
+
+    visible_acc_item[0].classList.add("visible-acc-item");
+    acc_btn[0].style.color = "rgb(var(--text-primary-color))";
+    for (let i = 0; i < acc_btn.length; i++) {
+        acc_btn[i].addEventListener("click", function () {
+                for (let i = 0; i < visible_acc_item.length; i++) {
+                    visible_acc_item[i].classList.remove("visible-acc-item");
+                    acc_btn[i].style.color = "#000";
+                }
+                visible_acc_item[i].classList.add("visible-acc-item");
+                acc_btn[i].style.color = "rgb(var(--text-primary-color))";
+                active_acc = visible_acc_item[i];
+        })
+    }
+
+    var js_acc_btn = document.querySelectorAll(".acc-item .js-acc-btn");
+    var js_acc_menu = document.querySelectorAll(".acc-item .acc__menu");
+    let active_acc = null;
+
+    for (let i = 0; i < js_acc_btn.length; i++) {
+        js_acc_btn[i].addEventListener("click", function () {
+
+            if (js_acc_menu[i].classList.contains("is-open")) {  
+                js_acc_menu[i].classList.remove("is-open");
+                js_acc_menu[i].style.height = "0px";
+                active_acc = null;    
+            }else{
+                if (active_acc) {
+                    active_acc.style.height = "0px";
+                    active_acc.classList.remove("is-open");
+                }
+                js_acc_menu[i].classList.add("is-open");
+                active_acc = js_acc_menu[i];
+                var js_acc_height = js_acc_menu[i].scrollHeight + 20;
+                js_acc_menu[i].style.height = js_acc_height + "px";
+            }  
+        })             
+    }                       
+</script>
+
+{% schema %}
+    {
+        "blocks": [
+            {
+                "type": "list_item",
+                "name": "List Item",
+                "settings": [
+                    {
+                        "id": "header",
+                        "label": "Header",
+                        "type": "text"
+                    },
+                    {
+                        "id": "copy",
+                        "label": "Copy",
+                        "type": "html"
+                    }
+                ]
+            },
+            {
+                "type": "parent_header",
+                "name": "Parent Header",
+                "settings": [
+                    {
+                        "id": "parent_header",
+                        "label": "Parent Header",
+                        "type": "text"
+                    }
+                ]
+            }
+        ],
+        "settings": [
+            {
+                "default": "clean and clear",
+                "id": "heading",
+                "label": "Clean and Clear",
+                "type": "text"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Customer Tab Accordion",
+                "category": "Customer Tab Accordion"
+            }
+        ]
+    }
+{% endschema %}

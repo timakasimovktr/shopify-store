@@ -1,0 +1,88 @@
+{% assign s = section.settings %}
+
+<style>
+	.about-join{
+		background: {% if s.use_bg_color %} {{ s.bg_color }} {% else %} url("{{ s.join_image | img_url: 'master' }}") 50% 50% / cover {% endif %};
+	}
+
+	.about-join-wrap .desktop-only{
+		color: {{ s.join_text_color }};
+	}
+</style>
+
+<section class="about-join-wrap">
+	<div class="about-join">
+		<div class="about-join__cta-flex-wrap">
+			<div class="about-join__cta">
+				<h3 class="about-join__cta-hdr about-join__cta-hdr--blue">join</h3>
+				<h3 class="about-join__cta-hdr">the team</h3>
+				<div class="about-join__cta-link">
+					<a href="{{ s.join_cta_url }}" class="link-arrow">
+						{{ s.join_cta_text }}
+					</a>
+				</div>
+			</div>
+		</div>
+		<p class="about-join__content">
+			<span class="desktop-only">
+				{{- s.join_content_desktop -}}
+			</span>
+			<span class="mobile-only">
+				{{- s.join_content_mobile -}}
+			</span>
+		</p>
+	</div>
+</section>
+{% schema %}
+	{
+		"name": "About Join Team",
+		"settings": [
+			{
+				"type": "text",
+				"id": "join_cta_text",
+				"label": "Join Team CTA Text",
+				"default": "see all open positions"
+			},
+			{
+				"type": "url",
+				"id": "join_cta_url",
+				"label": "Join Team CTA URL"
+			},
+			{
+				"type": "textarea",
+				"id": "join_content_desktop",
+				"label": "Join Team Content - Desktop"
+			},
+			{
+				"type": "textarea",
+				"id": "join_content_mobile",
+				"label": "Join Team Content - Mobile"
+			},
+			{
+				"type": "image_picker",
+				"id": "join_image",
+				"label": "Join Team Image"
+			},
+			{
+				"type": "checkbox",
+				"id": "use_bg_color",
+				"label": "Use Background Color"
+			},
+			{
+				"type": "color",
+				"id": "bg_color",
+				"label": "Background Color"
+			},
+			{
+				"type": "color",
+				"id": "join_text_color",
+				"label": "Join Team Text Color"
+			}
+		],
+    "presets": [
+      {
+        "name": "About Join Team"
+      }
+    ]
+	}
+{% endschema %}

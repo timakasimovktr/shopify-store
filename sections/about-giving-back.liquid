@@ -1,0 +1,80 @@
+{% assign s = section.settings %}
+<section class="about-giving-back">
+	<h3 class="about-giving-back__heading">
+		{{- s.gb_hdg -}}
+	</h3>
+  <div class="about-giving-back__carousel glide">
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+        <svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
+      </button>
+    </div>
+    <div class="glide__track" data-glide-el="track">
+      <ul id="givingBackCarousel" class="glide__slides about-giving-back__list">
+        {% for block in section.blocks %}
+        {% assign bs = block.settings %}
+          <li class="about-giving-back__item">
+            <div class="about-giving-back__img-container">
+              <img
+                alt="{{- bs.c_img.alt -}}"
+                class="about-giving-back__img"
+                srcset="{{ bs.c_img | img_url: '394x' }} 1x, {{ bs.c_img | img_url: 'master' }} 2x"
+                style="object-position: {{ bs.c_img.presentation.focal_point }};"
+              />
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]">
+      {% for block in section.blocks %}
+      {% assign i = forloop.index %}
+        <button class="slider__bullet glide__bullet" data-glide-dir="={{i}}"></button>
+      {% endfor %}    
+    </div>
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+        <svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>
+      </button>
+    </div>
+    
+  </div>
+</section>
+
+
+
+{% schema %}
+	{
+		"name": "About Giving Back",
+		"class": "giving-back",
+		"settings": [
+			{
+				"type": "header",
+				"content": "Header"
+			},
+			{
+				"type": "text",
+				"id": "gb_hdg",
+				"label": "Section Heading"
+			}
+		],
+		"blocks": [
+			{
+				"type": "Image",
+				"name": "Image",
+				"settings": [
+					{
+						"type": "image_picker",
+						"id": "c_img",
+						"label": "394 x 282"
+					}
+				]
+			}
+		],
+   "presets": [
+    {
+      "name":"About Giving Back"
+    }
+   ]
+	}
+{% endschema %}

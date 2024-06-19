@@ -1,0 +1,372 @@
+@import './../variables';
+@import './../mixins';
+@import './../utilities';
+@import './../components/index';
+@import './../partials/index';
+@import './../icons';
+@import "../sections/cart-drawer";
+
+.login {
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1400px !important;
+    flex-wrap: wrap !important;
+
+
+
+    .field:after,
+    .select:after,
+    .customer .field:after,
+    .customer select:after,
+    .localization-form__select:after {
+        box-shadow: none !important;
+    }
+
+    .recover_password_div {
+        max-width: 450px !important;
+        width: 100% !important;
+        text-align: left;
+
+        .recover_password_inputs {
+            p {
+                letter-spacing: 0 !important;
+                color: rgb(var(--text-primary-color));
+                font-family: nimbus-sans, sans-serif !important;
+            }
+
+            form {
+                margin-top: 0 !important;
+
+                input {
+                    margin-bottom: 24px !important;
+                    padding: 16px !important;
+                    font-family: nimbus-sans, sans-serif !important;
+                    border-radius: 5px !important;
+                    font-size: 16px !important;
+                    box-shadow: none !important;
+                    border: 1px gray solid;
+                    height: 52px !important;
+                    color: rgb(0, 0, 0);
+                    line-height: 18px !important;
+                }
+
+                button {
+                    margin-top: 0 !important;
+                    margin-bottom: 24px !important;
+                    width: 225px;
+                    height: 60px;
+                    border-radius: 5px !important;
+                    background: rgb(var(--primary-color)) !important;
+                    border: 1px rgb(var(--border-primary-color)) solid;
+                    font-family: nimbus-sans, sans-serif !important;
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                }
+
+                button::after {
+                    box-shadow: none !important;
+                }
+
+                a {
+                    margin: 0 !important;
+                    color: rgb(var(--text-primary-color)) !important;
+                    font-family: nimbus-sans, sans-serif !important;
+                    font-weight: 600;
+                }
+            }
+
+
+
+            input::placeholder {
+                opacity: 1;
+            }
+        }
+    }
+
+    .sign_in {
+        max-width: 450px !important;
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0 20px;
+
+        h1 {
+            font-size: 36px;
+            padding: 10px 0 24px;
+            color: rgb(var(--text-primary-color));
+            font-family: var(--font-heading-family);
+            margin: 0 !important;
+        }
+
+        form {
+            width: 100% !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: 0 !important;
+
+            .field {
+                input {
+                    padding: 16px !important;
+                    font-family: nimbus-sans, sans-serif !important;
+                    border-radius: 5px !important;
+                    font-size: 16px !important;
+                    box-shadow: none !important;
+                    border: 1px gray solid;
+                    height: 52px !important;
+                    color: rgb(0, 0, 0);
+                    line-height: 18px !important;
+                }
+
+                input::placeholder {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .login-container__remember-me-container {
+            display: flex;
+            margin-top: 24px;
+            margin-bottom: 24px;
+            justify-content: center;
+            align-items: center;
+            color: rgb(var(--text-primary-color));
+
+            .checkbox-primary-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .recover_link {
+                margin-left: 10px;
+                color: rgb(var(--text-primary-color));
+                font-size: 11px;
+                text-transform: uppercase;
+                font-weight: 600 !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .login-container__terms {
+            font-family: nimbus-sans, sans-serif !important;
+            display: flex;
+            text-align: left;
+            font-size: 16px !important;
+            width: 100%;
+            line-height: 18px;
+            justify-content: space-between;
+            letter-spacing: 0px;
+
+            .link-primary {
+                color: rgb(var(--text-primary-color));
+                font-size: 11px !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 600;
+
+            }
+        }
+
+        .checkbox-primary {
+            width: 24px !important;
+            height: 24px !important;
+            border-radius: 10px !important;
+            margin: 0 10px 0 0 !important;
+        }
+
+        .sign_in_button {
+            margin-top: 0 !important;
+            margin-bottom: 24px !important;
+            width: 225px;
+            height: 60px;
+            border-radius: 5px !important;
+            background: rgb(var(--primary-color)) !important;
+            border: 1px gray solid;
+            font-family: nimbus-sans, sans-serif !important;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .sign_in_button::after {
+            box-shadow: none !important;
+        }
+    }
+
+    .register_block {
+        max-width: 450px !important;
+        width: 100% !important;
+        text-align-last: left;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+
+        h2 {
+            margin: 10px 0 24px !important;
+            font-size: 36px;
+            color: rgb(var(--text-primary-color));
+            font-family: var(--font-heading-family);
+            letter-spacing: 0;
+        }
+
+        .register_enjoy {
+            margin-top: 0;
+            margin-bottom: 24px !important;
+            font-weight: 600;
+            color: rgb(var(--text-primary-color));
+            font-family: var(--font-heading-family);
+            font-size: 16px;
+            letter-spacing: 0;
+        }
+
+        ul {
+            margin-top: 0 !important;
+            padding-left: 0 !important;
+            margin-bottom: 24px !important;
+
+            li {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                list-style-type: none !important;
+                font-family: nimbus-sans, sans-serif !important;
+                padding-bottom: 3px;
+                color: rgb(var(--text-primary-color));
+                font-size: 16px !important;
+                letter-spacing: 0 !important;
+                margin-bottom: 4px;
+
+                svg {
+                    margin-right: 16px;
+                }
+            }
+        }
+
+        .create_new_acc {
+            width: 225px;
+            height: 60px;
+            margin: 0 !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(var(--primary-color)) !important;
+            border: 1px gray solid;
+            font-family: nimbus-sans, sans-serif !important;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: capitalize;
+            border-radius: 5px !important;
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+input[type=checkbox]{
+    accent-color: rgb(var(--text-primary-color)) !important;
+}
+
+
+@media only screen and (max-width: 1080px) {
+ .login{
+    flex-direction: column !important;
+    align-items: center !important;
+ }
+}
+@media only screen and (max-width: 1390px) {
+
+    .login {
+        width: 95% !important;
+        // max-width: 100% !important;
+        margin: 70px auto !important;
+    }
+
+    .sign_in {
+        margin-bottom: 80px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .login {
+        width: 95% !important;
+        // max-width: 100% !important;
+        margin: 60px auto !important;
+        align-items: flex-start !important;
+    }
+
+    .sign_in {
+        margin-bottom: 80px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        h1 {
+            font-size: 30px !important;
+        }
+
+        .login-container__remember-me-container {
+            font-size: 12px !important;
+        }
+
+        .sign_in_button {
+            width: 150px !important;
+            height: 40px !important;
+        }
+
+        .login-container__terms {
+            justify-content: flex-start !important;
+            // align-items: flex-start !important;
+            flex-wrap: wrap !important;
+            font-size: 12px !important;
+            text-align: left;
+
+            .link-primary {
+                margin-right: 10px !important;
+                margin-left: 10px !important;
+            }
+
+            // .link-primary:last-child {
+            //     margin-left: 10px !important;
+            // }
+        }
+    }
+
+    .register_block {
+        margin: 0 !important;
+        h2 {
+            font-size: 30px !important;
+        }
+        
+        .register_enjoy {
+            text-align: left !important;
+        }
+
+        .create_new_acc {
+            width: auto !important;
+            height: 47px !important;
+            padding: 0 30px !important;
+        }
+    }
+    .recover_password_div{
+        padding: 0 15px !important;
+    }
+
+    .recover_password_inputs {
+        button {
+            width: 150px !important;
+            height: 40px !important;
+        }
+    }
+
+}

@@ -1,0 +1,128 @@
+{% assign ss = section.settings %}
+{% assign pdpTimeout = product.metafields.global.timer.value %}
+{% assign plpTimeout = collection.metafields.global.timer.value %}
+{% if ss.timer_text or plpTimeout or pdpTimeout %}
+  <section class="timer page-width" style="background: {{ ss.background }}; padding:{{ ss.padding_top_bottom }}px {{ ss.padding_left_right }}px; {% if ss.timer_width == "max-content" %} width: {{ ss.timer_width }}; margin:{{ ss.timer_position_margin }}; {% endif %}">
+    <div class="timer-wrapper" style="justify-content: {{ ss.timer_position }}">
+      <div class="timer-text">
+        <h3>{{ ss.timer_text }}</h3>
+      </div>
+      <div data-time="{% if pdpTimeout %}{{ pdpTimeout }}{% elsif plpTimeout %}{{plpTimeout}}{% else %}{{ ss.timer_clock }}{% endif %}" class="timer-clock">
+        <h3>
+          <span class="hours"></span>
+          <span>:</span>
+          <span class="minutes"></span>
+          <span>:</span>
+          <span class="seconds"></span>
+        </h3>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Timer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "timer_text",
+      "label": "Timer Text",
+      "default": "OFFER ENDS IN:"
+    },
+    {
+      "type": "text",
+      "id": "timer_clock",
+      "label": "Timer Time",
+      "info": "HH:MM:SS"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_bottom",
+      "label": "Timer Padding (TOP & BOTTOM)",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_left_right",
+      "label": "Timer Padding (LEFT & RIGHT)",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "timer_position",
+      "label": "Timer Position",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "timer_width",
+      "label": "Timer Width",
+      "default": "100%",
+      "options": [
+        {
+          "value": "max-content",
+          "label": "Max Content"
+        },
+        {
+          "value": "100%",
+          "label": "Full Width"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "timer_position_margin",
+      "label": "Timer Position",
+      "options": [
+        {
+          "value": "auto auto auto 0",
+          "label": "Left"
+        },
+        {
+          "value": "auto",
+          "label": "Center"
+        },
+        {
+          "value": "auto 0 auto auto",
+          "label": "Right"
+        }
+      ],
+      "default": "auto",
+      "info" : "chooce when timer width is max-content"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Timer Background"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Timer"
+    }
+  ]
+}
+{% endschema %}

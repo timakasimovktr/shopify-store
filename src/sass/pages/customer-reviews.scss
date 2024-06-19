@@ -1,0 +1,57 @@
+@import './../variables';
+@import './../mixins';
+@import './../utilities';
+@import './../components/index';
+@import './../partials/index';
+@import './../icons';
+@import "../sections/cart-drawer";
+
+
+.reviews{
+  .hdr {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    flex-direction: column;
+  
+    .reviews__heading.hdg {
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+      margin: auto;
+      text-align: center;
+      color: rgb(var(--text-primary-color));
+      font-size: 42px;
+      font-family: var(--font-heading-family);
+      font-weight: 400;
+      margin-bottom: 3rem;
+    
+      &::after {
+        content: ' ';
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 1px;
+        background-color: rgb(var(--text-primary-color));
+      }
+    }
+  
+    .reviews__copy {
+      max-width: 770px;
+      padding: 0 4rem;
+      margin: 0 auto 2rem auto;
+      text-align: center;
+    }
+  }
+}
+
+.reviews_bg {
+  background: #f8f8f8;
+  padding: 5rem;
+
+  @media only screen and (min-width: $responsive-large){
+    margin: 5rem;
+  }
+}

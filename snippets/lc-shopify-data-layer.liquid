@@ -1,0 +1,10 @@
+<script>
+  window.LC = window.LC || {};
+  window.LC.environment = `{{ settings.synchrony_environment }}`;
+  window.LC.customer = {
+    id: `{% if customer %}{{ customer.id }}{% endif %}`
+  };
+  window.LC.wishlist = {
+    linkText: `{{ shop.metafields.wishlist.sw_link_text }}`
+  };
+</script>

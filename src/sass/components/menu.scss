@@ -1,0 +1,139 @@
+header {
+  #menu-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 6rem 0 2rem;
+
+    ul, li {
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .hdr {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-family: var(--font-heading-family);
+      color: rgb(var(--text-primary-color));
+      font-size: 3.2rem;
+    }
+
+    &,
+    .menu-drawer__menu,
+    .menu-drawer__close-button {
+      background: #f8f8f8;
+    }
+
+    summary,
+    a,
+    .menu-drawer__close-button {
+      color: black;
+    }
+
+    .kf-icon.kf-icon__close {
+      position: fixed;
+      top: 25px;
+      left: 2rem;
+      width: 15px;
+      height: 15px;
+      color: black;
+      z-index: 1;
+    }
+
+    .menu-drawer__navigation {
+      & > ul {
+        padding: 0rem 2rem;
+
+        & li {
+          .accordion_item {
+            width: 100%;
+
+            .accordion-btn {
+              display: flex;
+            }
+          }
+
+          .accordion-menu {
+            transition: 0.3s;
+            display: grid;
+            grid-template-rows: 0fr;
+            overflow: hidden;
+
+            .accordion-content {
+              min-height: 0;
+              padding-left: 1rem;
+            }
+          }
+
+          .accordion_item.open > .accordion-menu {
+            grid-template-rows: 1fr;
+          }
+
+          .accordion_item.open > .accordion-btn .icon .after {
+            transform: rotate(0deg);
+          }
+
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+
+          .heading, a {
+            width: 100%;
+            text-transform: capitalize;
+            padding: 10px 0;
+            font-size: 1.6rem;
+            font-family: var(--font-body-family);
+            text-decoration: none;
+            cursor: pointer;
+          }
+
+          .icon {
+            position: relative;
+            padding-right: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            * {
+              display: flex;
+            }
+
+            .before {
+              content: "";
+              position: absolute;
+              width: 10px;
+              height: 1px;
+              background: #636363;
+            }
+
+            .after {
+              transition: 0.3s;
+              content: "";
+              position: absolute;
+              width: 10px;
+              height: 1px;
+              background: #636363;
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header__inline-menu {
+    .mega-menu__content {
+      transform: translateY(19px) !important;
+      z-index: 1;
+    }
+  }
+}
+
+#podium-bubble, #podium-prompt {
+  z-index: 1 !important;
+}

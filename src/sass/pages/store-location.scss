@@ -1,0 +1,110 @@
+@import './../index';
+
+#MainContent {
+  padding: 5rem 2rem 1rem 2rem;
+  
+  #store {
+    margin-bottom: 5rem;
+    opacity: 0;
+    transition: opacity .6s ease-out;
+
+    @media only screen and (min-width: $responsive-large) {
+      display: flex;
+      justify-content: space-between;
+
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #google-map-container {
+      order: 1;
+      
+      @media only screen and (min-width: $responsive-large) {
+        order: 2;
+      }
+
+      img {
+        width: 100%;
+
+        @media only screen and (min-width: $responsive-large) { 
+          margin-left: auto;
+          width: auto;
+        }
+      }
+    }
+
+    #store-information {
+      order: 2;
+
+      @media only screen and (min-width: $responsive-large) { 
+        order: 1;
+        margin-right: 10rem;
+      }
+      
+      .store__title {
+        font-family: var(--font-heading-family);
+        font-size: 4rem;
+        margin-bottom: .5rem;
+        text-transform: capitalize;
+        color: $color-dark-gray;
+      }
+
+      .store__address {
+        margin: 0 0 2rem 0;
+
+        > p {
+          margin: 0;
+        }
+      }
+  
+      .store__directions {
+        position: relative;
+        margin: 0;
+        font-family: ltc-bodoni-175, serif;
+        color: rgb(var(--text-primary-color));
+        font-size: 2rem;
+        line-height: 2rem;
+  
+        @include unstyled-link(rgb(var(--text-primary-color)));
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: -2rem;
+          border-top: 2px solid rgb(var(--border-primary-color));
+          border-right: 2px solid rgb(var(--border-primary-color));
+          transform: rotate(45deg) translateY(-50%);
+          width: 10px;
+          height: 10px;
+        }
+      }
+  
+      .store__phone {
+        display: block;
+        color: $color-dark-gray;
+        font-size: 1.4rem;
+        font-weight: 600;
+        @include unstyled-link($color-dark-gray);
+        text-decoration: underline !important;
+      }
+
+      .store__title-hours {
+        font-size: 4rem;
+        font-family: var(--font-heading-family);
+        color: $color-dark-gray;
+        text-transform: lowercase;
+        margin-bottom: .5rem;
+      }
+
+      .store__hours > p {
+        margin: 0;
+      }
+    }
+
+  }
+  
+  section.reviews > .container {
+    display: none;
+  }
+}

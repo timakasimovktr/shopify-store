@@ -1,0 +1,13 @@
+<shoptelligence-aa-widget
+  host="https://apps.shoptelligence.com/aa/latest"
+  apiKey="VmFH0fh4WkR5fGgbR5Yh1chGIhma2Juz"
+  anchorId="{{product.id}}"
+  addToCartIcon="cart"
+  anchorTitle="{{ product.title | escape }}"
+  anchorDescription="{{ product.description | escape | strip_html | strip_newlines }}"
+  anchorImageUrl="https:{{ product.featured_image | product_img_url: 'large' }}"
+  anchorPdpUrl="{{ shop.url }}/products/{{ product.handle }}"
+  socialSharing
+      specialOffers
+  specialOffersAction="zipcode"
+/>

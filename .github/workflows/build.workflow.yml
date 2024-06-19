@@ -1,0 +1,40 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master, stage, qa/kanes-cf ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14.x ]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Clear node_modules
+        run: rm -rf node_modules
+
+      - name: Install dependencies
+        run: |
+          yarn 
+
+      - name: Compile Shopify theme
+        run: |
+          yarn build 
+      
+      - name: Push changes to Shopify
+        id: update
+        run: |
+          git config --global user.name 'Github Actions'
+          git config --global user.email 'githubactions@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git add .
+          git add -f assets/
+          if git commit -m "Github Actions Build $(date +'%m/%d/%Y %H:%M:%S')" ; then
+            git push -u origin $GITHUB_REF
+            echo "::set-output name=notify::true"
+          fi

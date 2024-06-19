@@ -1,0 +1,86 @@
+{% assign s = section.settings %}
+
+<section  class="customer__delivery container">
+	<span class="customer__anchor" id="deliveryOptions"></span>
+	<h1 class="customer__header customer__header--short">{{- s.heading -}}</h1>
+	<p class="customer__delivery-copy">{{- s.copy -}}</p>
+
+	{% include 'customer-delivery' %}
+
+	<p class="customer__delivery-exception">
+		{{- s.fee_exception -}}
+	</p>
+</section>
+
+{% schema %}
+	{
+		"name": "Customer Delivery",
+		"settings": [
+			{
+				"default": "delivery options",
+				"id": "heading",
+				"label": "heading",
+				"type": "text"
+			},
+			{
+				"default": "A store representative will be calling you a few days before your scheduled delivery to confirm your address and the merchandise that you purchased. Though we cannot give you an exact time for your delivery area, the driver will call you either the evening before or the morning of your delivery day with a four hour time frame. Specific days have been designated for select areas: your furniture will be delivered on these specific days only. We require a 72 hour notice for any changes to your sales order prior to delivery.<br><br>On delivery, you can expect our professional delivery team to position your merchandise and remove all packing materials from your home. Please have the area cleared where your new furniture is to be placed. Difficult deliveries involving window removal and deliveries above the third floor(without access to an elevator) will not be done or done only after the customer has signed a waiver for liability.",
+				"id": "copy",
+				"label": "Copy",
+				"type": "html"
+			},
+			{
+				"default": "delivery fees",
+				"id": "delivery_header",
+				"label": "Delivery Header",
+				"type": "text"
+			},
+			{
+				"default": "delivery fees",
+				"id": "fee_heading",
+				"label": "Delivery Fees",
+				"type": "text"
+			},
+			{
+				"default": "The fees for delivery within our area are as follows:",
+				"id": "fee_copy",
+				"label": "Delivery Fees Copy",
+				"type": "text"
+			},
+			{
+				"default": "Tempur-Pedic and Serta iSeries and iComfort bedding sets delivered at NO DELIVERY CHARGE.<br>Delivery to areas beyhond our main delivery area will incur additional cost.",
+				"id": "fee_exception",
+				"label": "Delivery Fees Exception",
+				"type": "html"
+			}
+		],
+		"blocks": [
+			{
+				"name": "Fee Line Item",
+				"type": "fee_line_item",
+				"settings": [
+					{
+						"id": "fee_line_heading",
+						"label": "Fee Line Heading",
+						"type": "text"
+					},
+					{
+						"id": "fee_line_note",
+						"label": "Fee Line Note",
+						"type": "text"
+					},
+					{
+						"id": "fee_line_price",
+						"label": "Fee Line Price",
+						"type": "text"
+					}
+				]
+			}
+		],
+       "presets": [
+        {
+            "category": "Customer Delivery",
+            "name":"Customer Delivery"
+        }
+       ]
+	}
+{% endschema %}

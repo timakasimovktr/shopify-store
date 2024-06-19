@@ -1,0 +1,52 @@
+<div class="zip-panel__dropdown">
+  <div class="zip-panel__header">
+    <h2>Choose Delivery Preference</h2>
+  </div>
+
+  <fieldset class="zip-panel__optionBtns" data-selected-option="delivery">
+    <div class="zip-panel__option-item">
+      <input 
+        id="preference-btn--delivery" 
+        class="zip-panel__btn cta-btn option-btn kf-input active" 
+        type="radio" 
+        name="preference-btn" 
+        data-value="delivery"
+        checked
+      >
+      <label for="preference-btn--delivery">Delivery</label>
+    </div>
+
+    <div class="zip-panel__option-item">
+      <input 
+        id="preference-btn--pickup" 
+        class="zip-panel__btn cta-btn option-btn kf-input" 
+        type="radio" 
+        name="preference-btn" 
+        data-value="pickup"
+      >
+      <label for="preference-btn--pickup">Pickup</label>
+    </div>
+  </fieldset>
+
+  <div class="zip-panel__delivery-content">
+    <form>
+      <label for="zip-code">Enter your ZIP code</label>
+      <div class="zip-panel__code-input--wrapper">
+        <input type=text id="zip-code">
+        <button class="zip-panel__btn cta-btn btn-primary">
+          <span>Update</span>
+          {% render 'icon' with icon_name: 'spinner' %}
+        </button>
+      </div>
+    </form>
+    <div class="zip-panel__error-wrapper">
+      <span class="zip-panel__error-msg error-valid">This zip code is not valid</span>
+      <span class="zip-panel__error-msg error-area">This zip code is outside our delivery area</span>
+      <span class="zip-panel__error-msg error-rest">Something went wrong. Please try again</span>
+    </div>
+  </div>
+
+  <div class="zip-panel__pickup-content loading">
+  </div>
+
+</div>

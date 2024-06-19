@@ -1,0 +1,123 @@
+{% liquid
+  assign related_handles_split = product.metafields.product.colorRelatedHandles.value | split: ','
+  assign product_images = product.images
+  assign product_image_urls = ''
+  assign product_image_url = ''
+  assign hasRelatedColors = false
+  assign blank = ''
+  for product_image in product_images
+    assign product_image_url = product_image.src | img_url: 'x2139'
+    if forloop.first
+      assign product_image_urls = product_image_url
+    else
+      assign product_image_urls = product_image_urls | append: '~' | append: product_image_url
+    endif
+  endfor
+
+  for related_handle in related_handles_split
+    assign related_product = all_products[related_handle]
+    assign color_name = related_product.metafields.product.color
+    if color_name == blank
+      assign color_name = related_product.metafields.product.Color
+    endif
+    if color_name != blank
+      assign hasRelatedColors = true
+      break
+    endif
+  endfor
+%}
+
+{% if related_handles_split.size > 0 and hasRelatedColors %}
+  <div class="related-product-color-container">
+    <h3 class="section-title text-start">Colors</h3>
+    {%- liquid
+      assign color_code = product.metafields.product.colorCode.value 
+      assign color_name = product.metafields.product.color
+
+      if color_code == blank
+        assign color_code = product.metafields.product.colorCode
+      endif
+
+      if color_name == blank
+        assign color_name = product.metafields.product.Color
+      endif
+
+      if color_code == '#ffffff' or color_code == '#FFFFFF'
+        assign color_to_use = '#f1f1f1'
+      else
+        assign color_to_use = color_code
+      endif
+    -%}
+
+    <div class="related-product-colors">
+      <div class="product-color-option-wrapper" data-variant-id="{{product.selected_or_first_available_variant.id}}" data-product-url="{{ product.url }}">
+        <input id="product-color-option-1" type="radio" class="hidden" name="product-color-option" value="{{ product.variants[0].id }}" checked>
+
+        <label for="product-color-option-1">
+          <div class="related-product-color" style="background-color: {{ color_to_use }}"></div>
+        
+          <span class="related-product-color__name">{{ color_name }}</span>
+          <input type="hidden" name="related-product-images" value="{{ product_image_urls }}">
+          <input type="hidden" name="related-product-title" value="{{ product.title }}">
+          <input type="hidden" name="related-product-url" value="{{ product.url }}">
+          <div class="product-color-description hidden">{{ product.description}}</div>
+          <div class="product-color-attributes hidden">
+            {% render 'product-attributes' with target_product: product %}
+          </div>
+        </label>
+      </div>
+
+      {% assign product_image_urls = '' %}
+      {% assign product_image_url = '' %}
+      
+      {% for related_handle in related_handles_split %}
+        {%- liquid
+          assign related_product = all_products[related_handle]
+          assign color_code = related_product.metafields.product.colorCode
+          assign color_name = related_product.metafields.product.color
+          if color_code == blank
+            assign color_code = related_product.metafields.product.ColorCode
+          endif
+          if color_name == blank
+            assign color_name = related_product.metafields.product.Color
+          endif
+          if color_code == '#ffffff' or color_code == '#FFFFFF'
+            assign color_to_use = '#f1f1f1'
+          else
+            assign color_to_use = color_code
+          endif
+          if color_name == blank or color_code == blank
+            continue
+          endif
+
+          for product_image in related_product.images
+            assign product_image_url = product_image.src | img_url: 'x2139'
+            if forloop.first
+              assign product_image_urls = product_image_url
+            else
+              assign product_image_urls = product_image_urls | append: '~' | append: product_image_url
+            endif
+          endfor
+        -%}
+        
+        <div class="product-color-option-wrapper" data-variant-id="{{ related_product.selected_or_first_available_variant.id }}" data-product-url="{{ related_product.url }}">
+          <input id="product-color-option-{{ forloop.index | plus: 1}}" type="radio" class="hidden" name="product-color-option" value="{{ related_product.variants[0].id }}">
+
+          <label for="product-color-option-{{ forloop.index | plus: 1}}">
+            <div class="related-product-color" style="background-color: {{ color_to_use }}"></div>
+            
+            <span class="related-product-color__name">{{ color_name }}</span>
+            <input type="hidden" name="related-product-images" value="{{ product_image_urls }}">
+            <input type="hidden" name="related-product-title" value="{{ related_product.title }}">
+            <input type="hidden" name="related-product-url" value="{{ related_product.url }}">
+            <div class="product-color-description hidden">{{ related_product.description}}</div>
+            <div class="product-color-attributes hidden">
+              {% render 'product-attributes' with target_product: related_product %}
+            </div>
+          </label>
+        </div>
+
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

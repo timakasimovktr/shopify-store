@@ -1,0 +1,221 @@
+.faq{
+    margin: 0 auto;
+	letter-spacing: normal !important;
+
+    p{
+        font-family: nimbus-sans,sans-serif;
+        margin-top: 0;
+        margin-bottom: 30px;
+        color: rgb(var(--text-primary-color));
+        font-size: 16px;
+        line-height: 23px;
+    }
+}
+.faq__heading {
+	font-size: 52px;
+	margin: 25px auto 40px;
+	max-width: 50%;
+	position: relative;
+	text-align: center;
+    font-family: var(--font-heading-family);
+	color: rgb(var(--text-primary-color));
+	&::after {
+		background-color: rgb(var(--text-primary-color));
+		bottom: -10px;
+		content: "";
+		height: 1px;
+		left: 0;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		width: 105px;
+	}
+}
+.faq__list {
+	padding: 0;
+	list-style: none;
+}
+.faq__item {
+	padding-bottom: 6px;
+	&:last-child {
+		padding-bottom: 50px;
+	}
+}
+.faq__header {
+	-webkit-appearance: none;
+	background-color: #f8f8f8;
+	border: none;
+	display: block;
+	font-family: var(--font-heading-family);
+	font-size: 21px;
+	padding: 12px 110px;
+	position: relative;
+	text-align: left;
+	width: 100%;
+    transition: 0.5s;
+	&:focus {
+		outline: none;
+	}
+}
+
+.faq__header:hover{
+    cursor: pointer;
+}
+
+.faq__header.is-active {
+	background-color: #fff;
+    transition: 0.5s;
+	&::before {
+		opacity: 0;
+	}
+}
+
+.faq {
+    max-width: 1184px;
+    padding: 30px 20px 0 20px;
+}
+
+.faq__heading{
+    font-size: 39px;
+}
+
+.q {
+    display: inherit;
+}
+
+.faq__header {
+    text-transform: lowercase;
+    color: rgb(var(--text-primary-color));
+    &::after {
+        background-color: rgb(var(--text-primary-color));
+        content: "";
+        position: absolute;
+        top: 48%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 300ms ease-in-out;
+        transition: opacity 300ms ease-in-out;
+        height: 1px;
+        left: 15px;
+        width: 13px;
+    }
+    &::before {
+        background-color: rgb(var(--text-primary-color));
+        content: "";
+        position: absolute;
+        top: 48%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity 300ms ease-in-out;
+        transition: opacity 300ms ease-in-out;
+        height: 13px;
+        left: 21px;
+        width: 1px;
+    }
+}
+.faq__copy {
+    overflow: hidden !important;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 110px;
+    padding-right: 110px;
+    transition: 0.5s;
+    height: 0px;
+    position: relative;
+    z-index: 2;
+    font-family: nimbus-sans,sans-serif;
+}
+
+@media only screen and (max-width: 1024px) {
+
+}
+@media only screen and (max-width: 767px) {
+
+    .faq__header{
+        font-size: 18px;
+        padding-left: 52px;
+    }
+    
+    .faq p {
+        font-size: 14px !important;
+    }
+    
+    .faq__copy{
+        letter-spacing: normal;
+        padding-left: 52px;
+        padding-right: 52px;
+    }
+
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: smaller-phone) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (max-width: 374px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.q {
+		display: inherit;
+	}
+	.faq__heading {
+		font-size: 52px;
+		margin-bottom: 77px;
+		&::after {
+			width: 183px;
+		}
+	}
+}
+@media only screen and (min-width: 768px)and (max-width: 1024px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: 768px)and (max-width: 979px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: 980px) {
+	.q {
+		display: inherit;
+	}
+}
+	
+
+@media only screen and (min-width: 1281px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: 1401px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (max-width: 1280px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (max-width: 1400px) {
+	.q {
+		display: inherit;
+	}
+}

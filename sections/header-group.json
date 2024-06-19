@@ -1,0 +1,181 @@
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "784764e9-67e0-428e-a5aa-00e88614dc26": {
+      "type": "announcement-bar",
+      "blocks": {
+        "8766bd84-3504-4c1c-918b-3e62d4e631fa": {
+          "type": "announcement",
+          "settings": {
+            "color_scheme": "accent-2",
+            "image_primary": "shopify:\/\/shop_images\/Kanes_Card_Banner_2.webp",
+            "image_primary_width": 50,
+            "text_primary": "<p><strong>60 MONTHS INTEREST FREE FINANCING<\/strong><\/p>",
+            "text_secondary": "<p><span style=\"text-decoration:underline\">Learn More<\/span><\/p>",
+            "main_link": "https:\/\/etail.mysynchrony.com\/eapply\/eapply.action?uniqueId=8F73E7018ED430FA3422907B0C198D6C928EE0509DA8EBA8&client=Kane%27s%20Furniture",
+            "main_mobile_hide": false,
+            "box_1_id": "accessibility-usable-net-btn",
+            "box_1_text": "ENABLE ACCESSIBILITY",
+            "box_1_mobile_hide": false,
+            "box_1_icon": "",
+            "box_1_link": "tel:1-888-373-4088",
+            "box_2_id": "",
+            "box_2_text": "",
+            "box_2_mobile_hide": false,
+            "box_2_icon": "",
+            "box_2_link": "",
+            "box_3_id": "",
+            "box_3_text": "find a store",
+            "box_3_mobile_hide": false,
+            "box_3_icon": "location",
+            "box_3_link": "shopify:\/\/pages\/store-locations",
+            "box_4_id": "",
+            "box_4_text": "reviews",
+            "box_4_mobile_hide": false,
+            "box_4_icon": "",
+            "box_4_link": "shopify:\/\/pages\/reviews",
+            "box_5_id": "",
+            "box_5_text": "",
+            "box_5_mobile_hide": false,
+            "box_5_icon": "",
+            "box_5_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8766bd84-3504-4c1c-918b-3e62d4e631fa"
+      ],
+      "settings": {
+      }
+    },
+    "8b5a9ccb-e497-4106-9c70-89ef1c65dfad": {
+      "type": "header",
+      "blocks": {
+        "c8915111-22dd-43c0-88ea-72dc0fd612cb": {
+          "type": "mega_menu_image",
+          "settings": {
+            "mm_image_url": "shopify:\/\/shop_images\/Menu_tout_living_95d770b5-4ec8-465c-b7a3-6816c99b594c.jpg",
+            "mm_text": "The best selection of POWER RECLINERS",
+            "mm_text_color": "#ffffff",
+            "mm_button_text": "SHOP NOW",
+            "mm_link": "shopify:\/\/collections\/recliners",
+            "mm_shop_all_link": "shopify:\/\/collections\/living-room"
+          }
+        },
+        "a6273760-4854-42b5-9472-0aac905d3fbd": {
+          "type": "mega_menu_image",
+          "settings": {
+            "mm_image_url": "shopify:\/\/shop_images\/Bedroom_Menu_Tout_568x_7a0e871e-7d20-4c21-959c-d3b41a85312e.webp",
+            "mm_text": "",
+            "mm_text_color": "",
+            "mm_button_text": "Shop Beds",
+            "mm_link": "shopify:\/\/collections\/beds",
+            "mm_shop_all_link": "shopify:\/\/collections\/bedroom-collections"
+          }
+        },
+        "0ef45bc4-da7b-454f-b49d-19f0dad44fc5": {
+          "type": "mega_menu_image",
+          "settings": {
+            "mm_image_url": "shopify:\/\/shop_images\/Dining_Menu_Tout_568x_6da100c9-e0f9-431b-9fec-b096c22cef9e.jpg",
+            "mm_text": "",
+            "mm_text_color": "",
+            "mm_button_text": "SHOP TABLES",
+            "mm_link": "shopify:\/\/collections\/dining-tables",
+            "mm_shop_all_link": "shopify:\/\/collections\/dining-collections"
+          }
+        },
+        "63de1320-ee49-4fd9-96ae-0504aa7895ce": {
+          "type": "mega_menu_image",
+          "settings": {
+            "mm_image_url": "shopify:\/\/shop_images\/Mattress_Menu_Tout_2_568x_bcf4e6bb-ea0d-4ee3-9dd2-6517fa588c2c.webp",
+            "mm_text": "",
+            "mm_text_color": "",
+            "mm_button_text": "SHOP NOW",
+            "mm_link": "shopify:\/\/collections\/queen",
+            "mm_shop_all_link": "shopify:\/\/collections\/queen"
+          }
+        },
+        "209fbaa4-24c1-4655-966b-08501bf93fe1": {
+          "type": "mega_menu_image",
+          "settings": {
+            "mm_image_url": "shopify:\/\/shop_images\/ezgif.com-gif-maker_4.jpg",
+            "mm_text": "",
+            "mm_text_color": "",
+            "mm_button_text": "SHOP NOW",
+            "mm_link": "shopify:\/\/collections\/home-office",
+            "mm_shop_all_link": "shopify:\/\/collections\/home-office"
+          }
+        },
+        "1bd4721c-e190-458d-b58e-3064e2139ef0": {
+          "type": "mega_menu_image",
+          "settings": {
+            "mm_image_url": "shopify:\/\/shop_images\/Outdoor_Menu_Tout_Lakewood_568x_b8bcdb3b-c70d-4ed6-aa69-6c2985700f04.webp",
+            "mm_text": "",
+            "mm_text_color": "",
+            "mm_button_text": "GO OUTSIDE",
+            "mm_link": "shopify:\/\/collections\/outdoor-collections",
+            "mm_shop_all_link": "shopify:\/\/collections\/outdoor-collections"
+          }
+        },
+        "598d4168-7eb1-474b-8e9c-7a4c46a4d05e": {
+          "type": "mega_menu_image",
+          "settings": {
+            "mm_image_url": "shopify:\/\/shop_images\/Accents_Menu_Tout_568x_a5a980b7-ffaa-4e9f-81fb-ce135b368e8c.webp",
+            "mm_text": "",
+            "mm_text_color": "",
+            "mm_button_text": "SHOP ACCENTS",
+            "mm_link": "shopify:\/\/collections\/accessories",
+            "mm_shop_all_link": "shopify:\/\/collections\/accessories"
+          }
+        },
+        "4d2e1c9a-6195-42f2-9645-30be3c4931a5": {
+          "type": "mega_menu_image",
+          "settings": {
+            "mm_image_url": "shopify:\/\/shop_images\/Kids_Menu_Tout_568x_c2970b83-f7b4-4885-bb7c-eca7ecc1fb87.webp",
+            "mm_text": "",
+            "mm_text_color": "",
+            "mm_button_text": "SHOP BEDS",
+            "mm_link": "shopify:\/\/collections\/kids-teens-beds",
+            "mm_shop_all_link": "shopify:\/\/collections\/kids-teens"
+          }
+        }
+      },
+      "block_order": [
+        "c8915111-22dd-43c0-88ea-72dc0fd612cb",
+        "a6273760-4854-42b5-9472-0aac905d3fbd",
+        "0ef45bc4-da7b-454f-b49d-19f0dad44fc5",
+        "63de1320-ee49-4fd9-96ae-0504aa7895ce",
+        "209fbaa4-24c1-4655-966b-08501bf93fe1",
+        "1bd4721c-e190-458d-b58e-3064e2139ef0",
+        "598d4168-7eb1-474b-8e9c-7a4c46a4d05e",
+        "4d2e1c9a-6195-42f2-9645-30be3c4931a5"
+      ],
+      "custom_css": [
+        "ul.list-menu li:last-child a.header__menu-item.header__menu-item.list-menu__item.link.link--text.focus-inset span {color: red!important;}"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "logo": "{{ shop.brand.logo }}",
+        "logo_width": 120,
+        "logo_position": "middle-left",
+        "menu": "mega-menu",
+        "menu_type_desktop": "mega",
+        "show_header_links": false,
+        "enable_sticky_header": true,
+        "redirect_to_collection_page": true,
+        "margin_bottom": 0,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "anouncement": "",
+        "accessibility": true,
+        "accessibility_id": "accessibility-usable-net-btn",
+        "accessibility_text": "Enable Accessibility"
+      }
+    }
+  },
+  "order": [
+    "784764e9-67e0-428e-a5aa-00e88614dc26",
+    "8b5a9ccb-e497-4106-9c70-89ef1c65dfad"
+  ]
+}

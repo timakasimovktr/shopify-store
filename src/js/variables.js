@@ -1,0 +1,5 @@
+export const RESPONSIVE_BREAKPOINTS = {
+  MEDIUM: 749,
+  LARGE: 989,
+  XL: 1400
+};

@@ -1,0 +1,289 @@
+{% assign s = section.settings %}
+
+<style>
+	.about-timeline{
+		background: {% if s.use_bg_color %} {{ s.bg_color }} {% else %} url({{s.desktop_bg | img_url: 'master'}}) 50% 50% / cover {% endif %};
+	}
+
+	@media (max-width: 1024px) {
+		.about-timeline{
+		background: {% if s.use_bg_color %} {{ s.bg_color }} {% else %} url({{s.mobile_bg | img_url: 'master'}}) 50% 50% / cover {% endif %}
+		}
+  	}
+</style>
+{% comment %} desktop layout {% endcomment %}
+<section id="aboutTimeline" class="about-timeline desktop-only">
+	<div class="container">
+		<div class="about-timeline__content">
+			<div class="timeline__left">
+				<div class="timeline__header-wrap">
+          <h2 class="about-timeline__header-title">a look at<br /> our history</h2>
+				</div>
+
+				{% comment %} 1958 - top left {% endcomment %}
+				<div class="timeline__block-super-wrap timeline__fifty-eight">
+					<div class="timeline__date-wrap">
+						<span class="timeline__date timeline__date--left">1958</span>
+						<div class="timeline-dot">
+							<div class="timeline-dot__inner">
+							</div>
+						</div>
+					</div>
+					<div class="timeline__block-wrap">
+						<div class="timeline__block timeline__block--left">
+							<div class="timeline__text">
+								{% if s.top_left_text contains '<p>' %}
+									{{ s.top_left_text }}
+								{% else %}
+									<p>
+										{{ s.top_left_text }}
+									</p>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{% comment %} 1979 - bottom left {% endcomment %}
+				<div class="timeline__block-super-wrap">
+					<div class="timeline__date-wrap">
+						<span class="timeline__date timeline__date--left timeline__date--light">1979</span>
+						<div class="timeline-dot">
+							<div class="timeline-dot__inner">
+							</div>
+						</div>
+					</div>
+					<div class="timeline__block-wrap timeline__block-wrap--light">
+						<div class="timeline__block timeline__block--left">
+							<div class="timeline__text">
+								{% if s.bottom_left_text contains '<p>' %}
+									{{ s.bottom_left_text }}
+								{% else %}
+									<p>
+										{{ s.bottom_left_text }}
+									</p>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="timeline__right">
+
+				{% comment %} 1948 - top right {% endcomment %}
+				<div class="timeline__block-super-wrap timeline__block-super-wrap--right timeline__forty-eight">
+					<div class="timeline__date-wrap timeline__date-wrap--right">
+						<div class="timeline-dot timeline-dot--right">
+							<div class="timeline-dot__inner">
+							</div>
+						</div>
+						<span class="timeline__date timeline__date--right timeline__date--light">1948</span>
+					</div>
+					<div class="timeline__block-wrap timeline__block-wrap--light timeline__block-wrap--right-top">
+						<div class="timeline__split-content">
+							<div class="timeline__forty-eight-img">
+								<div class="ir is-loading timeline__forty-eight-img-ir">
+									<img
+										srcset="{{ s.top_right_image | img_url: '272x' }} 1x, {{ s.top_right_image | img_url: '544x' }} 2x"
+										alt="{{ s.top_right_image.alt }}"
+										loading="lazy"
+										style="object-position: {{ s.top_right_image.presentation.focal_point }}"
+									/>
+								</div>
+							</div>
+							<div class="timeline__block timeline__block--right-top">
+								<div class="timeline__text">
+									{% if s.top_right_text contains '<p>' %}
+										{{ s.top_right_text }}
+									{% else %}
+										<p>
+											{{ s.top_right_text }}
+										</p>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{% comment %} 1963-2014 - middle right {% endcomment %}
+				<div class="timeline__block-super-wrap timeline__block-super-wrap--right timeline__sixty-three">
+					<div class="timeline__date-wrap timeline__date-wrap--right-mid timeline__sixty-three-date-wrap">
+						<div class="timeline-dot timeline-dot--right">
+							<div class="timeline-dot__inner">
+							</div>
+						</div>
+						<span class="timeline__date timeline__date--right timeline__sixty-three-date">1963 - 2014</span>
+					</div>
+					<div class="timeline__block-wrap timeline__block-wrap timeline__block-wrap--right-mid">
+						<div class="timeline__split-content timeline__split-content--sixty-three">
+							<div class="timeline__sixty-three-img">
+								<div class="ir is-loading timeline__sixty-three-img-ir">
+									<img
+										srcset="{{ s.mid_right_image | img_url: '278x' }} 1x, {{ s.mid_right_image | img_url: '556x' }} 2x"
+										class="lazyload"
+										alt="{{ s.mid_right_image.alt }}"
+										style="object-position: {{ s.mid_right_image.presentation.focal_point }}"
+									/>
+								</div>
+							</div>
+							<div class="timeline__block timeline__block--right-mid">
+								<div class="timeline__text">
+									{% if s.mid_right_text contains '<p>' %}
+										{{ s.mid_right_text }}
+									{% else %}
+										<p>
+											{{ s.mid_right_text }}
+										</p>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{% comment %} Today - bottom right {% endcomment %}
+				<div class="timeline__block-super-wrap timeline__block-super-wrap--right">
+					<div class="timeline__date-wrap timeline__today-date-wrap timeline__date-wrap--right">
+						<div class="timeline-dot timeline-dot--right">
+							<div class="timeline-dot__inner">
+							</div>
+						</div>
+						<span class="timeline__date timeline__today-date timeline__date--right">Today</span>
+					</div>
+					<div class="timeline__block-wrap timeline__block-wrap timeline__block-wrap--right-bottom">
+						<div class="timeline__block">
+							<div class="timeline__text">
+								{% if s.bottom_right_text contains '<p>' %}
+									{{ s.bottom_right_text }}
+								{% else %}
+									<p>
+										{{ s.bottom_right_text }}
+									</p>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% comment %} mobile layout {% endcomment %}
+<section class="about-timeline hide-desktop">
+	<div class="container">
+			<h2 class="about-timeline__header-title">a look at<br /> our history</h2>
+		<div class="about-timeline__content">
+      
+			{% include 'about-mobile-timeline', year: '1948', img: s.top_right_image, desc: s.top_right_text, isLight: true  %}
+			{% include 'about-mobile-timeline', year: '1958', desc: s.top_left_text %}
+			{% include 'about-mobile-timeline', year: '1963 - 2014', img: s.mid_right_image, desc: s.mid_right_text %}
+			{% include 'about-mobile-timeline', year: '1979', desc: s.bottom_left_text, isLight: true %}
+			{% include 'about-mobile-timeline', year: 'Today', img: s.anniversary_img_mobile, desc: s.bottom_right_text %}
+		</div>
+	</div>
+</section>
+
+{% schema %}
+  {
+    "name": "About Timeline",
+    "settings" : [
+      {
+        "id": "timeline_title",
+        "type": "text",
+        "label": "Header Title"
+      },
+      {
+        "type": "header",
+        "content": "1948"
+      },
+      {
+        "id": "top_right_image",
+        "type": "image_picker",
+        "label": "1948 Image"
+      },
+      {
+        "id": "top_right_text",
+        "type": "textarea",
+        "label": "1948 Text"
+      },
+      {
+        "type": "header",
+        "content": "1958"
+      },
+      {
+        "id": "top_left_text",
+        "type": "textarea",
+        "label": "1958 Text"
+      },
+      {
+        "type": "header",
+        "content": "1963 - 2014"
+      },
+      {
+        "id": "mid_right_image",
+        "type": "image_picker",
+        "label": "1963 - 2014 Image"
+      },
+      {
+        "id": "mid_right_text",
+        "type": "textarea",
+        "label": "1963 - 2014 Text"
+      },
+      {
+        "type": "header",
+        "content": "1979"
+      },
+      {
+        "id": "bottom_left_text",
+        "type": "textarea",
+        "label": "1979 Text"
+      },
+      {
+        "type": "header",
+        "content": "Banner Image"
+      },
+      {
+        "id": "anniversary_img_mobile",
+        "type": "image_picker",
+        "label": "Anniversary Image"
+      },
+      {
+        "type": "header",
+        "content": "Today"
+      },
+      {
+        "id": "bottom_right_text",
+        "type": "textarea",
+        "label": "Today"
+      },
+	  {
+		"type": "image_picker",
+		"id": "desktop_bg",
+		"label": "Desktop Background Image"
+	  },
+	  {
+		"type": "image_picker",
+		"id": "mobile_bg",
+		"label": "Mobile Background Image"
+	  },
+	  {
+		"type": "checkbox",
+		"id": "use_bg_color",
+		"label": "Use Background Color"
+	  },
+	  {
+		"type": "color",
+		"id": "bg_color",
+		"label": "Background Color"
+	  }
+    ],
+   "presets": [
+      {
+        "name" : "About Timeline"
+      }
+   ]
+  }
+{% endschema %}

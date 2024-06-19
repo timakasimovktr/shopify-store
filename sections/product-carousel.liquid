@@ -1,0 +1,217 @@
+{% assign ss = section.settings %}
+{% assign product_metafields = product.metafields.carousel.products_in_carousel.value %}
+{% assign collection_metafields = collection.metafields.carousel.products_in_carousel.value %}
+
+<section class="product-carousel page-width" style="padding:{{ ss.carousel_padding }}px 20px;">
+  <div class="carousel_heading" style="text-align: {{ ss.slider_title_position }}">
+    <p>{{ ss.heading }}</p>
+  </div>
+
+  <div class="product-carousel-wrapper">
+    <div class="swiper ProductsSwiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% assign bs = block.settings %}
+          {% if bs.product_info.url and bs.image_gallery or bs.product_info.featured_image %}
+            <a title="{{ bs.product_info.title }}" href="{{ bs.product_info.url }}" class="swiper-slide">
+              <div class="image_wrapper">
+                {% if bs.image_gallery %}
+                  <img
+                    loading="lazy"
+                    src="{{ bs.image_gallery | image_url: width: 300 }}"
+                    alt="{% if bs.image_gallery.alt %}{{ bs.image_gallery.alt }}{% else %}{{ bs.product_info }}{% endif %}"
+                  >
+                {% else %}
+                  <img
+                    loading="lazy"
+                    src="{{ bs.product_info.featured_image | image_url: width: 300 }}"
+                    alt="{% if bs.product_info.featured_image.alt %}{{ bs.product_info.featured_image.alt }}{% else %}{{ bs.product_info }}{% endif %}"
+                  >
+                {% endif %}
+              </div>
+              <div class="text_wrapper">
+                <h4>{{ bs.product_info.title }}</h4>
+                <p>
+                  {% if bs.product_info.price == bs.product_info.compare_at_price %}
+                    {{ bs.product_info.price | money -}}
+                  {% else %}
+                    {{ bs.product_info.price | money -}}
+                    <span>{{ bs.product_info.compare_at_price | money }}</span>
+                  {% endif %}
+                </p>
+              </div>
+            </a>
+          {% endif %}
+        {% endfor %}
+
+        {% for product_meta in product_metafields %}
+          {% if product_meta.url and product_meta.featured_image %}
+            <a title="{{ product_meta.title }}" href="{{ product_meta.url }}" class="swiper-slide">
+              <div class="image_wrapper">
+                <img
+                  loading="lazy"
+                  src="{{ product_meta.featured_image | image_url: width: 300 }}"
+                  alt="{{ product_meta.title }}"
+                >
+              </div>
+              <div class="text_wrapper">
+                <h4>{{ product_meta.title }}</h4>
+                <p>
+                  {% if product_meta.price == product_meta.compare_at_price %}
+                    {{ product_meta.price | money -}}
+                  {% else %}
+                    {{ product_meta.price | money -}}
+                    <span>{{ product_meta.compare_at_price | money }}</span>
+                  {% endif %}
+                </p>
+              </div>
+            </a>
+          {% endif %}
+        {% endfor %}
+
+        {% for collection_meta in collection_metafields %}
+          {% if collection_meta.url and collection_meta.featured_image %}
+            <a title="{{ collection_meta.title }}" href="{{ collection_meta.url }}" class="swiper-slide">
+              <div class="image_wrapper">
+                <img
+                  loading="lazy"
+                  src="{{ collection_meta.featured_image | image_url: width: 300 }}"
+                  alt="{{ collection_meta.title }}"
+                >
+              </div>
+              <div class="text_wrapper">
+                <h4>{{ collection_meta.title }}</h4>
+                <p>
+                  {% if collection_meta.price == collection_meta.compare_at_price %}
+                    {{ collection_meta.price | money -}}
+                  {% else %}
+                    {{ collection_meta.price | money -}}
+                    <span>{{ collection_meta.compare_at_price | money }}</span>
+                  {% endif %}
+                </p>
+              </div>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% comment %} NAVIGATION {% endcomment %}
+    </div>
+    <div class="swiper-button-n">{% render 'icon-arrow' %}</div>
+    <div class="swiper-button-p">{% render 'icon-arrow' %}</div>
+  </div>
+</section>
+
+<script>
+  function initTabsCarousel() {
+    var swiper = new Swiper('.ProductsSwiper', {
+      slidesPerView: 5,
+      spaceBetween: 10,
+      slidesPerGroup: 2,
+      centerInsufficientSlides: true,
+      loopFillGroupWithBlank: false,
+      loop: false,
+      navigation: {
+        nextEl: '.swiper-button-n',
+        prevEl: '.swiper-button-p',
+      },
+      breakpoints: {
+        0: {
+          loop: true,
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+          autoplay: {
+            delay: 1000,
+          },
+        },
+        500: {
+          loop: true,
+          slidesPerGroup: 1,
+          slidesPerView: 2,
+        },
+        800: {
+          loop: false,
+          slidesPerGroup: 2,
+          slidesPerView: 3,
+        },
+        1200: {
+          loop: false,
+          slidesPerView: 4,
+        },
+        1579: {
+          loop: false,
+          slidesPerView: 5,
+        },
+      },
+    });
+  }
+  document.addEventListener('DOMContentLoaded', initTabsCarousel);
+</script>
+
+{% schema %}
+{
+  "name": "Product carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "slider_title_position",
+      "label": "Select carousel title position",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "carousel_padding",
+      "label": "Set padding",
+      "info": "Set padding for carousel or gallery.",
+      "step": 1,
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_gallery",
+          "label": "Select Image",
+          "info": "Select an image to display."
+        },
+        {
+          "type": "product",
+          "id": "product_info",
+          "label": "Select product",
+          "info": "Select a product to display on carousel."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product carousel"
+    }
+  ]
+}
+{% endschema %}

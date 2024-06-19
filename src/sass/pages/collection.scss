@@ -1,0 +1,210 @@
+@import './../index';
+@import './../components/product-card';
+@import './../components/ss-actions';
+@import './pdp';
+
+body[data-template=collection] {
+  .collection-hero {
+    padding: 0;
+
+    .collection-hero__image-container {
+      position: relative;
+      border: none;
+
+      @media screen and (min-width: $responsive-large){
+        min-height: 34.2rem;
+      }
+      
+      .collection-hero__image-container__texts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        left: 0;
+        margin: auto;
+        height: fit-content;
+        min-width: 150px;
+        min-height: 130px;
+        padding: 0 1rem 1rem 1rem;
+        z-index: 1;
+        background: rgb(248, 248, 248, .85);
+        border-radius: 3px;
+
+        @media screen and (min-width: $responsive-large){
+          right: 13%;
+          left: initial;
+          height: auto;
+          width: auto;
+          padding: 2rem;
+          margin: initial;
+        }
+
+        
+        .collection-hero__image-container__title {
+          display: inline-block;
+          font-size: 3.5rem;
+          font-family: var(--font-heading-family);
+          line-height: 5rem;
+          text-transform: lowercase;
+          position: relative;
+          color: $color-dark-gray;
+          margin-bottom: 2rem;
+          text-align: center;
+          
+          @media screen and (min-width: $responsive-large){
+            font-size: 5rem;
+          }
+  
+          &::after {
+            content: ' ';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 75%;
+            height: 1px;
+            background: rgb(var(--primary-color));
+          }
+        }
+  
+        .collection-hero__image-container__link-name {
+          font-size: 1.1rem;
+          text-transform: uppercase;
+          color: rgb(var(--text-primary-color));
+          letter-spacing: 0;
+
+          @media screen and (min-width: $responsive-large){
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+  
+  .ss-actions__filters,
+  .ss-actions__sort {
+    > *:first-child {
+      margin-right: 0;
+    }
+
+    span {
+      display: none;
+    }
+
+    @media screen and (min-width: $responsive-large){
+      span {
+        display: block;
+      }
+
+      > *:first-child {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .ss-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 1px solid #dadada;
+    transition: opacity .3s ease;
+    margin-bottom: 5rem;
+
+    .ss-actions__filters,
+    .ss-actions__sort {
+      display: flex;
+      align-items: center;
+      padding: 1rem 4rem;
+
+      span {
+        text-transform: lowercase;
+        font-weight: 400;
+        font-size: 1.9rem;
+        letter-spacing: 0;
+        color: $color-gray;
+        font-family: var(--font-heading-family);
+      }
+
+      > *:first-child {
+        margin-right: 1rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .ss-actions__filters {
+      border-right: 1px solid #dadada;
+    }
+  }
+
+  
+  main .ss-actions {
+    width: max-content;
+  }
+
+  sticky-header .ss-actions {
+    width: 100%;
+  }
+
+  #ssCatalog {
+    .kf-icon__spinner {
+      width: 80px;
+      margin-left: auto;
+    }
+  }
+
+
+  #collection-description {
+    @media screen and (min-width: $responsive-large){
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    #collection-description__title {
+      font-size: 3.6rem;
+      font-family: bodoni-urw, sans;
+      color: $color-gray;
+    }
+
+    #collection-description__content {
+      color: $color-gray;
+      letter-spacing: 0;
+    }
+  }
+
+  .card__information {
+    padding-bottom: 3rem;
+  }
+
+  @media screen and (min-width: $responsive-large){
+    .card__information-inner {
+      min-height: 90px;
+    }
+
+    .card__information {
+      padding-bottom: 6rem;
+    }
+  }
+  
+}
+
+.collection-loading-warpper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .lds-spinner{
+    transform: scale(0.6);
+    div{
+     border-color: rgb(var(--primary-color)) transparent transparent transparent !important;
+    }
+  }
+}

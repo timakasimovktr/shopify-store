@@ -1,0 +1,79 @@
+<script>
+  class StoreLocation {
+    name;
+    img;
+    address;
+    phone;
+    hours;
+    latitude;
+    longitude;
+    storePage;
+    googleMaps;
+    customImage;
+    
+    constructor(name, img, address, phone, hours, latitude, longitude, redirectToStorePage, storePage, googleMaps, customImage, customImageFocalPoint){
+      this.name = name;
+      this.img = img;
+      this.address = address;
+      this.phone = phone;
+      this.hours = hours;
+      this.latitude = latitude;
+      this.longitude = longitude;
+      this.redirectToStorePage = redirectToStorePage == 'true';
+      this.storePage = storePage;
+      this.googleMaps = googleMaps;
+      this.customImage = {
+        url: customImage,
+        focalPoint: customImageFocalPoint
+      };
+    }
+  }
+
+  window.LC = window.LC || {};
+  window.LC.storeLocations = [];
+
+  {% for i in (1..20) %}
+    {%- liquid
+      assign store_location_index = 'store_location_' | append: i | append: '_'
+
+      assign name_index = store_location_index | append: 'name'
+      assign img_index = store_location_index | append: 'img'
+      assign address_index = store_location_index | append: 'address'
+      assign phone_index = store_location_index | append: 'phone'
+      assign hours_index = store_location_index | append: 'hours'
+      assign latitude_index = store_location_index | append: 'latitude'
+      assign longitude_index = store_location_index | append: 'longitude'
+      assign redirection_index = store_location_index | append: 'redirect_to_store_page'
+      assign store_page_index = store_location_index | append: 'store_page'
+      assign google_maps_index = store_location_index | append: 'google_maps'
+      assign custom_image_index = store_location_index | append: 'custom_image'
+
+      if settings[name_index] == blank
+        break
+      endif
+
+      assign custom_image = ''
+      if settings[custom_image_index]
+        assign custom_image = settings[custom_image_index] | img_url: '530x'
+      endif
+    -%}
+
+    window.LC.storeLocations.push(
+      new StoreLocation(
+        `{{ settings[name_index] }}`,
+        `{{ settings[img_index] }}`,
+        `{{ settings[address_index] }}`,
+        `{{ settings[phone_index] }}`,
+        `{{ settings[hours_index] }}`,
+        `{{ settings[latitude_index] }}`,
+        `{{ settings[longitude_index] }}`,
+        `{{ settings[redirection_index] }}`,
+        `/pages/{{ settings[store_page_index] }}`,
+        `{{ settings[google_maps_index] }}`,
+        `{{ custom_image }}`,
+        `{{ settings[custom_image_index].presentation.focal_point }}`
+      )
+    );
+  {% endfor %}
+</script>
+<script src="{{ 'store-locations.js' | asset_url }}"></script>

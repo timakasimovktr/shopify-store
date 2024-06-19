@@ -1,0 +1,111 @@
+{% assign s = section.settings %}
+
+<section id="kanesCares" class="about-kanes-cares">
+
+	<div class="kanes-cares__heading container">
+		<h3 class="kanes-cares__hdg">
+			{{- s.kc_hdg -}}
+		</h3>
+		<p class="kanes-cares__desc">
+			{{- s.kc_desc -}}
+		</p>
+	</div>
+
+	<ul id="cares" class="kanes-cares__list list-reset acc container">
+
+		{% for block in section.blocks %}
+			{% assign i = forloop.index %}
+
+			{% if i == 1 or i == 3 or i == 4 or i == 6 or i == 7 %}
+				<li class="kanes-cares__item{% if i == 1 or i == 3 or i == 4 %} kanes-cares__item--3{% else %} kanes-cares__item--2{% endif %}">
+			{% endif %}
+			<div class="kanes-cares__care">
+        <button data-kanes-cares-btn class="kanes-cares__btn">
+          <span class="kanes-cares__btn-title">
+            {{- block.settings.c_name -}}
+          </span>
+          <i class="kanes-cares__btn-icon">
+						<svg class="flickity-button-icon" viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>
+					</i>
+        </button>
+        <div data-kanes-cares-div class="kanes-cares__menu">
+          <div class="kanes-cares__menu-wrap">
+            <div class="kanes-cares__logo">
+              <img
+								class="kanes-cares__img kanes-cares__img--{{ i }}"
+								srcset="{{ block.settings.c_img | img_url: '288x' }} 1x, {{ block.settings.c_img | img_url: 'master' }} 2x"
+								alt="{{- title -}}"
+								style="object-position: {{ block.settings.c_img.presentation.focal_point }}"
+							/>
+            </div>
+            <hr class="kanes-cares__hr">
+            <div class="kanes-cares__charity-desc">
+              {%- if block.settings.c_desc contains '<p>' or block.settings.c_desc contains '<ul>' or block.settings.c_desc contains '<ol>' or block.settings.c_desc contains 'table' -%}
+                {{- block.settings.c_desc -}}
+              {%- else -%}
+                <p>
+                  {{- block.settings.c_desc -}}
+                </p>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+			</div>
+			{% if i == 2  or i == 3 or i == 5 or i == 6 or i == 7 %}
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</section>
+
+{% schema %}
+	{
+		"name": "About Kanes Cares",
+		"max_blocks": 7,
+		"class": "kanes-cares",
+		"settings": [
+			{
+				"type": "header",
+				"content": "Header"
+			},
+			{
+				"type": "text",
+				"id": "kc_hdg",
+				"label": "Section Heading"
+			},
+			{
+				"type": "textarea",
+				"id": "kc_desc",
+				"label": "Section Description"
+			}
+		],
+		"blocks": [
+			{
+				"type": "Charity",
+				"name": "Charity",
+				"settings": [
+				{
+					"type": "image_picker",
+					"id": "c_img",
+					"label": "Logo"
+				},
+				{
+					"type": "text",
+					"id": "c_name",
+					"label": "Name"
+				},
+				{
+					"type": "textarea",
+					"id": "c_desc",
+					"label": "Description"
+				}
+				]
+			}
+		],
+    "presets": [
+       {
+         "name" : "About Kanes Cares"
+       }
+    ]
+	}
+{% endschema %}

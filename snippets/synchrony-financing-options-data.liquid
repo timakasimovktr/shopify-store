@@ -1,0 +1,25 @@
+<script>
+  window.LC = window.LC || {};
+  window.LC.synchrony = window.LC.synchrony || {};
+  window.LC.synchrony.financingOptions = window.LC.synchrony.financingOptions || [];
+
+  `{% for i in (1..10) %}`;
+  `{% assign offer_code_index = 'financing_option_' | append: i | append: '_offer_code' %}`;
+  `{% assign months_index = 'financing_option_' | append: i | append: '_months' %}`;
+  `{% assign title_index = 'financing_option_' | append: i | append: '_title' %}`;
+  `{% assign details_index = 'financing_option_' | append: i | append: '_details' %}`;
+  `{% assign minimum_cart_subtotal_index = 'financing_option_' | append: i | append: '_minimum_cart_subtotal' %}`;
+
+  `{% if settings[offer_code_index] == blank%}`;
+  `{% break %}`;
+  `{% endif %}`
+
+  window.LC.synchrony.financingOptions.push({
+      offerCode: `{{ settings[offer_code_index] }}`,
+      months: + `{{ settings[months_index] }}`,
+      title: `{{ settings[title_index] }}`,
+      details: `{{ settings[details_index] }}`,
+      minimumCartSubtotal: + `{{ settings[minimum_cart_subtotal_index] }}`
+    });
+  `{% endfor %}`;
+</script>

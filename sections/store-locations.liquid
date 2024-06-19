@@ -1,0 +1,33 @@
+<div id="stores-container">
+  <div id="stores-container__info">
+    <h2 id="stores-container__info__title">Store Locations</h2>
+    <p id="stores-container__info__desc">Our goal continues to be providing the best customer service. Come in to one of our 18 Florida stores and see for yourself.</p>
+    
+    <div class="input-continue">
+      {% render 'icon' with icon_name: 'arrow', classes: 'input-continue__icon absolute-y-centered' %}
+      <input type="number" class="input-continue__input" placeholder="Enter your zipcode">
+      <span class="input-continue__error-msg hidden">You must enter a valid zipcode</span>
+    </div>
+
+    <a href="/pages/store-locations" class="stores-container__see-all">see all ></a>
+  </div>
+  <div id="stores-container__slider">
+    <div class="glide" manual-mount>
+      <div class="glide__track" data-glide-el="track">
+        <ul id="store-locations__cards-container" class="glide__slides"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% render 'store-locations-js' %}
+
+{% schema %}
+{
+  "name": "Store Locations",
+  "tag": "section",
+  "presets": [{
+    "name": "Store Locations"
+  }]
+}
+{% endschema %}

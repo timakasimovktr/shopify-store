@@ -1,0 +1,483 @@
+<div class="address_mobile">
+  <div class="account_div">
+    <div class="account_titles">
+      <nav>
+        <ul class="">
+          <li class="title_div">
+            <div class="account_tab_title">
+              {{ 'customer.account.details' | t }}
+            </div>
+            <div class="account_tab_content">
+              <div class="account_tab_content_div">
+                <h2>{{ 'customer.account.details' | t }}
+                </h2>
+                <div class="content_box_header">
+                  {{ customer.default_address | format_address }}
+                </div>
+                <div class="content_box_cover">
+                  <div class="content_box">
+                    <h2>{{ 'customer.activate_account.password' | t }}
+                    </h2>
+                    <p>••••••••••</p>
+                  </div>
+                  <form method="post" action="/account/recover" accept-charset="UTF-8" class="ac-content-box__actions">
+                    <input type="hidden" name="form_type" value="recover_customer_password">
+                    <input type="hidden" name="utf8" value="✓">
+                    <input type="hidden" name="email" value="timur@llamacommerce.io">
+                    <button type="submit" class="ac-content-box__action btn btn--small btn--quaternary js-submit-btn">
+                      <span class="btn__bg"></span>
+                      <span class="btn__label">
+                        Reset
+                      </span>
+                    </button>
+                  </form>
+                </div>
+
+                {%- comment -%}
+                <a href="{{ routes.account_addresses_url }}">
+                  {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+                </a>
+                {%- endcomment -%}
+              </div>
+            </div>
+          </li>
+          <li class="title_div">
+            <div class="account_tab_title">
+              {{ 'customer.orders.title' | t }}
+            </div>
+            <div class="account_tab_content">
+              <div class="order_mobile_div">
+                {% paginate customer.orders by 20 %}
+                {%- if customer.orders.size > 0 -%}
+                <table role="table" class="order-history">
+                  <caption class="visually-hidden">{{ 'customer.orders.title' | t }}
+                  </caption>
+                  <thead role="rowgroup">
+                    <tr role="row">
+                      <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}
+                      </th>
+                      <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}
+                      </th>
+                      <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}
+                      </th>
+                      <th id="ColumnFulfillment" scope="col" role="columnheader">{{ 'customer.orders.fulfillment_status'
+                        |
+                        t }}
+                      </th>
+                      <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody role="rowgroup">
+                    {%- for order in customer.orders -%}
+                    <tr role="row">
+                      <td class="row_order" id="RowOrder" role="cell" headers="ColumnOrder"
+                        data-label="{{ 'customer.orders.order_number' | t }}">
+                        <a href="{{ order.customer_url }}"
+                          aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">
+                          {{ order.name }}
+                        </a>
+                      </td>
+                      <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+                        {{ order.created_at | time_tag: format: 'date' }}
+                      </td>
+                      <td headers="RowOrder ColumnPayment" role="cell"
+                        data-label="{{ 'customer.orders.payment_status' | t }}">
+                        {{ order.financial_status_label }}
+                      </td>
+                      <td headers="RowOrder ColumnFulfillment" role="cell"
+                        data-label="{{ 'customer.orders.fulfillment_status' | t }}">
+                        {{ order.fulfillment_status_label }}
+                      </td>
+                      <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+                        {{ order.total_price | money_with_currency }}
+                      </td>
+                    </tr>
+                    {%- endfor -%}
+                  </tbody>
+                </table>
+                {%- else -%}
+                <p>{{ 'customer.orders.none' | t }}
+                </p>
+                {%- endif -%}
+
+                {%- if paginate.pages > 1 -%}
+                {%- if paginate.parts.size > 0 -%}
+                <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+                  <ul role="list">
+                    {%- if paginate.previous -%}
+                    <li>
+                      <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                            fill="currentColor">
+                        </svg>
+                      </a>
+                    </li>
+                    {%- endif -%}
+
+                    {%- for part in paginate.parts -%}
+                    <li>
+                      {%- if part.is_link -%}
+                      <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{
+                        part.title }}
+                      </a>
+                      {%- else -%}
+                      {%- if part.title == paginate.current_page -%}
+                      <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{
+                        part.title }}
+                      </span>
+                      {%- else -%}
+                      <span>{{ part.title }}
+                      </span>
+                      {%- endif -%}
+                      {%- endif -%}
+                    </li>
+                    {%- endfor -%}
+
+                    {%- if paginate.next -%}
+                    <li>
+                      <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                            fill="currentColor">
+                        </svg>
+                      </a>
+                    </li>
+                    {%- endif -%}
+                  </ul>
+                </nav>
+                {%- endif -%}
+                {%- endif -%}
+                {% endpaginate %}
+              </div>
+
+              {%- comment -%}
+              <a href="{{ routes.account_addresses_url }}">
+                {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+              </a>
+              {%- endcomment -%}
+            </div>
+          </li>
+          <li class="title_div">
+            <div class="account_tab_title">
+              {{ 'customer.addresses.title' | t }}
+            </div>
+            <div class="account_tab_content">
+              <div class="account_content">
+                <ul>
+                  <li class="content_div">
+
+                    {{ 'customer.css' | asset_url | stylesheet_tag }}
+
+                    <script src="{{ 'customer.js' | asset_url }}" defer></script>
+
+                    {%- paginate customer.addresses by 5 -%}
+                    <div class="customer addresses" data-customer-addresses>
+                      <ul class="data-list-addressess-ul" role="list">
+                        {%- for address in customer.addresses -%}
+                        <li data-address class="data-list-addressess">
+                          <div class="address_name">
+                            {%- if address == customer.default_address -%}
+                            <h2>Address
+                              {{ forloop.index }}
+                              ({{ 'customer.addresses.default' | t }}
+                              )</h2>
+                            {%- else -%}
+                            <h2>Address
+                              {{ forloop.index }}
+                            </h2>
+                            {%- endif -%}
+                            {{ address | format_address }}
+                          </div>
+                          <div class="edit_delete_buttons">
+                            <button type="button" class="edit_button input_buttons" id="EditFormButton_{{ address.id }}"
+                              aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
+                              aria-controls="EditAddress_{{ address.id }}" aria-expanded="false"
+                              data-address-id="{{ address.id }}">
+                              {{ 'customer.addresses.edit' | t }}
+                            </button>
+                            <button type="button" class="delete_button input_buttons"
+                              aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
+                              data-target="{{ address.url }}"
+                              data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}">
+                              {{ 'customer.addresses.delete' | t }}
+                            </button>
+
+                            <div class="edit_address_inputs" id="EditAddress_{{ address.id }}">
+                              {%- if address == customer.default_address -%}
+                              <h2>Edit Address
+                                {{ forloop.index }}
+                                ({{ 'customer.addresses.default' | t }}
+                                )</h2>
+                              {%- else -%}
+                              <h2>Edit Address
+                                {{ forloop.index }}
+                              </h2>
+                              {%- endif -%}
+                              {%- form 'customer_address', address -%}
+                              <div class="field">
+                                <input type="text" id="AddressFirstName_{{ form.id }}" name="address[first_name]"
+                                  value="{{ form.first_name }}" autocomplete="given-name"
+                                  placeholder="{{ 'customer.addresses.first_name' | t }} *">
+                              </div>
+                              <div class="field">
+                                <input type="text" id="AddressLastName_{{ form.id }}" name="address[last_name]"
+                                  value="{{ form.last_name }}" autocomplete="family-name"
+                                  placeholder="{{ 'customer.addresses.last_name' | t }} *">
+
+                              </div>
+                              <div class="field">
+                                <input type="text" id="AddressCompany_{{ form.id }}" name="address[company]"
+                                  value="{{ form.company }}" autocomplete="organization"
+                                  placeholder="{{ 'customer.addresses.company' | t }}">
+                              </div>
+                              <div class="field">
+                                <input type="text" id="AddressAddress1_{{ form.id }}" name="address[address1]"
+                                  value="{{ form.address1 }}" autocomplete="address-line1"
+                                  placeholder="{{ 'customer.addresses.address1' | t }} *">
+                              </div>
+                              <div class="field">
+                                <input type="text" id="AddressAddress2_{{ form.id }}" name="address[address2]"
+                                  value="{{ form.address2 }}" autocomplete="address-line2"
+                                  placeholder="{{ 'customer.addresses.address2' | t }}">
+
+                              </div>
+                              <div class="field">
+                                <input type="text" id="AddressCity_{{ form.id }}" name="address[city]"
+                                  value="{{ form.city }}" autocomplete="address-level2"
+                                  placeholder="{{ 'customer.addresses.city' | t }} *">
+                              </div>
+                              <div class="select_div">
+                                <div class="select">
+                                  <select id="AddressCountry_{{ form.id }}" name="address[country]"
+                                    data-address-country-select data-default="{{ form.country }}"
+                                    data-form-id="{{ form.id }}" autocomplete="country">
+                                    {{ all_country_option_tags }}
+                                  </select>
+                                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                    <use href="#icon-caret" />
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="select_div" id="AddressProvinceContainer_{{ form.id }}" style="display:none;">
+                                <div class="select">
+                                  <select id="AddressProvince_{{ form.id }}" name="address[province]"
+                                    data-default="{{ form.province }}" autocomplete="address-level1"></select>
+                                  <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                    <use href="#icon-caret" />
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="field">
+                                <input type="text" id="AddressZip_{{ form.id }}" name="address[zip]"
+                                  value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code"
+                                  placeholder="{{ 'customer.addresses.zip' | t }} *">
+                              </div>
+                              <div class="field">
+                                <input type="tel" id="AddressPhone_{{ form.id }}" name="address[phone]"
+                                  value="{{ form.phone }}" autocomplete="tel"
+                                  placeholder="{{ 'customer.addresses.phone' | t }} *">
+                              </div>
+                              <div class="default_address_checkbox">
+                                {{ form.set_as_default_checkbox }}
+                                <label for="address_default_address_new">
+                                  {{ 'customer.addresses.set_default' | t }}
+                                </label>
+                              </div>
+                              <div class="update_address_button">
+                                <button class="confirm_button">{{ 'customer.addresses.update' | t }}
+                                </button>
+                                <button class="cancel_edit_button" type="reset">
+                                  {% render 'icon-arrow' %}
+
+                                  {{ 'customer.addresses.cancel' | t }}
+                                </button>
+                              </div>
+                              {%- endform -%}
+                            </div>
+                          </div>
+
+
+                        </li>
+                        {%- endfor -%}
+                      </ul>
+
+                      <div class="data_address_div" data-address>
+                        <button type="button" class="addAddress_button" aria-expanded="false"
+                          aria-controls="AddAddress">
+                          {{ 'customer.addresses.add_new' | t }}
+                        </button>
+                        <div class="AddAddress" id="AddAddress">
+                          <h2 id="AddressNewHeading">
+                            {{ 'customer.addresses.add_new' | t }}
+                          </h2>
+                          {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading' -%}
+                          <div class="field">
+                            <input type="text" id="AddressFirstNameNew" name="address[first_name]"
+                              value="{{ form.first_name }}" autocomplete="given-name"
+                              placeholder="{{ 'customer.addresses.first_name' | t }} *" />
+
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressLastNameNew" name="address[last_name]"
+                              value="{{ form.last_name }}" autocomplete="family-name"
+                              placeholder="{{ 'customer.addresses.last_name' | t }} *" />
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressCompanyNew" name="address[company]" value="{{ form.company }}"
+                              autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}" />
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressAddress1New" name="address[address1]"
+                              value="{{ form.address1 }}" autocomplete="address-line1"
+                              placeholder="{{ 'customer.addresses.address1' | t }} *" />
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressAddress2New" name="address[address2]"
+                              value="{{ form.address2 }}" autocomplete="address-line2"
+                              placeholder="{{ 'customer.addresses.address2' | t }}" />
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressCityNew" name="address[city]" value="{{ form.city }}"
+                              autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }} *" />
+                          </div>
+                          <div class="select_div">
+                            <div class="select">
+                              <select id="AddressCountryNew" name="address[country]" data-default="{{ form.country }}"
+                                autocomplete="country">
+                                {{ all_country_option_tags }}
+                              </select>
+                              <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                <use href="#icon-caret" />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="select_div" id="AddressProvinceContainerNew" style="display: none">
+                            <div class="select">
+                              <select id="AddressProvinceNew" name="address[province]"
+                                data-default="{{ form.province }}" autocomplete="address-level1"></select>
+                              <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                <use href="#icon-caret" />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="field">
+                            <input type="text" id="AddressZipNew" name="address[zip]" value="{{ form.zip }}"
+                              autocapitalize="characters" autocomplete="postal-code"
+                              placeholder="{{ 'customer.addresses.zip' | t }} *" />
+                          </div>
+                          <div class="field">
+                            <input type="tel" id="AddressPhoneNew" name="address[phone]" value="{{ form.phone }}"
+                              autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }} *" />
+                          </div>
+                          <div class="default_address_checkbox">
+                            {{ form.set_as_default_checkbox }}
+                            <label for="address_default_address_new">
+                              {{ 'customer.addresses.set_default' | t }}
+                            </label>
+                          </div>
+                          <div class="update_address_button">
+                            <button class="confirm_button">
+                              {{ 'customer.addresses.add' | t }}
+                            </button>
+                            <button class="add_address_cancel_button" type="reset">
+                              {% render 'icon-arrow' %}
+
+                              {{ 'customer.addresses.cancel' | t }}
+                            </button>
+                          </div>
+                          {%- endform -%}
+
+                        </div>
+                      </div>
+
+                      {%- if paginate.pages > 1 -%}
+                      {%- if paginate.parts.size > 0 -%}
+                      <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+                        <ul role="list">
+                          {%- if paginate.previous -%}
+                          <li>
+                            <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                              <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                  fill="currentColor">
+                              </svg>
+                            </a>
+                          </li>
+                          {%- endif -%}
+
+                          {%- for part in paginate.parts -%}
+                          <li>
+                            {%- if part.is_link -%}
+                            <a href="{{ part.url }}"
+                              aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{
+                              part.title }}
+                            </a>
+                            {%- else -%}
+                            {%- if part.title == paginate.current_page -%}
+                            <span aria-current="page"
+                              aria-label="{{ 'general.pagination.page' | t: number: part.title }}">{{
+                              part.title }}
+                            </span>
+                            {%- else -%}
+                            <span>{{ part.title }}
+                            </span>
+                            {%- endif -%}
+                            {%- endif -%}
+                          </li>
+                          {%- endfor -%}
+
+                          {%- if paginate.next -%}
+                          <li>
+                            <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                              <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z"
+                                  fill="currentColor">
+                              </svg>
+                            </a>
+                          </li>
+                          {%- endif -%}
+                        </ul>
+                      </nav>
+                      {%- endif -%}
+                      {%- endif -%}
+                    </div>
+                    {%- endpaginate -%}
+
+                    <script>
+                      window.onload = () => {
+                        typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
+                      }
+                    </script>
+
+                  </li>
+
+
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="">
+            <div class="account_tab_title">
+              <a href="/apps/mywishlist" class="">
+                My Wishlist
+                {% render 'icon' with icon_name: 'link-blank' %}
+              </a>
+            </div>
+          </li>
+          <li class="ac-nav__item js-nav-item">
+            <div class="account_tab_title">
+              <a class="log_out" href="{{ routes.account_logout_url }}">{{ 'customer.log_out' | t }}
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

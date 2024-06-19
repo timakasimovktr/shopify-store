@@ -1,0 +1,30 @@
+<div id="search-popup">
+  <div class="search-popup__content">
+    <div class="search-popup__search-input-container">
+      <input 
+        placeholder="Search for products, offers and more" 
+        class="search-popup__search-input" 
+        type="text"
+        readonly
+      >
+      {% render 'icon' with icon_name: 'close', classes: 'hidden search-popup-close' %}
+      {% render 'icon' with icon_name: 'search', classes: 'search-popup-search' %}
+      {% render 'icon' with icon_name: 'loader', classes: 'hidden search-popup-loader' %}
+    </div>
+  </div>
+</div>
+<div class="search-popup__preview-container">
+  <div class="search-popup__suggested-results">
+    <div class="search-popup__alternatives">
+      <h2 class="search-popup__results-title">alternatives</h2>
+      <ul class="alternatives-wrapper">
+      </ul>
+    </div>
+    <div class="suggestions">
+      <h2 class="search-popup__results-title">product suggestions</h2>
+      <div class="search-popup__results">
+        
+      </div>
+    </div>
+  </div>
+</div>

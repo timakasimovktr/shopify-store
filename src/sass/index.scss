@@ -1,0 +1,26 @@
+@import './variables';
+@import './mixins';
+@import './utilities';
+
+// Dependencies /////////////////////////////
+////////////////////////////////////////////
+ 
+@import './node_modules/@glidejs/glide/src/assets/sass/glide.core';
+
+@import './components/index';
+@import './partials/index';
+@import './sections/index';
+
+@import './icons';
+
+// General //////////////////////////////////
+////////////////////////////////////////////
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#podium-bubble {
+  height: 100px !important;
+}

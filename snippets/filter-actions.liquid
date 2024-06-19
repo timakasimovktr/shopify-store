@@ -1,0 +1,25 @@
+{%- comment -%}
+Accepts:
+- search: boolean
+- sticky: boolean
+
+Usage:
+{% render 'filter-actions' with search:false, sticky:true %}
+{%- endcomment -%}
+
+<div class="ss-actions {% if search %}ss-actions--with-search{% endif %} {% if sticky %}sticky{% endif %}">
+  {% if search %}
+    <div class="ss-actions__search">
+      <input class="search-input" type="text">
+      <button class="button button__primary search-button">Search</button>
+    </div>
+  {% endif %}
+  <div class="ss-actions__filters">
+    {% render 'icon' with icon_name: 'filters'%}
+    <span>Filters</span>
+  </div>
+  <div class="ss-actions__sort">
+    <span>Sort by</span>
+    {% render 'icon' with icon_name: 'sort'%}
+  </div>
+</div>

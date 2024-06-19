@@ -1,0 +1,20 @@
+{% comment %}
+
+- Remove cents from price if possible (.00)
+- Shows/hides currency code
+
+Accepts:
+- price
+
+Usage:
+{% render 'format-price', price: price %}
+
+{% endcomment %}
+
+{% assign formatted_price = price | replace: '.00', '' | replace: '.0', '' %}
+
+{% if settings.currency_code_enabled %}
+  {{ formatted_price | money_with_currency }}
+{% else %}
+  {{ formatted_price | money}}
+{% endif %}

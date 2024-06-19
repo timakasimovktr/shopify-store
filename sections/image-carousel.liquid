@@ -1,0 +1,328 @@
+{% assign product_metafields = product.metafields.galery.products_in_gallery.value %}
+{% assign collection_metafields = collection.metafields.galery.product_list.value %}
+
+<section
+  style="padding:{{- section.settings.carousel_padding -}}px 5px; {% if section.blocks.size == 0 %} display: none; {% endif %}"
+  class="product-image-carousel"
+>
+  <h3
+    class="carousel_title"
+    style="text-align: {% if section.settings.slider_title_position == "left" %} left {% elsif section.settings.slider_title_position == "center" %} center {% else %} right {% endif %};"
+  >
+    {{ section.settings.carousel_title }}
+  </h3>
+  {% if section.settings.carousel_type == 'gallery' %}
+    <div class="grid-container">
+      {% if collection_metafields or product_metafields %}
+        {% for collection_meta in collection_metafields %}
+          {% if collection_meta.featured_image %}
+            <div class="griditem">
+              <img loading="lazy" src="{{ collection_meta.featured_image | image_url: width: 720 }}">
+            </div>
+          {% endif %}
+        {% endfor %}
+        {% for product_meta in product_metafields %}
+          {% if product_meta.featured_image %}
+            <div class="griditem">
+              <img loading="lazy" src="{{ product_meta.featured_image | image_url: width: 720 }}">
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% for block in section.blocks %}
+          {% if block.settings.image_gallery or block.settings.product_info.featured_image %}
+            <div class="griditem">
+              <img
+                loading="lazy"
+                src="
+                  {% if block.settings.image_gallery %}
+                    {{ block.settings.image_gallery | image_url: width: 720 }}
+                  {% else %}
+                    {{ block.settings.product_info.featured_image | image_url: width: 720 }}
+                  {% endif %}
+                "
+              alt="{% if block.settings.image_gallery.alt %}{{ block.settings.image_gallery.alt }}{% else %}{{ block.settings.product_info }}{% endif %}"
+              >
+            </div> 
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% elsif section.settings.carousel_type == 'carousel' %}
+    <div class="product_carousel">
+      <div class="swiper carouselSwiper">
+        <div class="swiper-wrapper">
+          {% if collection_metafields or product_metafields %}
+            {% for collection_meta in collection_metafields %}
+              {% if collection_meta.featured_image %}
+                <div class="swiper-slide">
+                  <img loading="lazy" src="{{ collection_meta.featured_image | image_url: width: 720 }}">
+                </div>
+              {% endif %}
+            {% endfor %}
+            {% for product_meta in product_metafields %}
+              {% if product_meta.featured_image %}
+                <div class="swiper-slide">
+                  <img loading="lazy" src="{{ product_meta.featured_image | image_url: width: 720 }}">
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% for block in section.blocks %}
+              {% if block.settings.image_gallery or block.settings.product_info.featured_image %}
+                <div class="swiper-slide">
+                  <img
+                    loading="lazy"
+                    src="
+                      {% if block.settings.image_gallery %} 
+                        {{ block.settings.image_gallery | image_url: width: 720 }}  
+                      {% else %} 
+                        {{ block.settings.product_info.featured_image | image_url: width: 720 }} 
+                      {% endif %}
+                    "
+                    alt="{% if block.settings.image_gallery.alt %}{{ block.settings.image_gallery.alt }}{% else %}{{ block.settings.product_info }}{% endif %}"
+                  >
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="carousel-button-next">{% render 'icon-arrow' %}</div>
+        <div class="carousel-button-prev">{% render 'icon-arrow' %}</div>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+<div class="product-slider">
+  <div class="close_icon">{% render 'icon-close' %}</div>
+  <div class="SwiperSlider">
+    <div class="swiper CardSwiper">
+      <div class="swiper-wrapper">
+        {% if product_metafields or collection_metafields %}
+          {% for collection_meta in collection_metafields %}
+            {% if collection_meta.featured_image %}
+              <div class="swiper-slide">
+                <div class="slideLeft">
+                  <div class="swiper-button-prev button-prev-mobile"><div></div></div>
+                  <img
+                    loading="lazy"
+                    src="{{ collection_meta.featured_image | image_url: width: 720 }}"
+                    alt="{% if block.settings.image_gallery.alt %}{{ block.settings.image_gallery.alt }}{% else %}{{ block.settings.product_info }}{% endif %}"
+                  >
+                  <div class="swiper-button-next button-next-mobile"><div></div></div>
+                </div>
+                <div class="slideRight">
+                  <div class="slide-wrapper">
+                    <div class="slideText">
+                      <h4 class="slde_title product__text">{{ collection_meta.title }}</h4>
+                      <h5 class="slde_content product__text">{{ collection_meta.description }}</h5>
+                    </div>
+                    <div class="price_url">
+                      <div class="slde_price">
+                        <span>Price: {{ collection_meta.price | money }}</span>
+                      </div>
+                      <a title="{{ collection_meta.title }}" href="{{ collection_meta.url }}" class="slide_btn btn">
+                        {{ section.settings.carousel_link_text }}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for product_meta in product_metafields %}
+            {% if product_meta.featured_image %}
+              <div class="swiper-slide">
+                <div class="slideLeft">
+                  <div class="swiper-button-prev button-prev-mobile"><div></div></div>
+                  <img
+                    loading="lazy"
+                    src="{{ product_meta.featured_image | image_url: width: 720 }}"
+                    alt="{% if block.settings.image_gallery.alt %}{{ block.settings.image_gallery.alt }}{% else %}{{ block.settings.product_info }}{% endif %}"
+                  >
+                  <div class="swiper-button-next button-next-mobile"><div></div></div>
+                </div>
+                <div class="slideRight">
+                  <div class="slide-wrapper">
+                    <div class="slideText">
+                      <h4 class="slde_title product__text">{{ product_meta.title }}</h4>
+                      <h5 class="slde_content product__text">{{ product_meta.description }}</h5>
+                    </div>
+                    <div class="price_url">
+                      <div class="slde_price">
+                        <span>Price: {{ product_meta.price | money }}</span>
+                      </div>
+                      <a title="{{ product_meta.title }}" href="{{ product_meta.url }}" class="slide_btn btn">
+                        {{ section.settings.carousel_link_text }}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% for block in section.blocks %}
+            {% if block.settings.product_info.featured_image %}
+              <div class="swiper-slide">
+                <div class="slideLeft">
+                  <div class="swiper-button-prev button-prev-mobile"><div></div></div>
+                  <img
+                    loading="lazy"
+                    src="{{ block.settings.product_info.featured_image | image_url: width: 720 }}"
+                    alt="{% if block.settings.image_gallery.alt %}{{ block.settings.image_gallery.alt }}{% else %}{{ block.settings.product_info }}{% endif %}"
+                  >
+                  <div class="swiper-button-next button-next-mobile"><div></div></div>
+                </div>
+                <div class="slideRight">
+                  <div class="slide-wrapper">
+                    <div class="slideText">
+                      <h4 class="slde_title product__text">{{ block.settings.product_info.title }}</h4>
+                      <h5 class="slde_content product__text">{{ block.settings.product_info.description }}</h5>
+                      <script>
+                        if({{ block.settings.hide_collection_link }}){
+                          let pv_add__btn = document.querySelectorAll('.pv-add__btn');
+                          pv_add__btn.forEach((item) => {
+                            item.style.display = 'none';
+                          })
+                        }
+                      </script>
+                    </div>
+                    <div class="price_url">
+                      <div class="slde_price">
+                        <span>Price: {{ block.settings.product_info.price | money }}</span>
+                      </div>
+                      <a
+                        title="{{block.settings.product_info.title}}"
+                        href="{{ block.settings.product_info.url }}"
+                        class="slide_btn btn"
+                      >
+                        {{ section.settings.carousel_link_text }}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% elsif block.settings.image_gallery %}
+              <div class="swiper-slide">
+                <div class="single-image">
+                  <div class="swiper-button-prev button-prev-mobile"><div></div></div>
+                  <img
+                    loading="lazy"
+                    src="{{ block.settings.image_gallery | image_url: width: 1000 }}"
+                    alt="{% if block.settings.image_gallery.alt %}{{ block.settings.image_gallery.alt }}{% else %}Single image{% endif %}"
+                  >
+                  <div class="swiper-button-next button-next-mobile"><div></div></div>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="swiper-button-prev button-prev-desktop"><div></div></div>
+    <div class="swiper-button-next button-next-desktop"><div></div></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image carousel",
+  "settings": [
+    {
+      "type": "range",
+      "id": "carousel_padding",
+      "label": "Set padding",
+      "info": "Set padding for carousel or gallery.",
+      "step": 1,
+      "default": 50,
+      "min": 0,
+      "max": 100,
+      "unit": "px"
+    },
+    {
+      "type": "text",
+      "id": "carousel_link_text",
+      "label": "Set link text",
+      "info": "Set link text for carousel item.",
+      "default": "View product"
+    },
+    {
+      "type": "select",
+      "id": "carousel_type",
+      "label": "Select slider type",
+      "info": "Select slider type.",
+      "default": "gallery",
+      "options": [
+        {
+          "value": "gallery",
+          "label": "Gallery"
+        },
+        {
+          "value": "carousel",
+          "label": "Carousel"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "carousel_title",
+      "label": "Set slider title",
+      "info": "Set slider title.",
+      "default": "product carousel"
+    },
+    {
+      "type": "select",
+      "id": "slider_title_position",
+      "label": "Select slider title position",
+      "info": "Select slider title position.",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_gallery",
+          "label": "Select Image",
+          "info": "Select an image to display."
+        },
+        {
+          "type": "product",
+          "id": "product_info",
+          "label": "Select product",
+          "info": "Select a product to display on carousel."
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_collection_link",
+          "label": "Hide collection link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image carousel"
+    }
+  ]
+}
+{% endschema %}

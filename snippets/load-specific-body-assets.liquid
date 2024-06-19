@@ -1,0 +1,38 @@
+{%- liquid
+  case template
+    when 'product'
+      render 'load-env-script' with script_name: 'pdp'
+    when 'collection'
+      render 'load-env-script' with script_name: 'collection' 
+    when 'stores'
+      render 'load-env-script' with script_name: 'stores'
+    when 'page.reviews'
+      render 'load-env-script' with script_name: 'reviews'
+    when 'page.faq'
+      render 'load-env-script' with script_name: 'faq'
+    when 'page.about'
+      render 'load-env-script' with script_name: 'about'
+    when 'page.careers'
+      render 'load-env-script' with script_name: 'careers'
+    when 'customers/login'
+      render 'load-env-script' with script_name: 'login'
+    when 'customers/account'
+      render 'load-env-script' with script_name: 'account'
+    when 'cart'
+      render 'load-env-script' with script_name: 'cart'
+    when 'search'
+      render 'load-env-script' with script_name: 'collection'
+    when 'page.store-location'
+      render 'load-env-script' with script_name: 'store-location'
+    when 'page.locations'
+      render 'load-env-script' with script_name: 'stores'
+  endcase
+  
+  render 'load-env-script' with script_name: 'wishlist-king'
+-%}
+
+{% if canonical_url contains 'wishlist' %}
+  <script src="https://shopiapps.in/wishlistapp/addtowishlist.js" type="text/javascript"></script>
+{% endif %}
+
+

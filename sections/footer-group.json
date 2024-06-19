@@ -1,0 +1,37 @@
+{
+  "type": "header",
+  "name": "Footer Group",
+  "sections": {
+    "2bb751d1-e500-4538-845a-ed3e456713b2": {
+      "type": "footer",
+      "blocks": {
+        "6d8a61cc-465c-4263-892f-31f9a861858c": {
+          "type": "link_list",
+          "settings": {
+            "heading": "",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "6d8a61cc-465c-4263-892f-31f9a861858c"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "<span style=\"color: #AE8B1A\"><em>get<\/em><\/span> in the know",
+        "newsletter_subheading": "sign up for our newsletter for coupons, promotions, sale and more.",
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "margin_top": 48,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "2bb751d1-e500-4538-845a-ed3e456713b2"
+  ]
+}

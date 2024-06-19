@@ -1,0 +1,77 @@
+.img-with-text {
+  max-width: 140rem;
+  padding: 0 10rem;
+  margin: 5rem auto;
+  @media (max-width: 1024px) {
+    padding: 0 5rem;
+  }
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+    margin: 2rem auto;
+  }
+  .img-with-text__heading {
+    font-size: 3rem;
+    position: relative;
+    text-transform: uppercase;
+    width: max-content;
+    font-family: "bodoni-urw medium";
+    color: black;
+    font-weight: 550;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+    &::after {
+      content: "";
+      background-color: rgb(var(--primary-color));
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.5rem;
+    }
+  }
+  .img-with-text__container {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    @media (max-width: 1024px) {
+      gap: 3rem;
+    }
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    &.image-first .img-with-text__image{
+      order: -1;
+    }
+    .img-with-text__content {
+      width: 60%;
+      font-family: "bodoni-urw Book";
+      font-size: 2rem;
+      line-height: 1.4;
+      @media (max-width: 768px) {
+        width: 100%;
+        line-height: 1.2;
+        font-size: 1.6rem;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .img-with-text__image {
+    width: 40%;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+

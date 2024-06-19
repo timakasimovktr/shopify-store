@@ -1,0 +1,96 @@
+{% assign related_products_tags = '' %}
+{% assign alredy_used_skus = '' %}
+
+{%- assign target_product = product -%}
+
+{%- if target_product == nil or target_product == blank -%}
+  {%- if cart.items.size > 0 -%}
+
+    {%- for cart_item in cart.items -%}
+      {%- assign has_warranties_associated = false -%}
+
+      {%- for cart_item_prop in cart_item.properties -%}
+        {%- if cart_item_prop[0] == 'warrantyUniqueId' -%}
+          {%- assign has_warranties_associated = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- unless has_warranties_associated -%}
+        {%- assign target_product = cart_item.product -%}
+        {% for tag in target_product.tags %}
+          {% if tag contains 'Related: ' %}
+            {% assign related_products_tag = tag | split: 'Related: ' %}
+
+            {% comment %} Avoid duplicates {% endcomment %}
+            {% unless related_products_tags contains related_products_tag[1] %}
+              {% assign related_products_tags = related_products_tags | append: '~' | append: related_products_tag[1] %}
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      {%- endunless -%}
+
+    {%- endfor -%}
+  {%- endif -%}
+{% else %}
+  {% for tag in target_product.tags %}
+    {% if tag contains 'Related: ' %}
+      {% assign related_products_tag = tag | split: 'Related: ' %}
+
+      {% comment %} Avoid duplicates {% endcomment %}
+      {% unless related_products_tags contains related_products_tag[1] %}
+        {% assign related_products_tags = related_products_tags | append: '~' | append: related_products_tag[1] %}
+      {% endunless %}
+
+    {% endif %}
+  {% endfor %}
+{%- endif -%}
+
+
+{% assign related_products_tags = related_products_tags | split: '~' %}
+
+<div class="related-products">
+  <h1 class="related-products__title">Complete The Collection</h1>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {% for related_products_tag in related_products_tags %}
+        {% unless related_products_tag == blank %}
+          {% assign related_product = all_products[related_products_tag] %}
+          {%- if related_product.tags contains 'NFS' or related_product.title == blank or alredy_used_skus contains related_product.variants[0].sku -%}
+            {% continue %}
+          {%- endif -%}
+          <div class="swiper-slide">
+            <a href="{{ related_product.url }}">
+              <div class="related-product-img">
+                <img src="{{ related_product.featured_image | img_url: '450x' }}" alt="{{ related_product.title }}">
+              </div>
+              <div class="related-product__info">
+                <span class="related-product__title">{{ related_product.title }}</span>
+                <span class="related-product__price">
+                  {% render 'format-price', price: related_product.price %}
+                </span>
+              </div>
+            </a>
+          </div>
+          {% assign alredy_used_skus = alredy_used_skus | append: '~' | append: related_product.variants[0].sku %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev"><span></span></div>
+    <div class="swiper-button-next"><span></span></div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Related Products",
+    "tag": "section",
+    "class": "section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Related Products"
+      }
+    ]
+  }
+{% endschema %}

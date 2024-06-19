@@ -1,0 +1,29 @@
+.homepage-banner {
+    .image-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .desktop-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+    .mobile-image {
+        display: none;
+        max-width: 100%;
+        height: auto;
+    }
+    @media screen and (max-width: 767px) {
+        & {
+            padding: 0 15px;
+        }
+        .desktop-image {
+            display: none;
+        }
+        .mobile-image {
+            display: block;
+        }
+    }
+}

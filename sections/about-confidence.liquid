@@ -1,0 +1,90 @@
+<section class="about-confidence">
+  <div class="about-confidence__container">
+    <li class="confidence__item confidence__item--first">
+      <h4 class="confidence__heading confidence__heading--small">
+        {{- section.settings.hyper_heading -}}
+      </h4>
+      {%- render 'icon' with icon_name: 'kanes' -%}
+    </li>
+
+    <li class="confidence__item confidence__item--half">
+      <h3 class="confidence__heading">
+        {{- section.settings.heading -}}
+      </h3>
+      <p class="confidence__copy confidence__copy--caps">
+        {{- section.settings.copy -}}
+      </p>
+    </li>
+
+    <li class="confidence__item confidence__item--half confidence-heading-back">
+      <h3 class="confidence__heading">
+        {{- section.settings.heading_three -}}
+      </h3>
+      <p class="confidence__copy confidence__copy--caps">
+        {{- section.settings.copy_three -}}
+      </p>
+    </li>
+
+    <li class="confidence__item confidence__item--full">
+      <h3 class="confidence__heading">
+        {{- section.settings.heading_two -}}
+      </h3>
+      <p class="confidence__copy confidence__copy--caps">
+        {{- section.settings.copy_two -}}
+      </p>
+    </li>
+  </div>
+</section>
+
+<style>
+</style>
+
+{% schema %}
+  {
+    "name": "About Confidence",
+    "class": "section",
+    "tag": "section",
+    "settings" : [
+      {
+        "id": "hyper_heading",
+        "type": "text",
+        "label": "Section Header"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "label": "Heading"
+      },
+      {
+        "id": "copy",
+        "type": "textarea",
+        "label": "Copy"
+      },
+      {
+        "id": "heading_two",
+        "type": "text",
+        "label": "Heading"
+      },
+      {
+        "id": "copy_two",
+        "type": "textarea",
+        "label": "Copy"
+      },
+      {
+        "id": "heading_three",
+        "type": "text",
+        "label": "Heading"
+      },
+      {
+        "id": "copy_three",
+        "type": "textarea",
+        "label": "Copy"
+      }
+    ],
+    "presets": [
+      {
+        "name":"About Confidence"
+      }
+    ]
+  }
+{% endschema %}

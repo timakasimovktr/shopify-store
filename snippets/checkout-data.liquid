@@ -1,0 +1,37 @@
+<script>
+  window.LC = window.LC || {};
+
+  window.LC.checkout = {
+    firstName: `{{ checkout.customer.first_name }}`,
+    lastName: `{{ checkout.customer.last_name }}`,
+    address1: `{{ checkout.shipping_address.address1 }}`,
+    address2: `{{ checkout.shipping_address.address2 }}`,
+    city: `{{ checkout.shipping_address.city }}`,
+    state: `{{ checkout.shipping_address.province_code }}`,
+    zip: `{{ checkout.shipping_address.zip }}`,
+    email: `{{ checkout.email }}`,
+    orderSubtotal: parseInt(`{{ checkout.line_items_subtotal_price }}`) / 100,
+    shippingPrice: parseFloat(`{{ checkout.shipping_price | money_without_currency | remove: ',' }}`),
+    orderTotal: parseFloat(`{{ checkout.total_price | money_without_currency | remove: ',' }}`)
+  };
+
+  `{% assign shop_domain = shop.domain | replace: 'www.', '' %}`;
+
+  window.LC.synchrony = window.LC.synchrony || {
+    gatewayId: `{% if shop_domain == 'kanesfurniture.com' %}{{ settings.financing_production_gateway_id }}{% else %}{{ settings.financing_development_gateway_id }}{% endif %}`,
+    elegibleCart: {
+      header: `{{ settings.financing_elegible_cart_header }}`,
+      subHeader: `{{ settings.financing_elegible_cart_subheader }}`,
+      image: {
+        url: `{{ settings.financing_elegible_cart_img | img_url: 'x300'}}`,
+        focalPoint: `{{ settings.financing_elegible_cart_img.presentation.focal_point }}`
+      }
+    },
+    checkout: {
+      sixtyMonthsPopup: {
+        title: `{{ settings.financing_sixty_months_popup_title }}`,
+        description: `{{ settings.financing_sixty_months_popup_description }}`
+      }
+    }
+  };
+</script>

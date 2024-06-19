@@ -1,0 +1,162 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 4,
+        "padding_bottom": 8
+      }
+    },
+    "338fc60b-ce53-4d73-b871-eb05dde198dd": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/NOW_HIRNING_BANNERV5_copy.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
+        "full_link_enabled": false,
+        "full_link": ""
+      }
+    },
+    "1663249593161540ce": {
+      "type": "about-jobs-link",
+      "custom_css": [
+        "a {color: #25cad3;}"
+      ],
+      "settings": {
+      }
+    },
+    "1663246079ed1bcb19": {
+      "type": "img-with-text",
+      "custom_css": [
+        "hl {color: #25cad2;}"
+      ],
+      "settings": {
+        "heading": "About us",
+        "first": "content",
+        "img": "shopify:\/\/shop_images\/kanes_naples_2019_Head_On-FIX_3a352b14-5346-488b-b83f-1dfad91d5713.jpg",
+        "text": "<p>For nearly 75 years, Kane’s has been providing our associates with the tools and training to succeed in a fast-paced environment. We are constantly searching for highly motivated individuals to join our team! With 18 locations, and career opportunities in store management, customer service, sales, visual merchandising and store warehouse, there is plenty of opportunity right around the corner from you! Tampa, St. Petersburg, Clearwater, New Port Richey, Lakeland, Brandon, Sarasota, Fort Myers, Naples, Ocoee, Orlando, Casselberry, Melbourne, and Ocala all have Kane’s Furniture stores.<\/p>"
+      }
+    },
+    "16632461389eda8290": {
+      "type": "img-with-text",
+      "settings": {
+        "heading": "OUR CULTURE AND COMMUNITY",
+        "first": "image",
+        "img": "shopify:\/\/shop_images\/IMG_5898_jpg_2.jpg",
+        "text": "<p>Furniture is a rewarding place to work because of our people. Our associates genuinely care about each other and are always ready to assist and work toward a common goal which is helping our associates achieve success and assuring our customers love their home!<\/p><p><\/p><p>With associate and community engagement activities from community outreach programs to internal initiatives, our team always rises to the occasion, bringing enthusiasm, fun, and commitment to the occasion.<\/p><p><\/p><p>Did you know that Kane’s (and our associates) are involved in helping wonderful charities like the American Heart Association, Starting Straight Now (ending homelessness, one child at a time), Junior Achievement, Habitat for Humanity, Great Explorations, and Ronald McDonald House Charities? Whether it is physically rolling up our sleeves to help build a house with the Habitat for Humanity teams or speaking with kids enrolled in Junior Achievement that are exploring career opportunities, helping the communities in which we live, and work is extremely important to the Kane’s team.  <\/p>"
+      }
+    },
+    "16632397547a146eec": {
+      "type": "two-images",
+      "settings": {
+        "img_1": "shopify:\/\/shop_images\/IMG_9129_2.jpg",
+        "img_2": "shopify:\/\/shop_images\/IMG_6194_0aae51c8-bf25-4b94-936e-ba8e899bfdf0.jpg"
+      }
+    },
+    "166324376138eb6905": {
+      "type": "text-with-image",
+      "settings": {
+        "heading": "Growth",
+        "first": "image",
+        "img": "shopify:\/\/shop_images\/622210e17826497cf6d132bd.jpg",
+        "text": "<p>We want YOU to grow your career with US! When you join Kane’s, no matter what the level or role, we will support your path to success in many ways. We have 18 locations across central and southwest Florida as well as our Distribution and Store Support Center in Pinellas Park. At Kane’s we encourage our associates to transfer into different roles and locations to build their skills and ability. We offer a formal Manager in Training program within our stores to support our future leaders when they choose a path in retail management. Kane’s has a proven track record of promoting our associates from within!<\/p>"
+      }
+    },
+    "1663242633ef7ea652": {
+      "type": "text-with-image",
+      "blocks": {
+        "02dfc5e5-3407-46da-8493-2bd8e9663940": {
+          "type": "block",
+          "settings": {
+            "list_item": "Medical"
+          }
+        },
+        "5fa741db-3f1c-4631-93dd-0d54a7cf7df5": {
+          "type": "block",
+          "settings": {
+            "list_item": "Dental"
+          }
+        },
+        "ce73a7e4-ce42-4b87-b21e-6e5ba19e8173": {
+          "type": "block",
+          "settings": {
+            "list_item": "Vision"
+          }
+        },
+        "cd9faba0-47f2-4fec-a68f-819b637dab2e": {
+          "type": "block",
+          "settings": {
+            "list_item": "Accident and Life Insurance"
+          }
+        },
+        "6d89c3d2-e0ed-49a1-a99e-c7c74e993707": {
+          "type": "block",
+          "settings": {
+            "list_item": "401K"
+          }
+        },
+        "b103fa77-7f8f-4ced-83e7-d6798cd88e00": {
+          "type": "block",
+          "settings": {
+            "list_item": "Profit Sharing"
+          }
+        },
+        "7384b71c-29a4-4168-ac56-bcd8eeb660e7": {
+          "type": "block",
+          "settings": {
+            "list_item": "Associate Discount for Merchandise"
+          }
+        },
+        "654b1d4c-381c-4977-9b59-d62931995ef7": {
+          "type": "block",
+          "settings": {
+            "list_item": "Discounts on theme park, sporting event, concert tickets and more!"
+          }
+        }
+      },
+      "block_order": [
+        "02dfc5e5-3407-46da-8493-2bd8e9663940",
+        "5fa741db-3f1c-4631-93dd-0d54a7cf7df5",
+        "ce73a7e4-ce42-4b87-b21e-6e5ba19e8173",
+        "cd9faba0-47f2-4fec-a68f-819b637dab2e",
+        "6d89c3d2-e0ed-49a1-a99e-c7c74e993707",
+        "b103fa77-7f8f-4ced-83e7-d6798cd88e00",
+        "7384b71c-29a4-4168-ac56-bcd8eeb660e7",
+        "654b1d4c-381c-4977-9b59-d62931995ef7"
+      ],
+      "settings": {
+        "heading": "BENEFITS",
+        "first": "content",
+        "img": "shopify:\/\/shop_images\/6221366a7826497cf6d0f3fd-optimized.webp",
+        "text": "<p>We truly care about the health and wellness of our associates and their families. We offer a comprehensive benefits plan including:<\/p><p><\/p><p><\/p>"
+      }
+    },
+    "16632416448e0f7378": {
+      "type": "two-images",
+      "settings": {
+        "img_1": "shopify:\/\/shop_images\/622210e12c842c1b80e62182.jpg",
+        "img_2": "shopify:\/\/shop_images\/622210e17826497cf6d132bc_720x450_b7f08c55-6ff9-41f1-991f-5c2c216f9c8c.webp"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "338fc60b-ce53-4d73-b871-eb05dde198dd",
+    "1663249593161540ce",
+    "1663246079ed1bcb19",
+    "16632461389eda8290",
+    "16632397547a146eec",
+    "166324376138eb6905",
+    "1663242633ef7ea652",
+    "16632416448e0f7378"
+  ]
+}

@@ -1,0 +1,79 @@
+<section class="text-with-image">
+  <h2 class="text-with-image__heading">{{section.settings.heading}}</h2>
+  <div class="text-with-image__container {{section.settings.first}}-first">
+    <div class="text-with-image__content">
+      {{section.settings.text}}
+      <ul>
+        {%- for block in section.blocks -%}
+          <li>
+            {{block.settings.list_item}}
+          </li>
+        {%- endfor -%}
+      </ul> 
+    </div>
+    <div class="text-with-image__image">
+      <img
+        src="{{section.settings.img | img_url: 'master'}}"
+        alt="{{section.settings.img.alt}}"
+        style="object-position: {{ section.settings.img.presentation.focal_point }};"
+      />
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Text & Image",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "heading"
+      },
+      {
+        "type": "select",
+        "id": "first",
+        "label": "Image First ?",
+        "options" : [
+        {
+          "value" : "content",
+          "label": "Content"
+        },
+        {
+          "value" : "image",
+          "label": "Image"
+        }
+        ]
+      },
+      {
+        "id": "img",
+        "type": "image_picker",
+        "label": "Choose an Image 1"
+      },
+      {
+       "type": "richtext",
+       "id" : "text",
+       "label": "Text here"
+      }
+    ],
+    "blocks" : [
+      {
+        "name": "List",
+       "type": "block",
+        "settings": [
+           {
+            "type": "text",
+            "id" : "list_item",
+            "label": "Text"
+           }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text & Image"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,15 @@
+{%- comment -%}
+Accepts:
+- style_name
+
+Usage:
+{% render 'load-env-style' with style_name: 'index' %}
+{%- endcomment -%}
+
+{% assign file_extension = '.css' %}
+{% if settings.shop_environment == 'production' %}
+  {% assign file_extension = '.min.css' %}
+{% endif %}
+
+{% assign full_name = style_name | append: file_extension %}
+<link rel="stylesheet" href="{{ full_name | asset_url }}">

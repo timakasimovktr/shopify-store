@@ -1,0 +1,2966 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Dawn",
+    "theme_version": "2.18.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
+  },
+  {
+    "name": "Environment",
+    "settings": [
+      {
+        "type": "select",
+        "id": "shop_environment",
+        "options": [
+          {
+            "value": "production",
+            "label": "Production"
+          },
+          {
+            "value": "development",
+            "label": "Development"
+          }
+        ],
+        "default": "production",
+        "label": "Shop Environment"
+      }
+    ]
+  },
+  {
+    "name": "Synchrony Environment",
+    "settings": [
+      {
+        "type": "select",
+        "id": "synchrony_environment",
+        "options": [
+          {
+            "value": "production",
+            "label": "Production"
+          },
+          {
+            "value": "development",
+            "label": "Development"
+          }
+        ],
+        "default": "production",
+        "label": "Synchrony Environment"
+      }
+    ]
+  },
+  {
+    "name": "Kanes Financing",
+    "settings": [
+      {
+        "type": "text",
+        "id": "financing_production_gateway_id",
+        "label": "Production - Gateway ID",
+        "default": "37263900775"
+      },
+      {
+        "type": "text",
+        "id": "financing_development_gateway_id",
+        "label": "Development - Gateway ID",
+        "default": "37263900775"
+      },
+      {
+        "type": "header",
+        "content": "PDP Financing Details Popup"
+      },
+      {
+        "type": "number",
+        "id": "financing_popup_months",
+        "label": "Down Payments Amount",
+        "default": 60
+      },
+      {
+        "type": "text",
+        "id": "financing_popup_1st_column_title",
+        "label": "First Column Title",
+        "default": "Promotional Purchase Amount"
+      },
+      {
+        "type": "text",
+        "id": "financing_popup_2nd_column_title",
+        "label": "Second Column Title",
+        "default": "Equal Monthly Payment Required"
+      },
+      {
+        "type": "text",
+        "id": "financing_popup_3rd_column_title",
+        "label": "Third Column Title",
+        "default": "Promotional Period"
+      },
+      {
+        "type": "richtext",
+        "id": "financing_popup_message",
+        "label": "Message"
+      },
+      {
+        "type": "header",
+        "content": "Elegible Cart Message"
+      },
+      {
+        "type": "image_picker",
+        "id": "financing_elegible_cart_img",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "financing_elegible_cart_header",
+        "label": "Header Message",
+        "default": "Your cart is eligible for Special Financing with the Kane’s Furniture credit card.*"
+      },
+      {
+        "type": "text",
+        "id": "financing_elegible_cart_subheader",
+        "label": "Subheader Message",
+        "default": "*Subject to credit approval. Minimum monthly payments required."
+      },
+      {
+        "type": "header",
+        "content": "Product Page Financing Offer"
+      },
+      {
+        "type": "number",
+        "id": "financing_option_pdp_offer_option_number",
+        "label": "Financing Option to Use",
+        "default": 4
+      },
+      {
+        "type": "text",
+        "id": "financing_option_pdp_offer_details",
+        "label": "Details",
+        "default": "With 60 month financing Limited Time. Minimum purchase amount of $5,999.99. 20% down payment to be paid by credit card. All promotional discounts are excluded. <a id='financing-details-popup-show' href='#'>Click<\/a> for important monthly payment and offer information."
+      },
+      {
+        "type": "header",
+        "content": "Financing Option 1"
+      },
+      {
+        "type": "number",
+        "id": "financing_option_1_months",
+        "label": "Months Without Interest",
+        "default": 6
+      },
+      {
+        "type": "number",
+        "id": "financing_option_1_offer_code",
+        "label": "Offer Code",
+        "default": 106
+      },
+      {
+        "type": "text",
+        "id": "financing_option_1_title",
+        "label": "Title",
+        "default": "No Interest if paid in full within 6 Months"
+      },
+      {
+        "type": "textarea",
+        "id": "financing_option_1_details",
+        "label": "Details",
+        "default": "On qualifying purchases made with your Kanes Furniture credit card. Interest will be charged to your account from the purchase date if the promotional purchase is not paid in full within 6 months. Minimum monthly payments required. <a href='https:\/\/www.kanesfurniture.com\/pages\/terms-and-conditions'>LEARN HOW<\/a>"
+      },
+      {
+        "type": "number",
+        "id": "financing_option_1_minimum_cart_subtotal",
+        "label": "Minimum Cart Subtotal",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Financing Option 2"
+      },
+      {
+        "type": "number",
+        "id": "financing_option_2_months",
+        "label": "Months Without Interest",
+        "default": 12
+      },
+      {
+        "type": "number",
+        "id": "financing_option_2_offer_code",
+        "label": "Offer Code",
+        "default": 112
+      },
+      {
+        "type": "text",
+        "id": "financing_option_2_title",
+        "label": "Title",
+        "default": "No Interest if paid in full within 12 Months^"
+      },
+      {
+        "type": "textarea",
+        "id": "financing_option_2_details",
+        "label": "Details",
+        "default": "On qualifying purchases made with your Kanes Furniture credit card. Interest will be charged to your account from the purchase date if the promotional purchase is not paid in full within 12 Months. Minimum monthly payments required. <a href='https:\/\/www.kanesfurniture.com\/pages\/terms-and-conditions'>LEARN HOW<\/a>"
+      },
+      {
+        "type": "number",
+        "id": "financing_option_2_minimum_cart_subtotal",
+        "label": "Minimum Cart Subtotal",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Financing Option 3"
+      },
+      {
+        "type": "number",
+        "id": "financing_option_3_months",
+        "label": "Months Without Interest",
+        "default": 36
+      },
+      {
+        "type": "number",
+        "id": "financing_option_3_offer_code",
+        "label": "Offer Code",
+        "default": 536
+      },
+      {
+        "type": "text",
+        "id": "financing_option_3_title",
+        "label": "Title",
+        "default": "No Interest if paid in full within 36 Months^"
+      },
+      {
+        "type": "textarea",
+        "id": "financing_option_3_details",
+        "label": "Details",
+        "default": "On qualifying purchases made with your Kanes Furniture credit card. Interest will be charged to your account from the purchase date if the promotional purchase is not paid in full within 36 Months. Minimum monthly payments required. <a href='https:\/\/www.kanesfurniture.com\/pages\/terms-and-conditions'>LEARN HOW<\/a>"
+      },
+      {
+        "type": "number",
+        "id": "financing_option_3_minimum_cart_subtotal",
+        "label": "Minimum Cart Subtotal",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "Financing Option 4"
+      },
+      {
+        "type": "number",
+        "id": "financing_option_4_months",
+        "label": "Months Without Interest",
+        "default": 60
+      },
+      {
+        "type": "number",
+        "id": "financing_option_4_offer_code",
+        "label": "Offer Code",
+        "default": 560
+      },
+      {
+        "type": "text",
+        "id": "financing_option_4_title",
+        "label": "Title",
+        "default": "No Interest if paid in full within 60 Months^"
+      },
+      {
+        "type": "textarea",
+        "id": "financing_option_4_details",
+        "label": "Details",
+        "default": "<p>On purchases of $5999.99 or more made with your Kanes Furniture credit card. Limited Time. Equal monthly payments required for 60 months. The Kanes Furniture Credit Card cannot be used for the required 20% deposit. The order is excluded from all promotional discounts. <a href='https:\/\/www.kanesfurniture.com\/pages\/terms-and-conditions'>LEARN HOW<\/a><\/p><p style='color: red'>This financing option has the following prerequisites:<\/p><li>Minimum purchase amount of $5999.99<\/li><li>20% down payment paid by credit card<\/li><li>The order is excluded from all promotional discounts<\/li>"
+      },
+      {
+        "type": "number",
+        "id": "financing_option_4_minimum_cart_subtotal",
+        "label": "Minimum Cart Subtotal",
+        "default": 5999
+      },
+      {
+        "type": "header",
+        "content": "Checkout - Sixty Months Popup"
+      },
+      {
+        "type": "text",
+        "id": "financing_sixty_months_popup_title",
+        "label": "Title",
+        "default": "Your Cart"
+      },
+      {
+        "type": "text",
+        "id": "financing_sixty_months_popup_description",
+        "label": "Description",
+        "default": "The selected financing option is excluded from all promotional discounts and requires a 20% down payment by credit card. First, we will submit 80% of the cart total for approval by Synchrony. Upon approval of financing, we will require payment of the 20% down payment by credit card. Successful authorization of the down payment will complete your order."
+      }
+    ]
+  },
+  {
+    "name": "Google Tag Manager",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "gtm_is_active",
+        "default": true,
+        "label": "Active"
+      },
+      {
+        "type": "text",
+        "id": "gtm_key",
+        "label": "ID",
+        "info": "The characters following 'GTM-'"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.colors.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.colors.settings.header__1.content"
+      },
+      {
+        "type": "color",
+        "id": "colors_solid_button_labels",
+        "default": "#FFFFFF",
+        "label": "t:settings_schema.colors.settings.colors_solid_button_labels.label",
+        "info": "t:settings_schema.colors.settings.colors_solid_button_labels.info"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "default": "#FFFFFF",
+        "label": "Primary color",
+        "info": "used for most buttons and footer logo"
+      },
+      {
+        "type": "color",
+        "id": "text_primary_color",
+        "default": "#FFFFFF",
+        "label": "Text primary color",
+        "info": "used for most primary text color"
+      },
+      {
+        "type": "color",
+        "id": "text_secondary_color",
+        "default": "#FFFFFF",
+        "label": "Text secondary color",
+        "info": "used for most secondary text color"
+      },
+      {
+        "type": "color",
+        "id": "border_primary_color",
+        "default": "#FFFFFF",
+        "label": "Border primary color",
+        "info": "used for most borders"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_1",
+        "default": "#121212",
+        "label": "t:settings_schema.colors.settings.colors_accent_1.label",
+        "info": "t:settings_schema.colors.settings.colors_accent_1.info"
+      },
+      {
+        "id": "gradient_accent_1",
+        "type": "color_background",
+        "label": "t:settings_schema.colors.settings.gradient_accent_1.label"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_2",
+        "default": "#334FB4",
+        "label": "t:settings_schema.colors.settings.colors_accent_2.label"
+      },
+      {
+        "id": "gradient_accent_2",
+        "type": "color_background",
+        "label": "t:settings_schema.colors.settings.gradient_accent_2.label"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_3",
+        "default": "#334FB4",
+        "label": "t:settings_schema.colors.settings.colors_accent_3.label"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.colors.settings.header__2.content"
+      },
+      {
+        "type": "color",
+        "id": "colors_text",
+        "default": "#121212",
+        "label": "t:settings_schema.colors.settings.colors_text.label",
+        "info": "t:settings_schema.colors.settings.colors_text.info"
+      },
+      {
+        "type": "color",
+        "id": "colors_outline_button_labels",
+        "default": "#121212",
+        "label": "t:settings_schema.colors.settings.colors_outline_button_labels.label",
+        "info": "t:settings_schema.colors.settings.colors_outline_button_labels.info"
+      },
+      {
+        "type": "color",
+        "id": "colors_background_1",
+        "default": "#FFFFFF",
+        "label": "t:settings_schema.colors.settings.colors_background_1.label"
+      },
+      {
+        "id": "gradient_background_1",
+        "type": "color_background",
+        "label": "t:settings_schema.colors.settings.gradient_background_1.label"
+      },
+      {
+        "type": "color",
+        "id": "colors_background_2",
+        "default": "#F3F3F3",
+        "label": "t:settings_schema.colors.settings.colors_background_2.label"
+      },
+      {
+        "id": "gradient_background_2",
+        "type": "color_background",
+        "label": "t:settings_schema.colors.settings.gradient_background_2.label"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.typography.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.typography.settings.header__1.content"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "default": "assistant_n4",
+        "label": "t:settings_schema.typography.settings.type_header_font.label",
+        "info": "t:settings_schema.typography.settings.type_header_font.info"
+      },
+      {
+        "type": "text",
+        "id": "type_header_font_names",
+        "label": "Font Names (Manual)",
+        "info": "Use this field to replace the font-picker input as a comma-separated list of font names"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale",
+        "min": 100,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.heading_scale.label",
+        "default": 100
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.typography.settings.header__2.content"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "default": "assistant_n4",
+        "label": "t:settings_schema.typography.settings.type_body_font.label",
+        "info": "t:settings_schema.typography.settings.type_body_font.info"
+      },
+      {
+        "type": "text",
+        "id": "type_body_font_names",
+        "label": "Font Names (Manual)",
+        "info": "Use this field to replace the font-picker input as a comma-separated list of font names"
+      },
+      {
+        "type": "range",
+        "id": "body_scale",
+        "min": 100,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.body_scale.label",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.layout.name",
+    "settings": [
+      {
+        "type": "range",
+        "id": "page_width",
+        "min": 1000,
+        "max": 1600,
+        "step": 100,
+        "default": 1200,
+        "unit": "px",
+        "label": "t:settings_schema.layout.settings.page_width.label"
+      },
+      {
+        "type": "range",
+        "id": "spacing_sections",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:settings_schema.layout.settings.spacing_sections.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.layout.settings.header__grid.content"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.layout.settings.paragraph__grid.content"
+      },
+      {
+        "type": "range",
+        "id": "spacing_grid_horizontal",
+        "min": 4,
+        "max": 40,
+        "step": 4,
+        "default": 8,
+        "unit": "px",
+        "label": "t:settings_schema.layout.settings.spacing_grid_horizontal.label"
+      },
+      {
+        "type": "range",
+        "id": "spacing_grid_vertical",
+        "min": 4,
+        "max": 40,
+        "step": 4,
+        "default": 8,
+        "unit": "px",
+        "label": "t:settings_schema.layout.settings.spacing_grid_vertical.label"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.buttons.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "header",
+        "content": "Primary Button"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_color",
+        "default": "#FFFFFF",
+        "label": "Button color"
+      },
+      {
+        "type": "color",
+        "id": "button_primary_text_color",
+        "default": "#000000",
+        "label": "Text color"
+      },
+      {
+        "type": "header",
+        "content": "Secondary Button"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_color",
+        "default": "#000000",
+        "label": "Button color"
+      },
+      {
+        "type": "color",
+        "id": "button_secondary_text_color",
+        "default": "#FFFFFF",
+        "label": "Text color"
+      },
+      {
+        "type": "header",
+        "content": "Tertiary Button"
+      },
+      {
+        "type": "color",
+        "id": "button_tertiary_color",
+        "default": "transparent",
+        "label": "Button color"
+      },
+      {
+        "type": "color",
+        "id": "button_tertiary_text_color",
+        "default": "#000000",
+        "label": "Text color"
+      },
+      {
+        "type": "range",
+        "id": "buttons_border_thickness",
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "buttons_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "buttons_radius",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "buttons_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "buttons_shadow_horizontal_offset",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "buttons_shadow_vertical_offset",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "buttons_shadow_blur",
+        "min": 0,
+        "max": 20,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.variant_pills.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_border_thickness",
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 55
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 40
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_shadow_horizontal_offset",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_shadow_vertical_offset",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "variant_pills_shadow_blur",
+        "min": 0,
+        "max": 20,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.inputs.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "inputs_border_thickness",
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "inputs_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 55
+      },
+      {
+        "type": "range",
+        "id": "inputs_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "inputs_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "inputs_shadow_horizontal_offset",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "inputs_shadow_vertical_offset",
+        "min": -12,
+        "max": 12,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "inputs_shadow_blur",
+        "min": 0,
+        "max": 20,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.cards.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "card_style",
+        "options": [
+          {
+            "value": "standard",
+            "label": "t:settings_schema.cards.settings.style.options__1.label"
+          },
+          {
+            "value": "card",
+            "label": "t:settings_schema.cards.settings.style.options__2.label"
+          }
+        ],
+        "default": "standard",
+        "label": "t:settings_schema.cards.settings.style.label"
+      },
+      {
+        "type": "range",
+        "id": "card_image_padding",
+        "min": 0,
+        "max": 20,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.image_padding.label",
+        "default": 0
+      },
+      {
+        "type": "select",
+        "id": "card_text_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
+          },
+          {
+            "value": "center",
+            "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
+          },
+          {
+            "value": "right",
+            "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
+          }
+        ],
+        "default": "left",
+        "label": "t:settings_schema.global.settings.text_alignment.label"
+      },
+      {
+        "type": "select",
+        "id": "card_color_scheme",
+        "options": [
+          {
+            "value": "accent-1",
+            "label": "t:sections.all.colors.accent_1.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:sections.all.colors.accent_2.label"
+          },
+          {
+            "value": "background-1",
+            "label": "t:sections.all.colors.background_1.label"
+          },
+          {
+            "value": "background-2",
+            "label": "t:sections.all.colors.background_2.label"
+          },
+          {
+            "value": "inverse",
+            "label": "t:sections.all.colors.inverse.label"
+          }
+        ],
+        "default": "background-2",
+        "label": "t:sections.all.colors.label"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "card_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "card_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "card_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "card_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "card_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "card_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "card_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.content_containers.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "text_boxes_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.media.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "media_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "media_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 5
+      },
+      {
+        "type": "range",
+        "id": "media_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "media_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "media_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "media_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "media_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.popups.name",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.popups.paragraph"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "popup_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "popup_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "popup_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "popup_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "popup_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "popup_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "popup_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.drawers.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__border.content"
+      },
+      {
+        "type": "range",
+        "id": "drawer_border_thickness",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "drawer_border_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 10
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__shadow.content"
+      },
+      {
+        "type": "range",
+        "id": "drawer_shadow_opacity",
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.global.settings.opacity.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "drawer_shadow_horizontal_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.horizontal_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "drawer_shadow_vertical_offset",
+        "min": -40,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.vertical_offset.label",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "drawer_shadow_blur",
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.blur.label",
+        "default": 0
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.badges.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "badge_position",
+        "options": [
+          {
+            "value": "bottom left",
+            "label": "t:settings_schema.badges.settings.position.options__1.label"
+          },
+          {
+            "value": "bottom right",
+            "label": "t:settings_schema.badges.settings.position.options__2.label"
+          },
+          {
+            "value": "top left",
+            "label": "t:settings_schema.badges.settings.position.options__3.label"
+          },
+          {
+            "value": "top right",
+            "label": "t:settings_schema.badges.settings.position.options__4.label"
+          }
+        ],
+        "default": "bottom left",
+        "label": "t:settings_schema.badges.settings.position.label"
+      },
+      {
+        "type": "range",
+        "id": "badge_corner_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 40
+      },
+      {
+        "type": "select",
+        "id": "sale_badge_color_scheme",
+        "options": [
+          {
+            "value": "accent-1",
+            "label": "t:sections.all.colors.accent_1.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:sections.all.colors.accent_2.label"
+          },
+          {
+            "value": "background-2",
+            "label": "t:sections.all.colors.background_2.label"
+          }
+        ],
+        "default": "accent-2",
+        "label": "t:settings_schema.badges.settings.sale_badge_color_scheme.label"
+      },
+      {
+        "type": "select",
+        "id": "sold_out_badge_color_scheme",
+        "options": [
+          {
+            "value": "background-1",
+            "label": "t:sections.all.colors.background_1.label"
+          },
+          {
+            "value": "inverse",
+            "label": "t:sections.all.colors.inverse.label"
+          }
+        ],
+        "default": "inverse",
+        "label": "t:settings_schema.badges.settings.sold_out_badge_color_scheme.label"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.styles.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "accent_icons",
+        "options": [
+          {
+            "value": "accent-1",
+            "label": "t:sections.all.colors.accent_1.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:sections.all.colors.accent_2.label"
+          },
+          {
+            "value": "outline-button",
+            "label": "t:settings_schema.styles.settings.accent_icons.options__3.label"
+          },
+          {
+            "value": "text",
+            "label": "t:settings_schema.styles.settings.accent_icons.options__4.label"
+          }
+        ],
+        "default": "text",
+        "label": "t:settings_schema.styles.settings.accent_icons.label"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.social-media.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.header.content"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
+        "info": "t:settings_schema.social-media.settings.social_twitter_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
+        "info": "t:settings_schema.social-media.settings.social_facebook_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "t:settings_schema.social-media.settings.social_pinterest_link.label",
+        "info": "t:settings_schema.social-media.settings.social_pinterest_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
+        "info": "t:settings_schema.social-media.settings.social_instagram_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
+        "info": "t:settings_schema.social-media.settings.social_tiktok_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
+        "info": "t:settings_schema.social-media.settings.social_tumblr_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "t:settings_schema.social-media.settings.social_snapchat_link.label",
+        "info": "t:settings_schema.social-media.settings.social_snapchat_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
+        "info": "t:settings_schema.social-media.settings.social_youtube_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
+        "info": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "Linkedin"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.search_input.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.search_input.settings.header.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_enabled",
+        "default": true,
+        "label": "t:settings_schema.search_input.settings.predictive_search_enabled.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_show_vendor",
+        "default": false,
+        "label": "t:settings_schema.search_input.settings.predictive_search_show_vendor.label",
+        "info": "t:settings_schema.search_input.settings.predictive_search_show_vendor.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_show_price",
+        "default": false,
+        "label": "t:settings_schema.search_input.settings.predictive_search_show_price.label",
+        "info": "t:settings_schema.search_input.settings.predictive_search_show_price.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.favicon.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "t:settings_schema.favicon.settings.favicon.label",
+        "info": "t:settings_schema.favicon.settings.favicon.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.currency_format.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.currency_format.settings.content"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.currency_format.settings.paragraph"
+      },
+      {
+        "type": "checkbox",
+        "id": "currency_code_enabled",
+        "label": "t:settings_schema.currency_format.settings.currency_code_enabled.label",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.cart.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_type",
+        "options": [
+          {
+            "value": "drawer",
+            "label": "t:settings_schema.cart.settings.cart_type.drawer.label"
+          },
+          {
+            "value": "page",
+            "label": "t:settings_schema.cart.settings.cart_type.page.label"
+          },
+          {
+            "value": "notification",
+            "label": "t:settings_schema.cart.settings.cart_type.notification.label"
+          }
+        ],
+        "default": "notification",
+        "label": "t:settings_schema.cart.settings.cart_type.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "t:settings_schema.cart.settings.show_vendor.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cart_note",
+        "label": "t:settings_schema.cart.settings.show_cart_note.label",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.cart.settings.cart_drawer.header"
+      },
+      {
+        "type": "collection",
+        "id": "cart_drawer_collection",
+        "label": "t:settings_schema.cart.settings.cart_drawer.collection.label",
+        "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
+      }
+    ]
+  },
+  {
+    "name": "Store Locations",
+    "settings": [
+      {
+        "type": "text",
+        "id": "store_locations_google_maps_key",
+        "label": "Google Maps Key"
+      },
+      {
+        "type": "header",
+        "content": "Store 1"
+      },
+      {
+        "type": "text",
+        "id": "store_location_1_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_1_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_1_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_1_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_1_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_1_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_1_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_1_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_1_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_1_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_1_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_1_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 2"
+      },
+      {
+        "type": "text",
+        "id": "store_location_2_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_2_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_2_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_2_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_2_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_2_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_2_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_2_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_2_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_2_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_2_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_2_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 3"
+      },
+      {
+        "type": "text",
+        "id": "store_location_3_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_3_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_3_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_3_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_3_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_3_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_3_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_3_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_3_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_3_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_3_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_3_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 4"
+      },
+      {
+        "type": "text",
+        "id": "store_location_4_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_4_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_4_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_4_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_4_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_4_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_4_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_4_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_4_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_4_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_4_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_4_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 5"
+      },
+      {
+        "type": "text",
+        "id": "store_location_5_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_5_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_5_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_5_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_5_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_5_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_5_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_5_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_5_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_5_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_5_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_5_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 6"
+      },
+      {
+        "type": "text",
+        "id": "store_location_6_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_6_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_6_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_6_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_6_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_6_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_6_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_6_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_6_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_6_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_6_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_6_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 7"
+      },
+      {
+        "type": "text",
+        "id": "store_location_7_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_7_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_7_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_7_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_7_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_7_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_7_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_7_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_7_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_7_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_7_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_7_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 8"
+      },
+      {
+        "type": "text",
+        "id": "store_location_8_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_8_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_8_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_8_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_8_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_8_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_8_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_8_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_8_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_8_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_8_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_8_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 9"
+      },
+      {
+        "type": "text",
+        "id": "store_location_9_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_9_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_9_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_9_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_9_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_9_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_9_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_9_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_9_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_9_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_9_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_9_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 10"
+      },
+      {
+        "type": "text",
+        "id": "store_location_10_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_10_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_10_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_10_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_10_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_10_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_10_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_10_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_10_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_10_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_10_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_10_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 11"
+      },
+      {
+        "type": "text",
+        "id": "store_location_11_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_11_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_11_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_11_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_11_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_11_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_11_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_11_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_11_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_11_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_11_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_11_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 12"
+      },
+      {
+        "type": "text",
+        "id": "store_location_12_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_12_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_12_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_12_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_12_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_12_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_12_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_12_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_12_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_12_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_12_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_12_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 13"
+      },
+      {
+        "type": "text",
+        "id": "store_location_13_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_13_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_13_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_13_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_13_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_13_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_13_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_13_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_13_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_13_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_13_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_13_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 14"
+      },
+      {
+        "type": "text",
+        "id": "store_location_14_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_14_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_14_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_14_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_14_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_14_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_14_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_14_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_14_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_14_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_14_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_14_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 15"
+      },
+      {
+        "type": "text",
+        "id": "store_location_15_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_15_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_15_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_15_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_15_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_15_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_15_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_15_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_15_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_15_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_15_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_15_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 16"
+      },
+      {
+        "type": "text",
+        "id": "store_location_16_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_16_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_16_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_16_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_16_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_16_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_16_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_16_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_16_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_16_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_16_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_16_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 17"
+      },
+      {
+        "type": "text",
+        "id": "store_location_17_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_17_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_17_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_17_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_17_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_17_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_17_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_17_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_17_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_17_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_17_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_17_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 18"
+      },
+      {
+        "type": "text",
+        "id": "store_location_18_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_18_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_18_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_18_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_18_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_18_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_18_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_18_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_18_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_18_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_18_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_18_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 19"
+      },
+      {
+        "type": "text",
+        "id": "store_location_19_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_19_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_19_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_19_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_19_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_19_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_19_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_19_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_19_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_19_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_19_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_19_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      },
+      {
+        "type": "header",
+        "content": "Store 20"
+      },
+      {
+        "type": "text",
+        "id": "store_location_20_name",
+        "label": "Store Name"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_20_address",
+        "label": "Address"
+      },
+      {
+        "type": "text",
+        "id": "store_location_20_phone",
+        "label": "Phone"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_20_hours",
+        "label": "Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_20_weekdays",
+        "label": "Monday-Saturday Office Hours"
+      },
+      {
+        "type": "richtext",
+        "id": "store_location_20_weekends",
+        "label": "Sunday Office Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_location_20_latitude",
+        "label": "Latitude"
+      },
+      {
+        "type": "text",
+        "id": "store_location_20_longitude",
+        "label": "Longitude"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_20_redirect_to_store_page",
+        "label": "Redirect to Store Page"
+      },
+      {
+        "type": "page",
+        "id": "store_location_20_store_page",
+        "label": "Store Page"
+      },
+      {
+        "type": "checkbox",
+        "id": "store_location_20_show_on_locator",
+        "label": "Show on Locator",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "store_location_20_custom_image",
+        "label": "Custom Image",
+        "info": "If a custom image is set, google maps API call will be ignored"
+      }
+    ]
+  },
+  {
+    "name": "Store Locator Options",
+    "settings": [
+      {
+        "type": "text",
+        "id": "store_button_1_text",
+        "label": "Store button 1 text"
+      },
+      {
+        "type": "url",
+        "id": "store_button_1_url",
+        "label": "Store button 1 url"
+      },
+      {
+        "type": "text",
+        "id": "store_button_2_text",
+        "label": "Store button 2 text"
+      },
+      {
+        "type": "url",
+        "id": "store_button_2_url",
+        "label": "Store button 2 url"
+      },
+      {
+        "type": "text",
+        "id": "store_button_3_text",
+        "label": "Store button 3 text"
+      },
+      {
+        "type": "url",
+        "id": "store_button_3_url",
+        "label": "Store button 3 url"
+      },
+      {
+        "type": "text",
+        "id": "store_button_4_text",
+        "label": "Store button 4 text"
+      },
+      {
+        "type": "url",
+        "id": "store_button_4_url",
+        "label": "Store button 4 url"
+      }
+    ]
+  }
+]

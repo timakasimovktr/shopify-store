@@ -1,0 +1,68 @@
+{% assign i = 0 %}
+<ul>
+  {%- for link in links -%}
+    {%- liquid 
+      assign i = pref | append: i
+      assign menu_items_id = i
+      if links_id != blank
+        assign menu_items_id = links_id | append: '-' | append: i
+      endif
+    -%}
+    <li>
+      {%- if link.links != blank -%}
+        <div class="accordion_item main-item">
+          <label class="accordion-btn">
+            <div class="heading">{{ link.title | escape }}</div>
+            <div class="icon">
+              <div class="before"></div>
+              <div class="after"></div>
+            </div>
+          </label>
+          <div class="accordion-menu">
+            <ul class="accordion-content">
+              {%- for childlink in link.links -%}
+                <li>
+                  {% if childlink.links.size > 1 %}
+                    <div class="accordion_item">
+                      <label class="accordion-btn">
+                        <div class="heading">{{ childlink.title | escape }}</div>
+                        <div class="icon">
+                          <div class="before"></div>
+                          <div class="after"></div>
+                        </div>
+                      </label>
+                      <div class="accordion-menu">
+                        <ul class="accordion-content">
+                          {% if childlink.url %}
+                            <li>
+                              <a href="{{ childlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
+                                {{ childlink.title | escape }}
+                              </a>
+                            </li>
+                          {% endif %}
+                          {%- for grandlink in childlink.links -%}
+                            <li>
+                              <a href="{{ grandlink.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandlink.current %} menu-drawer__menu-item--active{% endif %}"{% if grandlink.current %} aria-current="page"{% endif %}>
+                                {{ grandlink.title | escape }}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      </div>
+                    </div>
+                  {% else %}
+                    <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                  {% endif %}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </div>
+      {% else %}
+        <a href="{{ link.url }}" class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+          {{ link.title | escape }}
+        </a>
+      {%- endif -%}
+    </li>
+  {%- endfor -%}
+</ul>

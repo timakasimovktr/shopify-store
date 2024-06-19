@@ -1,0 +1,27 @@
+<div id="financing-details-popup" class="hidden">
+  <div class="financing-popup__container">
+    {% render 'icon' with icon_name: 'close' %}
+    <div class="financing-popup__content">
+      <table>
+          <thead>
+            <tr>
+              <th>{{ settings['financing_popup_1st_column_title'] }}</th>
+              <th>{{ settings['financing_popup_2nd_column_title'] }}</th>
+              <th>{{ settings['financing_popup_3rd_column_title'] }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="financing_popup__product-price">{{ product.price | money }}</td>
+              <td class="financing_popup__monthly-price">{{ product.price | divided_by: settings['financing_popup_months'] | money }}</td>
+              <td>{{ settings['financing_popup_months'] }}</td>
+            </tr>
+          </tbody>
+      </table>
+
+      <div class="financing-popup__message">
+        {{ settings['financing_popup_message'] }}
+      </div>
+    </div>
+  </div>
+</div>

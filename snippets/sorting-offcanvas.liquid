@@ -1,0 +1,72 @@
+<div id="sort-offcanvas">
+  <div class="offcanvas__header">
+    {% render 'icon' with icon_name: 'close', id: 'sort-offcanvas__header__close' %}
+    {% render 'icon' with icon_name: 'sort' %}
+    <span>Sort By</span>
+  </div>
+
+  <div class="offcanvas__content">
+    <ul>
+      {% for option in resource.sort_options %}
+        {%- liquid 
+          assign sort_value = option.value
+          case sort_value
+            when 'best-selling'
+              assign optionName = 'Best Selling'
+            when 'title-ascending'
+              assign optionName = 'NAME'
+            when 'title-descending'
+              assign optionName = 'NAME'
+            when 'price-ascending'
+              assign optionName = 'PRICE'
+            when 'price-descending'
+              assign optionName = 'PRICE'
+            when 'created-ascending'
+              assign optionName = 'NEWEST'
+            when 'created-descending'
+              assign optionName = 'NEWEST'
+            else
+              assign optionName = option.name
+          endcase
+        -%}
+        {% if option.value contains '-ascending' or option.value contains '-descending' %}
+          {%- assign pairValue = option.value | replace: '-ascending', '-descending' -%}
+          {% if option.value contains '-ascending' %}
+            <li>
+              <label
+                data-param-name="sort_by"
+                class="sort-option {% if option.value == resource.sort_by %}sort-active{% endif %}"
+                data-value="{{ option.value | escape }}"
+                data-asc-value="{{ option.value | escape }}"
+                data-desc-value="{{ pairValue | escape }}"
+              >
+                {{- optionName -}}
+                {% if option.value == sort_by -%}
+                  {%- if option.value contains '-ascending' %}: asc{% else %}: desc{% endif -%}
+                {%- endif %}
+              </label>
+            </li>
+          {% endif %}
+        {% else %}
+          <li>
+            <label
+              data-unique="true"
+              class="sort-option {% if option.value == resource.sort_by %}sort-active{% endif %}"
+              data-param-name="sort_by"
+              data-value="{{ option.value | escape }}"
+            >
+              {{- optionName -}}
+              {% if option.value == sort_by -%}
+                {%- if option.value contains '-ascending' %}: asc{% else %}: desc{% endif -%}
+              {%- endif %}
+            </label>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="offcanvas__footer">
+    <button class="sort-offcanvas__apply-btn button button__primary w-100">Apply Sorting</button>
+  </div>
+</div>

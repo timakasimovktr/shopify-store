@@ -1,0 +1,299 @@
+{% for block in section.blocks %}
+  <div
+    class="announcement-bar color-{{ block.settings.color_scheme }} gradient"
+    role="region"
+    aria-label="{{ 'sections.header.announcement' | t }}"
+    {{ block.shopify_attributes }}>
+
+    {% assign center_class = "" %}
+    {% if block.settings.text_primary == blank or block.settings["box_1_text"] == blank %}
+      {% assign center_class = "announcement-center" %}
+    {% endif %}
+    
+    {% assign main_mobile_hide_class = '' %}
+    {% if block.settings.main_mobile_hide %}
+      {% assign main_mobile_hide_class = 'small-hide' %}
+    {% endif %}
+
+    <div class="announcement-bar__main-boxes-container {{ center_class }} {{ main_mobile_hide_class }} page-width">
+      <div class="announcement-bar__main">
+        {% assign announcement_main_info = blank %}
+
+        {% if block.settings.image_primary %}
+          <img loading="lazy" src="{{ block.settings.image_primary | image_url: width: 200 }}" style="max-width: {{ block.settings.image_primary_width }}px; max-height: 100%;" alt="{{ block.settings.text_primary }}" />
+          {% comment %} <div class="nnouncement-bar__main-primary-image">
+          </div> {% endcomment %}
+        {% endif %}
+        {% capture announcement_main_info %}
+          <div class="announcement-bar__main-primary-text">
+            {{ block.settings.text_primary }}
+          </div>
+          {% if block.settings.text_secondary != blank %}
+            <div class="announcement-bar__main-secondary-text">
+              {{ block.settings.text_secondary }}
+            </div>
+          {% endif %}
+        {% endcapture %}
+
+        {% if announcement_main_info != blank %}
+          {% if block.settings.main_link != blank %}
+            <a class="color-{{ block.settings.color_scheme }}" href="{{ block.settings.main_link }}">{{ announcement_main_info }}</a>
+          {% else %}
+            {{ announcement_main_info }}
+          {% endif %}
+        {% endif %}
+      </div>
+
+      <div class="announcement-bar__boxes">
+        {% for ann_box_index in (1..5) %}
+          {% assign ann_box_string_index_id = "box_" | append: ann_box_index | append: "_id" %}
+          {% assign ann_box_string_index_text = "box_" | append: ann_box_index | append: "_text" %}
+          {% assign ann_box_string_index_icon = "box_" | append: ann_box_index | append: "_icon" %}
+          {% assign ann_box_string_index_url = "box_" | append: ann_box_index | append: "_link" %}
+          {% assign ann_box_string_index_mobile_hide = "box_" | append: ann_box_index | append: "_mobile_hide" %}
+
+          {% assign mobile_hide_class = '' %}
+          {% if block.settings[ann_box_string_index_mobile_hide] %}
+            {% assign mobile_hide_class = 'small-hide' %}
+          {% endif %}
+
+          {% if block.settings[ann_box_string_index_text] != blank %}
+            {% assign href = block.settings[ann_box_string_index_url] %}
+            {% unless href %}
+              {% assign href = '#' %}
+            {% endunless %}
+
+            {% assign box_custom_id = false %}
+            {% if block.settings[ann_box_string_index_id] != blank %}
+              {% assign box_custom_id = block.settings[ann_box_string_index_id] %}
+            {% endif %}
+
+            <a {% if box_custom_id %}id="{{ box_custom_id }}"{% endif %} class="announcement-bar__box center color-{{ block.settings.color_scheme }} {{ mobile_hide_class }}" href="{{ href }}">
+              {% if block.settings[ann_box_string_index_icon] %}
+                {% render 'icon' with icon_name: block.settings[ann_box_string_index_icon] %}
+              {% endif %}
+              {{ block.settings[ann_box_string_index_text] }}
+            </a>
+          {% else %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "t:sections.announcement-bar.name",
+    "max_blocks": 3,
+    "blocks": [
+      {
+        "type": "announcement",
+        "name": "t:sections.announcement-bar.blocks.announcement.name",
+        "settings": [
+          {
+            "type": "select",
+            "id": "color_scheme",
+            "options": [
+              {
+                "value": "accent-1",
+                "label": "t:sections.all.colors.accent_1.label"
+              },
+              {
+                "value": "accent-2",
+                "label": "t:sections.all.colors.accent_2.label"
+              },
+              {
+                "value": "background-1",
+                "label": "t:sections.all.colors.background_1.label"
+              },
+              {
+                "value": "background-2",
+                "label": "t:sections.all.colors.background_2.label"
+              }, {
+                "value": "inverse",
+                "label": "t:sections.all.colors.inverse.label"
+              }
+            ],
+            "default": "accent-1",
+            "label": "t:sections.all.colors.label"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_primary",
+            "label": "Image - Primary"
+          },
+          {
+            "type": "range",
+            "id": "image_primary_width",
+            "label": "Image - Primary Width",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 50,
+            "unit": "px"
+          },
+          {
+            "type": "richtext",
+            "id": "text_primary",
+            "label": "Text - Primary",
+            "default": "<p>Text primary</p>"
+          },
+          {
+            "type": "richtext",
+            "id": "text_secondary",
+            "label": "Text - Secondary",
+            "default": "<p>Text secondary</p>"
+          },
+          {
+            "type": "url",
+            "id": "main_link",
+            "label": "Link"
+          }, {
+            "type": "checkbox",
+            "id": "main_mobile_hide",
+            "label": "Hide on mobile",
+            "default": false
+          }, {
+            "type": "header",
+            "content": "Box 1"
+          }, {
+            "type": "text",
+            "id": "box_1_id",
+            "label": "Custom Element ID"
+          }, {
+            "type": "text",
+            "id": "box_1_text",
+            "label": "Text"
+          }, {
+            "type": "checkbox",
+            "id": "box_1_mobile_hide",
+            "label": "Hide on mobile",
+            "default": false
+          }, {
+            "type": "text",
+            "id": "box_1_icon",
+            "label": "Icon name",
+            "default": "icon--location"
+          }, {
+            "type": "url",
+            "id": "box_1_link",
+            "label": "Link"
+          }, {
+            "type": "header",
+            "content": "Box 2"
+          }, {
+            "type": "text",
+            "id": "box_2_id",
+            "label": "Custom Element ID"
+          }, {
+            "type": "text",
+            "id": "box_2_text",
+            "label": "Text"
+          }, {
+            "type": "checkbox",
+            "id": "box_2_mobile_hide",
+            "label": "Hide on mobile",
+            "default": false
+          }, {
+            "type": "text",
+            "id": "box_2_icon",
+            "label": "Icon name",
+            "default": "icon--location"
+          }, {
+            "type": "url",
+            "id": "box_2_link",
+            "label": "Link"
+          }, {
+            "type": "header",
+            "content": "Box 3"
+          }, {
+            "type": "text",
+            "id": "box_3_id",
+            "label": "Custom Element ID"
+          }, {
+            "type": "text",
+            "id": "box_3_text",
+            "label": "Text"
+          }, {
+            "type": "checkbox",
+            "id": "box_3_mobile_hide",
+            "label": "Hide on mobile",
+            "default": false
+          }, {
+            "type": "text",
+            "id": "box_3_icon",
+            "label": "Icon name",
+            "default": "icon--location"
+          }, {
+            "type": "url",
+            "id": "box_3_link",
+            "label": "Link"
+          }, {
+            "type": "header",
+            "content": "Box 4"
+          }, {
+            "type": "text",
+            "id": "box_4_id",
+            "label": "Custom Element ID"
+          }, {
+            "type": "text",
+            "id": "box_4_text",
+            "label": "Text"
+          }, {
+            "type": "checkbox",
+            "id": "box_4_mobile_hide",
+            "label": "Hide on mobile",
+            "default": false
+          }, {
+            "type": "text",
+            "id": "box_4_icon",
+            "label": "Icon name",
+            "default": "icon--location"
+          }, {
+            "type": "url",
+            "id": "box_4_link",
+            "label": "Link"
+          }, {
+            "type": "header",
+            "content": "Box 5"
+          }, {
+            "type": "text",
+            "id": "box_5_id",
+            "label": "Custom Element ID"
+          }, {
+            "type": "text",
+            "id": "box_5_text",
+            "label": "Text"
+          }, {
+            "type": "checkbox",
+            "id": "box_5_mobile_hide",
+            "label": "Hide on mobile",
+            "default": false
+          }, {
+            "type": "text",
+            "id": "box_5_icon",
+            "label": "Icon name",
+            "default": "icon--location"
+          }, {
+            "type": "url",
+            "id": "box_5_link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name":"Announcement bar",
+        "blocks": [
+          {
+            "type": "announcement"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

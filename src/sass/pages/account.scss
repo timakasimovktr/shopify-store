@@ -1,0 +1,638 @@
+@import './../variables';
+@import './../mixins';
+@import './../utilities';
+@import './../components/index';
+@import './../partials/index';
+@import './../icons';
+@import "../sections/cart-drawer";
+
+.account {
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 0 20px;
+
+    input::placeholder {
+        opacity: 1 !important;
+    }
+
+    .field:after,
+    .select:after,
+    .customer .field:after,
+    .customer select:after,
+    .localization-form__select:after {
+        box-shadow: none !important;
+    }
+
+    .account_div {
+        display: flex;
+
+        .account_titles {
+            // max-height: 590px;
+            min-height: 590px;
+
+            nav {
+                padding-right: 16px;
+                max-width: 300px;
+                width: 300px;
+            }
+
+            ul {
+                padding: 0;
+                margin-top: 0;
+
+                li {
+                    cursor: pointer;
+                    list-style-type: none;
+                    margin-bottom: 10px;
+
+                    .log_out {
+                        color: rgb(var(--text-primary-color));
+                        width: 100% !important;
+                    }
+
+                    div {
+                        background: none;
+                        border: none !important;
+                        border-radius: 0px !important;
+                        outline: none !important;
+                        padding: 14px 0 14px 18px;
+                        box-shadow: none !important;
+                        font-size: 16px !important;
+                        border-color: rgba(255, 255, 255, 0) !important;
+                        font-family: nimbus-sans, sans-serif;
+                        font-size: 18px;
+                        color: rgb(var(--text-primary-color));
+                        line-height: 18px;
+                        font-weight: 400;
+                    }
+
+                    a {
+                        font-size: 16px !important;
+                        text-decoration: none;
+                        font-family: nimbus-sans, sans-serif;
+                        line-height: 18px;
+                        color: rgb(var(--text-primary-color));
+                        font-weight: 400;
+                        width: 100%;
+                    }
+                }
+
+                .active {
+                    background: rgba(var(--primary-color), .15);
+                    transition: 0.4s;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .account_content {
+            position: relative;
+            width: 100%;
+            border-left: 1px rgb(92, 102, 112) solid;
+            padding-left: 80px;
+            padding-top: 14px;
+
+            .customer {
+                max-width: 100% !important;
+                margin-top: 0 !important;
+                padding: 0 !important;
+
+                .edit_address_inputs,
+                .AddAddress {
+                    form {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+
+                    .field {
+                        max-width: 49% !important;
+
+                        input {
+                            padding: 20px 20px 20px 15px !important;
+                            height: 56px !important;
+                            border: rgb(201, 209, 215) 1px solid !important;
+                            font-size: 13px !important;
+                            border-radius: 3px;
+                            color: #5c666f !important;
+                            font-family: nimbus-sans, sans-serif;
+                        }
+                    }
+
+                    .select_div {
+                        max-width: 49% !important;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    .select {
+                        max-width: 100% !important;
+
+                        select {
+                            padding: 17px 20px 20px 15px !important;
+                            height: 56px !important;
+                            border: rgb(201, 209, 215) 1px solid !important;
+                            font-size: 13px !important;
+                            color: #5c666f !important;
+                            border-radius: 3px;
+                            font-family: nimbus-sans, sans-serif;
+                        }
+                    }
+                }
+
+                ul {
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-top: 0 !important;
+                        margin-bottom: 50px;
+
+                        .address_name {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-content: flex-start;
+                            flex-direction: column;
+
+                            p {
+                                text-align: left;
+                            }
+                        }
+
+                        .edit_delete_buttons {
+                            display: flex;
+                            flex-direction: column;
+
+                            button::after {
+                                box-shadow: none !important;
+                            }
+
+                            .edit_button {
+                                margin-top: 0 !important;
+                                background: #0000;
+                                width: 200px !important;
+                                color: white;
+                                background: rgb(var(--primary-color));
+                                transition: 0.3s;
+                            }
+
+                            .edit_button:hover {
+                                background: #c19d29;
+                            }
+
+                            .delete_button {
+                                margin-top: 0 !important;
+                                background: #0000;
+                                width: 200px !important;
+                                border: 1px rgb(var(--border-primary-color)) solid;
+                                color: rgb(var(--text-primary-color));
+                                transition: 0.3s;
+                            }
+
+                            .delete_button:hover {
+                                background: rgb(var(--primary-color));
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            ul {
+                padding-left: 0;
+                margin-top: 0;
+
+                li {
+                    list-style-type: none;
+                }
+
+                .content_div {
+                    display: none;
+                    opacity: 0;
+
+                    h2 {
+                        font-family: var(--font-heading-family);
+                        font-size: 20px;
+                        font-weight: 400;
+                        line-height: 23px;
+                        margin-top: 0;
+                        color: rgb(var(--text-primary-color));
+                    }
+
+                    p {
+                        font-family: nimbus-sans, sans-serif;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: rgb(var(--text-primary-color));
+                        line-height: 23px;
+                    }
+
+                    .content_box_header {
+                        margin-bottom: 70px;
+                    }
+
+                    .content_box_cover {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        .content_box {
+                            display: flex;
+                            flex-direction: column;
+
+                            p {
+                                margin: 0;
+                            }
+                        }
+
+                        form {
+                            margin-top: 0 !important;
+                        }
+
+                        button {
+                            background: #0000;
+                            color: rgb(var(--text-primary-color));
+                            width: 200px;
+                            height: 50px;
+                            border: 1px rgb(var(--border-primary-color)) solid;
+                            font-size: 12px;
+                            text-transform: uppercase;
+                            line-height: 20px;
+                            font-family: nimbus-sans, sans-serif;
+                            transition: 0.5s;
+                            font-weight: 600;
+                            margin: 0;
+                        }
+
+                        button:hover {
+                            background: rgb(var(--primary-color));
+                            color: white;
+                        }
+
+                        button::after {
+                            box-shadow: none !important;
+                        }
+                    }
+
+                    .addAddress_button {
+                        background: #0000;
+                        padding: 15px 25px 15px 25px !important;
+                        border: rgb(var(--border-primary-color)) 1px solid;
+                        font-family: nimbus-sans, sans-serif;
+                        font-size: 12px;
+                        font-weight: 600;
+                        color: rgb(var(--text-primary-color));
+                        text-transform: uppercase !important;
+                    }
+
+                    .addAddress_button::after {
+                        box-shadow: none !important;
+                    }
+                }
+
+                .data_address_div {
+                    padding: 0;
+                    display: flex;
+                }
+
+                .active {
+                    display: block !important;
+                    opacity: 1;
+                    transition: 0.5s;
+                }
+            }
+
+            .cancel_edit_button,
+            .add_address_cancel_button {
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 0 !important;
+                padding-bottom: 3px !important;
+                border-radius: 0 !important;
+                font-family: nimbus-sans, sans-serif;
+                font-size: 14px !important;
+                color: rgb(var(--text-primary-color));
+                border-bottom: 1px rgb(var(--border-primary-color)) solid;
+                min-height: 15px !important;
+                max-height: 15px !important;
+                width: 70px !important;
+                max-width: 70px !important;
+                min-width: 70px !important;
+
+                svg {
+                    margin-right: 10px;
+                    padding-bottom: 1px;
+                    transform: rotate(180deg);
+
+                    path {
+                        fill: rgb(var(--primary-color));
+                    }
+                }
+            }
+
+            .cancel_edit_button::after,
+            .add_address_cancel_button::after {
+                box-shadow: none !important;
+                max-height: 70px !important;
+                min-height: 70px !important;
+                width: 70px !important;
+                max-width: 70px !important;
+                min-width: 70px !important;
+            }
+
+            .cancel_edit_button::before,
+            .add_address_cancel_button::before {
+                box-shadow: none !important;
+                max-height: 70px !important;
+                min-height: 70px !important;
+                width: 70px !important;
+                max-width: 70px !important;
+                min-width: 70px !important;
+            }
+
+            .confirm_button {
+                width: 100%;
+                height: 20px;
+                font-size: 12px;
+                font-family: nimbus-sans, sans-serif;
+                color: white;
+                background: rgb(var(--primary-color));
+                margin-top: 15px;
+                text-transform: uppercase;
+                font-weight: 600;
+                border-radius: 3px;
+                border: none !important;
+                transition: 0.4s;
+            }
+
+            .confirm_button::after {
+                box-shadow: none;
+            }
+
+            .confirm_button:hover {
+                background: #c19d29;
+            }
+        }
+    }
+}
+
+.customer_hdr {
+    margin: 30px auto 50px auto !important;
+    text-align: center !important;
+    position: relative;
+    color: rgb(var(--text-primary-color));
+    padding-bottom: 10px;
+    font-size: 52px;
+    font-family: var(--font-heading-family);
+    line-height: 60px;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+
+.customer_hdr::after {
+    content: '';
+    background-color: rgb(var(--primary-color));
+    bottom: 0;
+    height: 1px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 155px;
+}
+
+.row_order {
+    display: flex;
+    padding-top: 14px !important;
+}
+
+.address_mobile {
+    display: none;
+
+
+    .active {
+        background: #0000 !important;
+    }
+
+    .data_address_div {
+        padding-bottom: 0;
+    }
+
+    .addAddress_button {
+        margin-top: 0 !important;
+    }
+
+    .default_address_checkbox {
+        padding: 0 !important;
+    }
+
+    .is-open {
+        display: block !important;
+        transition: 0.5s;
+    }
+
+
+    .AddAddress {
+        padding: 0 !important;
+
+        form {
+            margin-top: 0;
+
+            .field,
+            .select_div {
+                padding: 0 !important;
+                margin-top: 0 !important;
+                margin-bottom: 10px !important;
+            }
+
+            .select {
+                padding: 0 !important;
+                margin-top: 0 !important;
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    .update_address_button {
+        padding-left: 0 !important;
+        padding-bottom: 0 !important;
+
+        .confirm_button {
+            margin: 0 !important;
+        }
+    }
+
+    .addAddress_button {
+        margin-bottom: 0 !important;
+    }
+
+    .cancel_edit_button,
+    .add_address_cancel_button {
+        top: 30px !important;
+        right: 18px !important;
+    }
+
+    .edit_delete_buttons {
+        padding: 0 !important;
+
+        .edit_address_inputs {
+            padding: 0 !important;
+
+            .field,
+            .select_div {
+                padding: 0;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+            .select {
+                padding: 0;
+                margin-top: 0;
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+
+    .default_address_checkbox {
+        padding: 0;
+    }
+
+    .customer {
+        margin-bottom: 0 !important;
+    }
+
+    .account_div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .account_titles {
+            width: 100%;
+
+            nav {
+                max-width: 100%;
+                width: 100%;
+                padding-right: 0 !important;
+
+                li {
+                    .account_tab_title {
+                        background: rgba(var(--primary-color), .15);
+                    }
+
+                    .account_tab_content {
+                        overflow: hidden !important;
+                        height: 0;
+                        padding: 0;
+                        background: #ffffff;
+
+                        .account_content {
+                            ul {
+                                margin-bottom: 0 !important;
+
+                                .content_div {
+                                    opacity: 1 !important;
+                                    display: block;
+                                }
+                            }
+                        }
+
+                        .account_tab_content_div {
+                            padding: 14px 18px;
+
+                            h2 {
+                                margin-top: 10px;
+                                font-family: bodoni-urw, serif !important;
+                                font-size: 33px;
+                            }
+
+                            .content_box_header {
+                                padding-left: 0;
+                            }
+
+                            .content_box_cover {
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 0;
+
+                                .content_box {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    flex-direction: column;
+                                    padding: 0;
+
+                                    h2 {
+                                        font-size: 20px;
+                                        text-align-last: left;
+                                        width: 100%;
+                                    }
+
+                                    p {
+                                        margin-bottom: 0;
+                                    }
+                                }
+
+                                form {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    flex-direction: column;
+                                    margin-top: 0;
+
+                                    button {
+                                        margin-top: 0;
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        .account_content {
+                            padding: 25px 0px;
+
+                            .data-list-addressess {
+                                margin-bottom: 30px;
+                            }
+                        }
+                    }
+
+                    .order_mobile_div {
+                        padding: 14px 18px;
+
+                        .row_order a {
+                            width: auto !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .address_desktop {
+        display: none;
+    }
+
+    .address_mobile {
+        display: block;
+    }
+
+    .customer_hdr {
+        font-size: 37px !important;
+        margin-top: 0 !important;
+    }
+
+    .customer {
+        margin-top: 30px !important;
+    }
+
+    .account_titles{
+        min-height: 100px !important;
+    }
+}

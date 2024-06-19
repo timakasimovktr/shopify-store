@@ -1,0 +1,11 @@
+node_modules
+config.yml
+*LICENSE.txt
+/.vscode
+assets/*.css
+assets/*.js
+/assets/*.js
+assets/index.js
+/assets/index.js
+/assets/cart.js
+/shopify.theme.toml

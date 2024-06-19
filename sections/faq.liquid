@@ -1,0 +1,48 @@
+<section class="faq container">
+  <h1 class="faq__heading">FAQs</h1>
+
+  <ul id="acc" class="faq__list">
+    {% for block in section.blocks %}
+      {% assign b = block.settings %}
+
+      <li class="faq__item">
+        <button class="faq__header js-acc-btn">
+          {{ b.faq_question }}
+        </button>
+        <div class="faq__copy acc__menu js-acc-menu">
+          {{ b.faq_answer }}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% schema %}
+{
+  "name": "FAQs",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "FAQ Item",
+      "type": "faq_item",
+      "settings": [
+        {
+          "id": "faq_question",
+          "label": "Question",
+          "type": "textarea"
+        },
+        {
+          "id": "faq_answer",
+          "label": "Answer",
+          "type": "richtext"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQs"
+    }
+  ]
+}
+{% endschema %}

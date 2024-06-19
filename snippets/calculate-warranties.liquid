@@ -1,0 +1,17 @@
+{% if product_metafields %}
+
+    {% assign sku_value = product_metafields | split: 'sku":"' %}
+    {% assign first_sku_value =  sku_value[1] | split: '"' | first  %}
+
+    {% assign warranties = collections.warranties.products %}
+    {% assign currentVariant = warranties | map: 'variants' | where: 'sku', first_sku_value | first %}
+    {% assign currentWarrantyPrice = currentVariant.price | times: quantity %}
+    {% assign totalWarrantyPrice = totalWarrantyPrice | plus: currentWarrantyPrice %}
+    
+    {% capture warrantyEntry %}
+        {{ currentVariant.id }}:{{ quantity }}{% unless lastLoop %},{% endunless %}
+    {% endcapture %}
+
+    {% assign warrantyIds = warrantyIds | append: warrantyEntry %}
+
+{% endif %}

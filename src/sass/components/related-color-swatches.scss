@@ -1,0 +1,61 @@
+.related-product-color-container {
+  .section-title {
+    display: none;
+  }
+
+  .related-product-colors {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+    margin-bottom: .75rem;
+    flex-wrap: wrap;
+
+    .product-color-option-wrapper {
+      position: relative;
+      width: 34px;
+      margin: 0 1rem 1rem 1rem;
+      @include unstyled-link($color-dark-gray);
+
+      &:hover label {
+        cursor: pointer;
+      }
+
+      &.active {
+        & .related-product-color {
+          position: relative;
+          
+          &:before{
+            content: "";
+            left: -8px;
+            top: -8px;
+            display: block;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            border: 3px solid rgb(var(--border-primary-color));
+          }
+        }
+      }
+
+      .related-product-color {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        border: 3px solid transparent;
+      }
+
+      .related-product-color__name {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        text-align: center;
+        line-height: 1.3rem;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

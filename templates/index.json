@@ -1,0 +1,931 @@
+{
+  "sections": {
+    "16603198110dffd9cc": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<div class=\"zmags-viewer-container\" data-group=\"637b9a9ff6b59348c452df99\" data-company=\"5fb81704ad04236b4d7db098\" data-speed=\"1\"><\/div>",
+        "color_scheme": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "f8a33ed5-3993-4bce-a74a-d9ce4b2a8b0c": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        "video {width: 100%;}"
+      ],
+      "settings": {
+        "custom_liquid": "<a href=\"https:\/\/www.kanesfurniture.com\/collections\/closeout-deals\"><video autoplay muted loop>\n            <source src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9183a79d393144788f732665fbb8e88b.mp4\">\n            Your browser does not support the video tag.\n        <\/video><\/a>",
+        "color_scheme": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "2859ae9f-a866-4f9c-bb7d-574301f10a20": {
+      "type": "image-banner",
+      "blocks": {
+        "template--16090777747645__2859ae9f-a866-4f9c-bb7d-574301f10a20-167770098631d1980d-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "template--16090777747645__2859ae9f-a866-4f9c-bb7d-574301f10a20-167770098631d1980d-2": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16090777747645__2859ae9f-a866-4f9c-bb7d-574301f10a20-167770098631d1980d-1",
+        "template--16090777747645__2859ae9f-a866-4f9c-bb7d-574301f10a20-167770098631d1980d-2"
+      ],
+      "custom_css": [
+        "h2 {font-family: var(--font-heading-family); color: rgb(92, 102, 112); text-transform: uppercase;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/HERO_GENERIC.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "top-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
+        "full_link_enabled": false,
+        "full_link": ""
+      }
+    },
+    "31054f0f-cfa5-4b3d-8488-766790928667": {
+      "type": "product-carousel",
+      "blocks": {
+        "58d48a04-4391-4170-9558-dc3e57a8b169": {
+          "type": "product",
+          "settings": {
+            "product_info": "rayna-3-piece-sectional-1"
+          }
+        },
+        "e3c7b5ac-d957-42bd-823f-04308f425166": {
+          "type": "product",
+          "settings": {
+            "product_info": "stoney-creek-white-ii-5-piece-queen-storage-bedroom"
+          }
+        },
+        "0c2289c2-8033-40d2-90b0-3d7dcdbcecc9": {
+          "type": "product",
+          "settings": {
+            "product_info": "hutton-ii-6-piece-dual-power-sectional-sofa"
+          }
+        },
+        "affd83ec-a2ad-4432-b0da-cecef7a1d279": {
+          "type": "product",
+          "settings": {
+            "product_info": "lynnfield-5-piece-dining-set"
+          }
+        },
+        "a4013b5b-0ff2-4144-85d6-55d5d807289f": {
+          "type": "product",
+          "settings": {
+            "product_info": "della-5-piece-dining-set"
+          }
+        },
+        "ea4e8ed6-9931-48d9-a9cf-a4485a75dff7": {
+          "type": "product",
+          "settings": {
+            "product_info": "carriage-house-4-piece-dining-set-with-2-side-chairs-1-bench"
+          }
+        },
+        "9f1f3d2c-0d5d-4075-9ed3-910ec453f452": {
+          "type": "product",
+          "settings": {
+            "product_info": "dallas-ivory-3pc-sofa-cons-l-s-recl"
+          }
+        },
+        "ca4d4d1b-d4da-4ea4-9168-f8ceaa768d48": {
+          "type": "product",
+          "settings": {
+            "product_info": "dallas-blue-3pc-sofa-cons-l-s-recl"
+          }
+        }
+      },
+      "block_order": [
+        "58d48a04-4391-4170-9558-dc3e57a8b169",
+        "e3c7b5ac-d957-42bd-823f-04308f425166",
+        "0c2289c2-8033-40d2-90b0-3d7dcdbcecc9",
+        "affd83ec-a2ad-4432-b0da-cecef7a1d279",
+        "a4013b5b-0ff2-4144-85d6-55d5d807289f",
+        "ea4e8ed6-9931-48d9-a9cf-a4485a75dff7",
+        "9f1f3d2c-0d5d-4075-9ed3-910ec453f452",
+        "ca4d4d1b-d4da-4ea4-9168-f8ceaa768d48"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+        "heading": "New Arrivals",
+        "slider_title_position": "left",
+        "carousel_padding": 30
+      }
+    },
+    "bee2ef9b-4b2e-466f-84ac-709cf80c8817": {
+      "type": "grid-blocks-section",
+      "blocks": {
+        "95c328b2-cdf8-4345-9daf-a844911bedd5": {
+          "type": "collection",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/LivingRoom.jpg",
+            "collection_label": "LIVING ROOM",
+            "collection_link": "shopify:\/\/collections\/living-room",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "de6fc4ea-dc2b-4d3c-bdf8-23c784da7a74": {
+          "type": "collection",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/Bedroom.jpg",
+            "collection_label": "BEDROOM",
+            "collection_link": "shopify:\/\/collections\/bedroom-collections",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "30bdc3df-feca-4b61-9225-b58bdf99858f": {
+          "type": "collection",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/DiningRoom.jpg",
+            "collection_label": "DINING",
+            "collection_link": "shopify:\/\/collections\/dining-collections",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#b17818"
+          }
+        },
+        "56befb0f-b4e3-4c89-97fe-0135e5f7a8ba": {
+          "type": "collection",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/HomeOffice.jpg",
+            "collection_label": "Office",
+            "collection_link": "shopify:\/\/collections\/home-office",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "cbe2f2eb-c7d7-4e73-9b41-e6393c34ab35": {
+          "type": "collection",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/Outdoor.jpg",
+            "collection_label": "OUTDOOR",
+            "collection_link": "shopify:\/\/collections\/outdoor-collections",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#868686"
+          }
+        },
+        "ad7c4ed4-05df-4ec4-92a4-a39536f9796a": {
+          "type": "collection",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/Mattress.jpg",
+            "collection_label": "MATTRESSES",
+            "collection_link": "shopify:\/\/collections\/queen",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "995f9dda-d313-4c7f-aca3-e2217495e9c4": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/Sofas.jpg",
+            "collection_label": "SOFAS",
+            "collection_link": "shopify:\/\/collections\/sofas",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "61092f22-f924-4fc5-895a-29ccf51b1fbf": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/Recliners.jpg",
+            "collection_label": "RECLINERS",
+            "collection_link": "shopify:\/\/collections\/recliners",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "56204b5c-3bb3-4686-8963-92037473aef3": {
+          "type": "collection",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/KidsBeds.jpg",
+            "collection_label": "KIDS & TEENS",
+            "collection_link": "shopify:\/\/collections\/kids-teens-beds",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "dc005fc8-8bab-45fd-84ee-dfdfef1143cb": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/Rugs.jpg",
+            "collection_label": "RUGS",
+            "collection_link": "shopify:\/\/collections\/area-rugs",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "710b837c-7647-4643-81f2-ce512b36137f": {
+          "type": "collection",
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/DECOR.jpg",
+            "collection_label": "DECOR",
+            "collection_link": "shopify:\/\/collections\/accessories",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "55f28801-9c7b-42b2-90a9-2680a58b3e6a": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/Console.jpg",
+            "collection_label": "TV CONSOLES",
+            "collection_link": "shopify:\/\/collections\/tv-consoles",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "656c5aa5-2cf1-4515-ba1b-de5dbaa1c2bd": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/Lamps.jpg",
+            "collection_label": "Lamps",
+            "collection_link": "shopify:\/\/collections\/lamps",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        },
+        "57e27586-821d-4fa9-9546-b52007b5b726": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "image_collection": "shopify:\/\/shop_images\/Artwork.jpg",
+            "collection_label": "Artwork",
+            "collection_link": "shopify:\/\/collections\/artwork",
+            "bg_color": "#f7f7f9",
+            "choosen_color": "#f7f7f9"
+          }
+        }
+      },
+      "block_order": [
+        "95c328b2-cdf8-4345-9daf-a844911bedd5",
+        "de6fc4ea-dc2b-4d3c-bdf8-23c784da7a74",
+        "30bdc3df-feca-4b61-9225-b58bdf99858f",
+        "56befb0f-b4e3-4c89-97fe-0135e5f7a8ba",
+        "cbe2f2eb-c7d7-4e73-9b41-e6393c34ab35",
+        "ad7c4ed4-05df-4ec4-92a4-a39536f9796a",
+        "995f9dda-d313-4c7f-aca3-e2217495e9c4",
+        "61092f22-f924-4fc5-895a-29ccf51b1fbf",
+        "56204b5c-3bb3-4686-8963-92037473aef3",
+        "dc005fc8-8bab-45fd-84ee-dfdfef1143cb",
+        "710b837c-7647-4643-81f2-ce512b36137f",
+        "55f28801-9c7b-42b2-90a9-2680a58b3e6a",
+        "656c5aa5-2cf1-4515-ba1b-de5dbaa1c2bd",
+        "57e27586-821d-4fa9-9546-b52007b5b726"
+      ],
+      "custom_css": [
+        ".grid_blocks_header {color: rgb(92, 102, 112); border-bottom: 2px solid #25cad3;}"
+      ],
+      "settings": {
+        "section_padding": 50,
+        "section_title": "SAVINGS IN EVERY DEPARTMENT",
+        "section_title_position": "left"
+      }
+    },
+    "f8d8ecd6-3578-493a-8f0c-9c73006e42eb": {
+      "type": "image-banner",
+      "blocks": {
+        "template--16105505194173__f8d8ecd6-3578-493a-8f0c-9c73006e42eb-16820904477bd9de2f-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Accessories & Decor",
+            "heading_size": "h1"
+          }
+        },
+        "template--16105505194173__f8d8ecd6-3578-493a-8f0c-9c73006e42eb-16820904477bd9de2f-1": {
+          "type": "text",
+          "settings": {
+            "text": "Find the right accessories to decorate every room",
+            "text_style": "body"
+          }
+        },
+        "template--16105505194173__f8d8ecd6-3578-493a-8f0c-9c73006e42eb-16820904477bd9de2f-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify:\/\/collections\/accessories",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16105505194173__f8d8ecd6-3578-493a-8f0c-9c73006e42eb-16820904477bd9de2f-0",
+        "template--16105505194173__f8d8ecd6-3578-493a-8f0c-9c73006e42eb-16820904477bd9de2f-1",
+        "template--16105505194173__f8d8ecd6-3578-493a-8f0c-9c73006e42eb-16820904477bd9de2f-2"
+      ],
+      "custom_css": [
+        "h2 {font-family: var(--font-heading-family); color: rgb(92, 102, 112); text-transform: uppercase;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Accessories_Image.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "top-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
+        "full_link_enabled": false,
+        "full_link": ""
+      }
+    },
+    "f73d2ffc-9197-4929-951b-285d025bcc09": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16090777747645__f73d2ffc-9197-4929-951b-285d025bcc09-16776869079186dd20-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "0% INTEREST FOR 60 MONTHS**",
+            "heading_size": "h1"
+          }
+        },
+        "template--16090777747645__f73d2ffc-9197-4929-951b-285d025bcc09-16776869079186dd20-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>On purchases of $5999.99 or more made with your Kane’s credit card on through 8\/31\/2023. Equal monthly payments required for 60 months. Deposit equal to 20% of order total (product + tax), plus delivery fee is required on another payment type. See below for details.<br\/><\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--16090777747645__f73d2ffc-9197-4929-951b-285d025bcc09-16776869079186dd20-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Prequalify Now",
+            "button_link": "https:\/\/etail.mysynchrony.com\/eapply\/eapply.action?uniqueId=8F73E7018ED430FA3422907B0C198D6C928EE0509DA8EBA8&preQual=Y"
+          }
+        }
+      },
+      "block_order": [
+        "template--16090777747645__f73d2ffc-9197-4929-951b-285d025bcc09-16776869079186dd20-0",
+        "template--16090777747645__f73d2ffc-9197-4929-951b-285d025bcc09-16776869079186dd20-1",
+        "template--16090777747645__f73d2ffc-9197-4929-951b-285d025bcc09-16776869079186dd20-2"
+      ],
+      "custom_css": [
+        "h2 {font-family: var(--font-heading-family); color: rgb(92, 102, 112);}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Kanes_Card_Banner_2.png",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-2",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "72a47eca-7a43-4123-bd69-65bb7826e442": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--16090777747645__72a47eca-7a43-4123-bd69-65bb7826e442-167770642538350334-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/CANT10W_cfaa05df-00f1-4da0-a334-6369fdcc2aad.jpg",
+            "title": "GLAM",
+            "text": "<p>Glam interior design blends an airy, upscale feel with luxurious fabrics, glittering metals, and sparkly accessories for a refined, elegant space. Discover the elements of this silver screen-approved style and get inspired to create a glamorous space.<\/p>",
+            "link_label": "Shop Now",
+            "link": "shopify:\/\/collections\/living-room"
+          }
+        },
+        "template--16090777747645__72a47eca-7a43-4123-bd69-65bb7826e442-167770642538350334-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FarmHouseBedroom_b8dd66b6-4ecb-4c1e-8fe5-065ce3b89021.jpg",
+            "title": "FARMHOUSE",
+            "text": "<p>Farmhouse style prioritizes practicality, simplicity, and rustic charm. While farmhouse style tends to reflect the aesthetics of rural architecture, it also embraces modern comforts, creating a look that feels both cozy and stylish.<\/p>",
+            "link_label": "Shop Now",
+            "link": "shopify:\/\/collections\/bedroom-collections"
+          }
+        },
+        "template--16090777747645__72a47eca-7a43-4123-bd69-65bb7826e442-167770642538350334-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/NAPAR01_4f7c29e6-f16a-4738-b430-29dcb680717f.jpg",
+            "title": "CONTEMPORARY",
+            "text": "<p>Contemporary design refers to the current and popular designs of the moment. Hallmarks of this design style include clean, curved lines, natural materials, stark contrasts, cool tones, and attention to quality. <\/p>",
+            "link_label": "Shop Now",
+            "link": "shopify:\/\/collections\/dining-collections"
+          }
+        }
+      },
+      "block_order": [
+        "template--16090777747645__72a47eca-7a43-4123-bd69-65bb7826e442-167770642538350334-0",
+        "template--16090777747645__72a47eca-7a43-4123-bd69-65bb7826e442-167770642538350334-1",
+        "template--16090777747645__72a47eca-7a43-4123-bd69-65bb7826e442-167770642538350334-2"
+      ],
+      "custom_css": [
+        "h2 {font-size: 3.6rem; color: rgb(92, 102, 112);}",
+        ".title-wrapper-with-link {border-bottom: 2px solid #25cad3;}",
+        "a {color: #25cad2;}"
+      ],
+      "settings": {
+        "title": "TRENDING STYLES",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "6f53590b-4c63-4b31-a61b-d85f5bc45e0b": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16090777747645__6f53590b-4c63-4b31-a61b-d85f5bc45e0b-16777668734c35e18c-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Multifunctional furniture for small spaces",
+            "heading_size": "h1"
+          }
+        },
+        "template--16090777747645__6f53590b-4c63-4b31-a61b-d85f5bc45e0b-16777668734c35e18c-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With furniture that can serve multiple purposes, you don't have to fill every inch of your room, and your home will feel more tidy and productive. Use this list of multipurpose furniture pieces to find out how you can make the most of your precious space.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--16090777747645__6f53590b-4c63-4b31-a61b-d85f5bc45e0b-16777668734c35e18c-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/sleepers"
+          }
+        }
+      },
+      "block_order": [
+        "template--16090777747645__6f53590b-4c63-4b31-a61b-d85f5bc45e0b-16777668734c35e18c-0",
+        "template--16090777747645__6f53590b-4c63-4b31-a61b-d85f5bc45e0b-16777668734c35e18c-1",
+        "template--16090777747645__6f53590b-4c63-4b31-a61b-d85f5bc45e0b-16777668734c35e18c-2"
+      ],
+      "custom_css": [
+        "h2 {font-family: var(--font-heading-family); color: rgb(92, 102, 112); text-transform: uppercase;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Reena_YRM-18_side_view-_2-2.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "197af9b4-196e-460b-b6c0-b5dc837e8e1c": {
+      "type": "product-carousel",
+      "blocks": {
+        "6f8d3d1e-338b-4a1a-ad08-d984e7990eff": {
+          "type": "product",
+          "settings": {
+            "product_info": "tyler-3-piece-dining-set"
+          }
+        },
+        "f0845320-b820-4558-8eee-71f7741c156c": {
+          "type": "product",
+          "settings": {
+            "product_info": "lorenzo-taupe-leather-loveseat"
+          }
+        },
+        "985f00a1-8d0a-49d1-ab8b-fa1354368082": {
+          "type": "product",
+          "settings": {
+            "product_info": "bergamo-5-piece-leather-modular-sectional"
+          }
+        },
+        "6293ad0c-4871-4c14-af84-c2760e96edc0": {
+          "type": "product",
+          "settings": {
+            "product_info": "valerie-cocktail-table"
+          }
+        },
+        "9e5d0a81-610b-420d-bca1-d85e65d2d8f6": {
+          "type": "product",
+          "settings": {
+            "product_info": "cyrus-3-pack-cocktail-table-2-end-tables"
+          }
+        },
+        "b2a4b2aa-34b7-4504-937b-5e4dee2ced07": {
+          "type": "product",
+          "settings": {
+            "product_info": "artik-5-piece-dining-set"
+          }
+        },
+        "271b36c3-8ae0-45fe-a09a-cf164c57aaab": {
+          "type": "product",
+          "settings": {
+            "product_info": "merris-4-piece-sectional"
+          }
+        }
+      },
+      "block_order": [
+        "6f8d3d1e-338b-4a1a-ad08-d984e7990eff",
+        "f0845320-b820-4558-8eee-71f7741c156c",
+        "985f00a1-8d0a-49d1-ab8b-fa1354368082",
+        "6293ad0c-4871-4c14-af84-c2760e96edc0",
+        "9e5d0a81-610b-420d-bca1-d85e65d2d8f6",
+        "b2a4b2aa-34b7-4504-937b-5e4dee2ced07",
+        "271b36c3-8ae0-45fe-a09a-cf164c57aaab"
+      ],
+      "custom_css": [
+        ".carousel_heading p {color: rgb(92, 102, 112); border-bottom: 2px solid #25cad3;}"
+      ],
+      "settings": {
+        "heading": "Special Offers",
+        "slider_title_position": "left",
+        "carousel_padding": 27
+      }
+    },
+    "595bea06-31fa-4634-85e2-d10be7932e39": {
+      "type": "grid-blocks-section",
+      "blocks": {
+        "785114f5-911b-447d-9ee9-6ec9727b896b": {
+          "type": "collection",
+          "settings": {
+            "collection_label": "Bar stools starting at $129",
+            "collection_link": "https:\/\/www.kanesfurniture.com\/collections\/stools",
+            "bg_color": "color",
+            "choosen_color": "#25cad3"
+          }
+        },
+        "7f00974d-fbd0-4f70-99ce-8a1d2c1d233c": {
+          "type": "collection",
+          "settings": {
+            "collection_label": "Occasional tables starting at $99",
+            "collection_link": "https:\/\/www.kanesfurniture.com\/collections\/living-room-occasional-tables",
+            "bg_color": "color",
+            "choosen_color": "#555453"
+          }
+        },
+        "e03afc64-5802-405b-a5e2-9a4edcb72804": {
+          "type": "collection",
+          "settings": {
+            "collection_label": "Beds starting at $299",
+            "collection_link": "https:\/\/www.kanesfurniture.com\/collections\/beds",
+            "bg_color": "color",
+            "choosen_color": "#25cad3"
+          }
+        },
+        "6582354f-9b88-4af7-a347-106a19e74281": {
+          "type": "collection",
+          "settings": {
+            "collection_label": "ACCENT CHAIRS starting at $299",
+            "collection_link": "https:\/\/www.kanesfurniture.com\/collections\/chairs",
+            "bg_color": "color",
+            "choosen_color": "#555453"
+          }
+        }
+      },
+      "block_order": [
+        "785114f5-911b-447d-9ee9-6ec9727b896b",
+        "7f00974d-fbd0-4f70-99ce-8a1d2c1d233c",
+        "e03afc64-5802-405b-a5e2-9a4edcb72804",
+        "6582354f-9b88-4af7-a347-106a19e74281"
+      ],
+      "custom_css": [
+        ".grid_blocks_header {border: 0;}"
+      ],
+      "settings": {
+        "section_padding": 24,
+        "section_title": "",
+        "section_title_position": "left"
+      }
+    },
+    "2038b0fa-f685-425e-9390-aed57a2b11cb": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--16090777747645__2038b0fa-f685-425e-9390-aed57a2b11cb-16776892470626cb03-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Outdoor Oasis",
+            "heading_size": "h1"
+          }
+        },
+        "template--16090777747645__2038b0fa-f685-425e-9390-aed57a2b11cb-16776892470626cb03-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Enjoy Florida lifestyle outdoors year round, and take your entertaining potential to a new level. You'll feel like you're vacationing in your own backyard with our wide selection of outdoor furniture.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--16090777747645__2038b0fa-f685-425e-9390-aed57a2b11cb-16776892470626cb03-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/outdoor-collections"
+          }
+        }
+      },
+      "block_order": [
+        "template--16090777747645__2038b0fa-f685-425e-9390-aed57a2b11cb-16776892470626cb03-0",
+        "template--16090777747645__2038b0fa-f685-425e-9390-aed57a2b11cb-16776892470626cb03-1",
+        "template--16090777747645__2038b0fa-f685-425e-9390-aed57a2b11cb-16776892470626cb03-2"
+      ],
+      "custom_css": [
+        "h2 {font-family: var(--font-heading-family); color: rgb(92, 102, 112); text-transform: uppercase;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/OutdoorBanner.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-2",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "6cd64e21-fda9-4171-b261-d5aa98a94ea7": {
+      "type": "image-banner",
+      "blocks": {
+        "template--16105505194173__6cd64e21-fda9-4171-b261-d5aa98a94ea7-16820904477bd9de2f-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Area Rugs",
+            "heading_size": "h1"
+          }
+        },
+        "template--16105505194173__6cd64e21-fda9-4171-b261-d5aa98a94ea7-16820904477bd9de2f-1": {
+          "type": "text",
+          "settings": {
+            "text": "Find the perfect rug to tie the room together",
+            "text_style": "body"
+          }
+        },
+        "template--16105505194173__6cd64e21-fda9-4171-b261-d5aa98a94ea7-16820904477bd9de2f-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify:\/\/collections\/area-rugs",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--16105505194173__6cd64e21-fda9-4171-b261-d5aa98a94ea7-16820904477bd9de2f-0",
+        "template--16105505194173__6cd64e21-fda9-4171-b261-d5aa98a94ea7-16820904477bd9de2f-1",
+        "template--16105505194173__6cd64e21-fda9-4171-b261-d5aa98a94ea7-16820904477bd9de2f-2"
+      ],
+      "custom_css": [
+        "h2 {font-family: var(--font-heading-family); color: rgb(92, 102, 112); text-transform: uppercase;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/DRMSH_DRS10_LTBGY_LIGHT_BLUE_GREY_8x10_099446893420_ROOM03.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "top-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true,
+        "full_link_enabled": false,
+        "full_link": ""
+      }
+    },
+    "1661267234db2342f8": {
+      "type": "home-reviews",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "9dc4d489-c851-4d65-8dd7-746610b9955b": {
+      "type": "home-follow-us",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "6dd36413-965f-420a-98f4-770c1cf8f6da": {
+      "type": "image-carousel",
+      "blocks": {
+        "cb459d5b-11ad-415a-b4a1-5086530cfdf4": {
+          "type": "product",
+          "settings": {
+            "product_info": "dante-white-5-piece-queen-framed-upholstered-bedroom",
+            "hide_collection_link": false
+          }
+        },
+        "ad2ed547-444b-4df2-9a6f-fa9d751d0b1d": {
+          "type": "product",
+          "settings": {
+            "image_gallery": "shopify:\/\/shop_images\/Screen_Shot_2023-03-03_at_1.45.40_PM.png",
+            "product_info": "ryker-server-1",
+            "hide_collection_link": false
+          }
+        },
+        "b9b385de-e2cb-48d5-8453-1865c9ab34d9": {
+          "type": "product",
+          "settings": {
+            "image_gallery": "shopify:\/\/shop_images\/Screen_Shot_2023-03-03_at_1.48.38_PM.png",
+            "product_info": "rochford-glass-table-lamp",
+            "hide_collection_link": false
+          }
+        },
+        "1e8e6c50-1e21-4dfb-a747-3171a4e58e02": {
+          "type": "product",
+          "settings": {
+            "image_gallery": "shopify:\/\/shop_images\/Screen_Shot_2023-03-03_at_1.50.54_PM.png",
+            "product_info": "devon-queen-panel-bed",
+            "hide_collection_link": false
+          }
+        },
+        "ebab75d9-0835-4ecb-bbc0-6bb148f3b3c9": {
+          "type": "product",
+          "settings": {
+            "product_info": "ryker-champagne-5-piece-king-upholstered-panel-bedroom",
+            "hide_collection_link": false
+          }
+        },
+        "d07a9f8e-3c89-4be4-86c4-04193e684b24": {
+          "type": "product",
+          "settings": {
+            "image_gallery": "shopify:\/\/shop_images\/FarmHouseBedroom.jpg",
+            "product_info": "freeport-sofa-85",
+            "hide_collection_link": false
+          }
+        },
+        "2e965c84-8e77-45e8-936b-740149aecc03": {
+          "type": "product",
+          "settings": {
+            "image_gallery": "shopify:\/\/shop_images\/loft-style-bedroom.jpg",
+            "product_info": "5-light-arch-floor-lamp",
+            "hide_collection_link": false
+          }
+        },
+        "a45dd6f7-9997-4d9b-b694-2b72f17837e6": {
+          "type": "product",
+          "settings": {
+            "product_info": "merris-7-piece-living-room",
+            "hide_collection_link": false
+          }
+        },
+        "4693dd2f-0dd0-41a7-a0b3-670159aec554": {
+          "type": "product",
+          "settings": {
+            "product_info": "ezra-swivel-chair-ottoman-2",
+            "hide_collection_link": false
+          }
+        },
+        "5ad77daa-447b-4178-9d59-d53b311f5e3f": {
+          "type": "product",
+          "settings": {
+            "product_info": "newtown-ii-5-piece-dining-set-with-orange-chairs",
+            "hide_collection_link": false
+          }
+        },
+        "d02ae49d-bf3d-493a-b64d-0cac65f2741e": {
+          "type": "product",
+          "settings": {
+            "image_gallery": "shopify:\/\/shop_images\/Screen_Shot_2023-03-03_at_1.57.04_PM.png",
+            "product_info": "",
+            "hide_collection_link": false
+          }
+        },
+        "c34f1bd0-b892-42c1-a936-f4cf4db2f9c9": {
+          "type": "product",
+          "settings": {
+            "product_info": "massima-horse-sculpture",
+            "hide_collection_link": false
+          }
+        },
+        "5040ee2c-491c-497f-a875-e5fd46006da2": {
+          "type": "product",
+          "settings": {
+            "image_gallery": "shopify:\/\/shop_images\/Screen_Shot_2023-03-03_at_2.52.33_PM.png",
+            "product_info": "",
+            "hide_collection_link": false
+          }
+        },
+        "8e6e44c9-0e38-476f-80ef-51872b18a0ed": {
+          "type": "product",
+          "settings": {
+            "image_gallery": "shopify:\/\/shop_images\/Screen_Shot_2023-03-03_at_2.56.01_PM.png",
+            "product_info": "",
+            "hide_collection_link": false
+          }
+        }
+      },
+      "block_order": [
+        "cb459d5b-11ad-415a-b4a1-5086530cfdf4",
+        "ad2ed547-444b-4df2-9a6f-fa9d751d0b1d",
+        "b9b385de-e2cb-48d5-8453-1865c9ab34d9",
+        "1e8e6c50-1e21-4dfb-a747-3171a4e58e02",
+        "ebab75d9-0835-4ecb-bbc0-6bb148f3b3c9",
+        "d07a9f8e-3c89-4be4-86c4-04193e684b24",
+        "2e965c84-8e77-45e8-936b-740149aecc03",
+        "a45dd6f7-9997-4d9b-b694-2b72f17837e6",
+        "4693dd2f-0dd0-41a7-a0b3-670159aec554",
+        "5ad77daa-447b-4178-9d59-d53b311f5e3f",
+        "d02ae49d-bf3d-493a-b64d-0cac65f2741e",
+        "c34f1bd0-b892-42c1-a936-f4cf4db2f9c9",
+        "5040ee2c-491c-497f-a875-e5fd46006da2",
+        "8e6e44c9-0e38-476f-80ef-51872b18a0ed"
+      ],
+      "custom_css": [
+        "h3 {font-size: 3.6rem; font-family: bodoni-urw, sans; color: rgb(92, 102, 112);}"
+      ],
+      "settings": {
+        "carousel_padding": 58,
+        "carousel_link_text": "View product",
+        "carousel_type": "carousel",
+        "carousel_title": "FOLLOW US",
+        "slider_title_position": "left"
+      }
+    },
+    "166031984652524891": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<div id=\"custom-liquid-home-clarification\" style=\"font-size: small\">\nIn-store:  *20% off entire purchase of $5,999.99 or more.  10% off entire purchase from $2,999.99 up to $5,999.98 (regular priced items excluding special orders, warranties, and Tempur-Pedic).  Kanesfurniture.com only:  *20% off entire purchase of $5,999.99 or more or 10% off entire purchase up to $5,999.98 (regular priced items excluding special orders, warranties, Tempur-Pedic, and Sealy Hybrid beds).  Offer expires 1\/30\/2023.\n<br><br>\n**0% interest for 60 months on purchases of $5999.99 or more made with your Kane's Furniture credit card on through 1\/30\/2023. Equally monthly payments required for 60 months. The Kane's Furniture Credit Card cannot be used for the required 20% deposit, which includes tax and delivery. Offer applies only to single-receipt qualifying purchases. No interest will be charged on promo purchase and equal monthly payments are required until promo is paid in full. The equal monthly payment will be rounded to the next highest whole dollar and may be higher than the minimum payment that would be required if the purchase was a non-promotional purchase. Regular account terms apply to non-promotional purchases. For new accounts: Purchase APR is 29.99%; Minimum Interest Charge is $2. Existing cardholders should see their credit card agreement for their applicable terms. Subject to credit approval. Excludes already reduced prices, prior sales. Not responsible for printer errors. Must take delivery within 21 days.\n<br><br>\n<\/div>\n\n<style>\n  #custom-liquid-home-clarification {\n    margin: 0px 50px;\n  }\n  \n  @media only screen and (max-width: 992px) {\n    #custom-liquid-home-clarification {\n      margin: 0px 2rem;\n    }\n  }\n<\/style>",
+        "color_scheme": "#000000",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "e85a598a-4eab-416e-a843-f4c7e8e2bfc3": {
+      "type": "legal-content",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "16603198110dffd9cc",
+    "f8a33ed5-3993-4bce-a74a-d9ce4b2a8b0c",
+    "2859ae9f-a866-4f9c-bb7d-574301f10a20",
+    "31054f0f-cfa5-4b3d-8488-766790928667",
+    "bee2ef9b-4b2e-466f-84ac-709cf80c8817",
+    "f8d8ecd6-3578-493a-8f0c-9c73006e42eb",
+    "f73d2ffc-9197-4929-951b-285d025bcc09",
+    "72a47eca-7a43-4123-bd69-65bb7826e442",
+    "6f53590b-4c63-4b31-a61b-d85f5bc45e0b",
+    "197af9b4-196e-460b-b6c0-b5dc837e8e1c",
+    "595bea06-31fa-4634-85e2-d10be7932e39",
+    "2038b0fa-f685-425e-9390-aed57a2b11cb",
+    "6cd64e21-fda9-4171-b261-d5aa98a94ea7",
+    "1661267234db2342f8",
+    "9dc4d489-c851-4d65-8dd7-746610b9955b",
+    "6dd36413-965f-420a-98f4-770c1cf8f6da",
+    "166031984652524891",
+    "e85a598a-4eab-416e-a843-f4c7e8e2bfc3"
+  ]
+}

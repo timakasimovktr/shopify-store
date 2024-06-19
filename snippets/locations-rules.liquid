@@ -1,0 +1,152 @@
+<script
+  async
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHTwUlFGC5vrVUmBeDggBshQN2yoiRSF0&libraries=geometry"></script>
+
+<script>
+  var $locations,
+    returnLocations;
+
+  function onDocumentLoaded() {
+    const btn = document.getElementById('locationsBtn')
+    $locations = document.getElementById('shopify-section-global-locations')
+
+    btn.addEventListener('click', searchLocation)
+
+    document.addEventListener("keydown", keyDownTextField, false);
+
+    initZipcode();
+  }
+
+  function initZipcode() {
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: function(searchParams, prop){
+        return searchParams.get(prop)
+      }
+    });
+
+    if (params.zipcode) {
+      document.querySelector('#locationsInput').value = params.zipcode;
+      getInputValueLocation(params.zipcode)
+    }
+  }
+
+  function keyDownTextField(e) {
+    var keyCode = e.keyCode;
+    if (keyCode == 13) {
+      searchLocation(e);
+    }
+  }
+
+  function searchLocation(e) {
+    e.preventDefault();
+    const value = document.getElementById('locationsInput').value;
+    getInputValueLocation(value);
+  }
+
+  function getInputValueLocation(value) {
+    const geocoder = new google.maps.Geocoder();
+    const uri = window.location.toString();
+
+    if (value !== '') {
+      if (uri.indexOf('?') > 0) {
+        const cleanUri = uri.substring(0, uri.indexOf('?'));
+        window.history.replaceState({}, document.title, cleanUri);
+      }
+
+      geocoder.geocode({
+        address: value
+      }, function(results, status){
+
+        if (status === 'OK') {
+
+          const lat = results[0].geometry.location.lat();
+          const lng = results[0].geometry.location.lng();
+          const coordsUser = new google.maps.LatLng(lat, lng);
+
+          setTimeout(function(){
+            eachLocation(coordsUser);
+          }, 500);
+        }
+      });
+    } else {}
+  }
+
+  function convertMetersToMiles(value) {
+
+// Convert from meters to miles
+    value *= 0.000621371192;
+
+// Round to nearest tenth
+    value = Math.round(value * 10) / 10;
+
+// Return value
+    return value;
+  }
+
+  function eachLocation(coords) {
+    const $locationsList = $locations.querySelectorAll('article')
+
+    $locationsList.forEach(function(item){
+
+      const latStore = parseFloat(item.dataset.lat);
+      const lngStore = parseFloat(item.dataset.lng);
+      const coordsStore = new google.maps.LatLng(latStore, lngStore);
+      const distance = google
+        .maps
+        .geometry
+        .spherical
+        .computeDistanceBetween(coords, coordsStore);
+      const miles = convertMetersToMiles(distance);
+      item.removeAttribute('data-near');
+      item.removeAttribute('data-distance');
+
+      if (miles < 30) {
+        item.setAttribute('data-near', 'true');
+        item.setAttribute('data-distance', miles);
+      } else {
+        item.setAttribute('data-near', 'false');
+      }
+
+    });
+
+    showResult();
+  }
+
+  function showResult() {
+
+    const nearbyLocationsArray = Array.from($locations.querySelectorAll(`.location[data-near="true"]`));
+    const locationsLength = nearbyLocationsArray.length;
+
+// eslint-disable-next-line
+    const nearLocationsArray = nearbyLocationsArray.sort(function(a, b){ return + a.dataset.distance - + b.dataset.distance });
+
+    returnLocations = [];
+    nearLocationsArray.forEach(function(item){
+      item.remove();
+      returnLocations.push(item.outerHTML);
+    });
+
+    const joinReturnLocations = returnLocations.join('');
+
+    $locations.insertAdjacentHTML('afterbegin', joinReturnLocations);
+
+    if (locationsLength === 0) {
+      $locations.insertAdjacentHTML('afterbegin', '<h3 id="no-locations">No locations found! <br> Try again!</h3>');
+    } else {
+      const noLocations = document.getElementById('no-locations');
+      if (noLocations) {
+        noLocations.remove();
+      }
+    }
+    
+    // LazyLoaz manual update
+    window.ll?.update();
+  }
+
+  if (document.readyState != 'loading') {
+    onDocumentLoaded();
+  } else {
+    document.addEventListener("DOMContentLoaded", onDocumentLoaded);
+  }
+</script>

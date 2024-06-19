@@ -1,0 +1,23 @@
+<section class="legal container legal-desktop">
+    <h1 class="legal__heading">{{ page.title }}</h1>
+    <ul class="legal__list"></ul>
+</section>
+<section class="legal container legal-mobile">
+    <h1 class="legal__heading">{{ page.title }}</h1>
+    <ul class="legal__list"></ul>
+</section>
+
+<script>
+    window.pageContent = {{ page.content | json }};
+</script>
+
+{% schema %}
+    {
+        "name": "Legal",
+        "settings": [
+        ],
+        "presets": [{
+            "name": "Legal"
+        }]
+    }
+{% endschema %}

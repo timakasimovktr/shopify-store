@@ -1,0 +1,68 @@
+{%- liquid
+  layout none
+
+  assign color_code = product.metafields.product.colorCode
+  if color_code == blank
+    assign color_code = product.metafields.product.ColorCode
+  endif
+
+  assign color_name = product.metafields.product.color
+  if color_name == blank
+    assign color_name = product.metafields.product.Color
+  endif
+
+  assign product_handle = product.handle
+  assign color_variant_id = all_products[product_handle].variants.first.id
+  if color_variant_id == blank
+    assign color_variant_id = all_products[product_handle].variants.first.id
+  endif
+
+  assign color_related_handles = product.metafields.product.colorRelatedHandles | split: ','
+-%}
+
+{% if color_related_handles.size == 0 %}
+  []
+{% else %}
+  [
+    {
+      "colorCode": "{{ color_code }}",
+      "colorName": "{{ color_name }}",
+      "colorVariantId": "{{ color_variant_id }}",
+      "url": "{{ product.url }}"
+    },
+    
+    {%- for color_related_handle in color_related_handles -%}
+      {%- liquid
+        assign related_product = all_products[color_related_handle]
+        assign color_code = related_product.metafields.product.colorCode
+        if color_code == blank
+          assign color_code = related_product.metafields.product.ColorCode
+        endif
+
+        assign color_name = related_product.metafields.product.color
+        if color_name == blank
+          assign color_name = related_product.metafields.product.Color
+        endif
+
+        assign color_variant_id = related_product.variants.first.id
+        if color_variant_id == blank
+          assign color_variant_id = related_product.variants.first.id
+        endif
+      -%}
+
+    {
+      "colorCode": "{{ color_code }}",
+      "colorName": "{{ color_name }}",
+      "colorVariantId": "{{ color_variant_id }}",
+      "url": "{{ related_product.url }}"
+    }
+      {%- unless forloop.last -%},{%- endunless -%}
+      
+    {%- endfor -%}
+  ]
+{% endif %}
+
+
+{%- comment -%}
+fetch /products/jasper-blue-leather-sofa?view=ss-metafields-json
+{%- endcomment -%}

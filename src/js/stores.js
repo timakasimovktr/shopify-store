@@ -1,0 +1,57 @@
+'use strict';
+
+////////// Dependencies /////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+import * as gtm from './lib/google-tag-manager';
+
+////////// Constants & Variables ////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+/* --------------- Control & Logic --------------- */
+
+
+/* --------------- DOM --------------- */
+
+
+////////// Functions & Methods //////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+/* --------------- Logic & Process --------------- */
+
+/* --------------- Utils & Tools --------------- */
+////////// Events //////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+function onDocumentLoaded(){
+  /* --------------- Variable Cache --------------- */
+  
+  
+  /* --------------- Events Setup --------------- */
+  
+  document.querySelectorAll('.location').forEach(($location) => {
+    $location.addEventListener('click', () => {
+      gtm.pushDataLayer(
+        gtm.getLocationDataLayer($location.querySelector('.location__hdg').innerText.trim())
+      );
+
+      // For GTM to send the info
+      setTimeout(() => {
+        window.location.href = $location.dataset.link;
+      }, 500);
+    });
+  });
+
+  /* --------------- Initialization--------------- */
+  
+  /* --------------- Window Export --------------- */
+}
+
+if(document.readyState != 'loading'){
+  onDocumentLoaded();
+} else {
+  document.addEventListener('DOMContentLoaded', onDocumentLoaded);
+}
+
+////////// Classes //////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,104 @@
+{
+  "sections": {
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "8deaf720-0640-4041-852c-4c6acaf52147": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Can I pick up my merchandise?",
+            "faq_answer": "<p>Once you purchase your merchandise at one of our Kane's locations you may pick up your merchandise either at our warehouse or designated stores<\/p>"
+          }
+        },
+        "2eec914d-e95a-4709-aa96-8d95eb043314": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "If I choose to pick up my merchandise will it all be assembled?",
+            "faq_answer": "<p>Many of our customers choose to pickup their merchandise from many of our store locations or Distribution Center. Since some of our products are shipped unassembled from the factory, the customer will be responsible for final assembly. Warehouse personnel will assist in loading merchandise on your vehicle, however we are not responsible for damages that occur during transport or unloading.<\/p>"
+          }
+        },
+        "b196fae0-09f8-4c32-8496-47233d75846c": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Where is your warehouse?",
+            "faq_answer": "<p>Our warehouse is located at 5700 70th Ave N, Pinellas Park, FL 33781. The warehouse hours are Monday to Saturday from 10:00AM to 5:30PM<\/p>"
+          }
+        },
+        "ee91172b-6860-4164-8308-e2f4ca258265": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "What time do you close?",
+            "faq_answer": "<p>Our store hours are 10:00AM until 7:00PM Monday-Saturday and 11:00PM until 6:00PM on Sunday. We also have special events with extended hours. Watch for our Ads<\/p>"
+          }
+        },
+        "aa9c60c5-61a5-4c02-b724-43fd62ab0754": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "What are your pickup hours?",
+            "faq_answer": "<p>Our store pickup hours are Monday-Saturday from 10:00AM until 7:00PM and Sunday from 12:00PM until 6:00PM<\/p>"
+          }
+        },
+        "0cb4c78d-4038-4c85-b652-dac0882b10fe": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Can I pay my Kane’s Furniture Card online?",
+            "faq_answer": "<p>Yes you can! <a href=\"https:\/\/www.mysynchrony.com\/mysynchrony\/merchants\/cmp-index.html?market=homefurnishings&store=kanesfurniture\">Click here to pay online now.<\/a><\/p>"
+          }
+        },
+        "735504e0-5f79-467e-bd29-6422ff372492": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Do I receive any guarantees when I purchase Clearance and \"as-is\" Merchandise?",
+            "faq_answer": "<p>It is our policy that merchandise reduced for clearance or final sale will not be delivered and will not include any service or warranty (unless otherwise stated). Merchandise must be picked up within the time specified by the store. If not, merchandise will be made available for sale and your deposit will be held on account. All merchandise sold “As-Is”. All Sales Final. NO Refunds. NO Warranties. NO Exchanges. Method of Payment We offer several ways to pay for your purchase.<\/p>"
+          }
+        },
+        "fe0dfd44-8f89-4a05-bd6e-47eefea18dd8": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Is there a delivery charge?",
+            "faq_answer": "<p>Our delivery fees can be found <a href=\"https:\/\/www.kanesfurniture.com\/pages\/customer-service#deliveryOptions\" title=\"https:\/\/www.kanesfurniture.com\/pages\/customer-service#deliveryOptions\">here<\/a>.<\/p>"
+          }
+        },
+        "739b2003-36af-4ae9-a54a-08cde0994dc4": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "How do I get my refund?",
+            "faq_answer": "<p>If you charge your purchase, we will credit your charge account. All other refunds will be made by check and mailed from the company headquarters. Please allow a minimum of 10 banking days for refund processing. If you have any questions regarding the status of your refund you may call your nearest Kane's store.<\/p>"
+          }
+        },
+        "2631ca40-242d-49b0-b80e-5a4713af3aca": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "What is your Corporate number?",
+            "faq_answer": "<p>You may call your nearest Kane's Furniture store with any questions or concerns. If you need to contact our Corporate office the number is 727-545-9555<\/p>"
+          }
+        },
+        "29cbdf41-68e5-4e68-aff9-20781128fa8e": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "What methods of payment do you accept?",
+            "faq_answer": "<p>We offer several ways to pay for your purchase. We accept MasterCard, VISA, Discover, American Express, Kane's Furniture Card, personal check, cash, bank cashier's check, bank treasurer's check or money order. No starter or temporary checks will be accepted.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "8deaf720-0640-4041-852c-4c6acaf52147",
+        "2eec914d-e95a-4709-aa96-8d95eb043314",
+        "b196fae0-09f8-4c32-8496-47233d75846c",
+        "ee91172b-6860-4164-8308-e2f4ca258265",
+        "aa9c60c5-61a5-4c02-b724-43fd62ab0754",
+        "0cb4c78d-4038-4c85-b652-dac0882b10fe",
+        "735504e0-5f79-467e-bd29-6422ff372492",
+        "fe0dfd44-8f89-4a05-bd6e-47eefea18dd8",
+        "739b2003-36af-4ae9-a54a-08cde0994dc4",
+        "2631ca40-242d-49b0-b80e-5a4713af3aca",
+        "29cbdf41-68e5-4e68-aff9-20781128fa8e"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "faq"
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "sections": {
+    "customer-delivery": {
+      "type": "customer-delivery",
+      "blocks": {
+        "477183a4-73d0-46dc-8f59-118879eaab28": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "The fees for delivering within our area are as follows:",
+            "fee_line_note": "",
+            "fee_line_price": ""
+          }
+        },
+        "682bb3dc-729a-4a1a-b1b5-b0567acd6c6c": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "No-contact delivery",
+            "fee_line_note": "min. purchase of $499",
+            "fee_line_price": "$39.99"
+          }
+        },
+        "802f4126-df79-4c22-a9d4-962ec002903e": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "White glove delivery",
+            "fee_line_note": "bedding",
+            "fee_line_price": "$69.99"
+          }
+        },
+        "fd08bc81-d633-4f77-b373-cc5eab152955": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "White glove delivery",
+            "fee_line_note": "recliner (limit 1 only)",
+            "fee_line_price": "$69.99"
+          }
+        },
+        "dcdccdbf-c676-4c4d-b851-3c68cffc42cf": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "White glove delivery",
+            "fee_line_note": "all other items",
+            "fee_line_price": "$169.99"
+          }
+        },
+        "87e0f433-92ff-4522-86d6-e68dd759896f": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "Express Delivery",
+            "fee_line_note": "",
+            "fee_line_price": "$199.99"
+          }
+        },
+        "f41b3432-921e-485f-8f7e-1d747a923fbc": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "-----------------------------------------------",
+            "fee_line_note": "",
+            "fee_line_price": ""
+          }
+        },
+        "5255872e-541d-4f21-938e-a2e8fb283a05": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "Pickup at store",
+            "fee_line_note": "$0 - $99.99",
+            "fee_line_price": "Free"
+          }
+        },
+        "b73f7b72-37d7-40a5-a4b8-fd4d943384c1": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "Pickup at store",
+            "fee_line_note": "$100 - $499",
+            "fee_line_price": "$39.99"
+          }
+        },
+        "90704f8a-bae2-4f42-8b58-49004b478331": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "Pickup at store",
+            "fee_line_note": "$500 and above",
+            "fee_line_price": "$69.99"
+          }
+        },
+        "73da4a34-6bac-46c9-a9e8-d3f04f73c438": {
+          "type": "fee_line_item",
+          "settings": {
+            "fee_line_heading": "Pickup at store",
+            "fee_line_note": "bedding or recliner",
+            "fee_line_price": "$39.99"
+          }
+        }
+      },
+      "block_order": [
+        "477183a4-73d0-46dc-8f59-118879eaab28",
+        "682bb3dc-729a-4a1a-b1b5-b0567acd6c6c",
+        "802f4126-df79-4c22-a9d4-962ec002903e",
+        "fd08bc81-d633-4f77-b373-cc5eab152955",
+        "dcdccdbf-c676-4c4d-b851-3c68cffc42cf",
+        "87e0f433-92ff-4522-86d6-e68dd759896f",
+        "f41b3432-921e-485f-8f7e-1d747a923fbc",
+        "5255872e-541d-4f21-938e-a2e8fb283a05",
+        "b73f7b72-37d7-40a5-a4b8-fd4d943384c1",
+        "90704f8a-bae2-4f42-8b58-49004b478331",
+        "73da4a34-6bac-46c9-a9e8-d3f04f73c438"
+      ],
+      "settings": {
+        "heading": "delivery options",
+        "copy": "<h2>COVID-19 – No Contact Delivery<\/h2>\nKane’s is now offering No-Contact Delivery option.  For our compromised customers and our customers wishing to avoid contact during this time, we are offering a delivery option that will put your product in the original boxes and packaging, at your front door, garage or patio.  To schedule No-Contact delivery, you can work with our delivery department when they follow up with scheduling your delivery.\n \n<br>\n<h2>Our Delivery Process<\/h2>\nYour salesperson will work with you on scheduling your delivery, based on the delivery schedule for your area. Orders typically deliver within 3-10 days from purchase. Changes in inventory or delivery capacity, as well as unforeseen circumstances beyond our control, such as a strike, natural disaster, or inclement weather, may delay delivery of your order.  Please note that we require a minimum of a 72-hour notice for any changes to your sales order before delivery. A few days before your scheduled delivery, a store representative will be calling you to confirm the delivery address and the merchandise that you have purchased.  The evening before or the morning of your delivery, our delivery team will call you with a four-hour delivery window. <br><br>\nWhen our delivery team arrives, you can expect a very professional experience.  We ask that you please have the area cleared where your new furniture is to be placed so that our delivery team can position your furniture to your liking.  We always remove packing materials, so you can enjoy your new furniture immediately! <br><br>\nWe are all about safety and want to make sure that not only our delivery team has a safe working environment, but your new furniture is positioned safely in your home (without any damage).  Please discuss any difficult delivery possibilities with your salesperson at the time of scheduling, so that we can ensure a great delivery.  Deliveries can be made to the third floor (or two flights of stairs) permitting staircase wide enough for furniture. For deliveries above the third floor (or two flights of stairs) elevator access will be required to complete delivery.",
+        "delivery_header": "delivery fees",
+        "fee_heading": "delivery fees",
+        "fee_copy": "The fees for delivery within our area are as follows:",
+        "fee_exception": ""
+      }
+    },
+    "16636025011230be39": {
+      "type": "customer-tab-accordion",
+      "blocks": {
+        "74f1a99b-5bfd-4dab-acd3-02436ceb5d9f": {
+          "type": "parent_header",
+          "settings": {
+            "parent_header": "masterguard+"
+          }
+        },
+        "7f72dcf5-4b13-42dd-b464-dc9e01359293": {
+          "type": "list_item",
+          "settings": {
+            "header": "what is masterguard+",
+            "copy": "Masterguard+ offers the finest fabric protection available. With people always on the go these days, the last thing you need to worry about is the appearance of your upholstered furniture. With our specialty formulated fabric protection, you won’t have to worry.\n<br><br>\nThis amazing protection prevents most accidental stains from soaking into the fabric, \nguaranteeing ease of cleaning, prevention of staining, and peace of mind.\n<br><br>\nThis special formula contains polymers that will surround each fiber of your fabric to prevent stains from setting into the fabric.\n<br><br>\nThese polymers allow for liquid beading to occur on tighter woven fabrics. This protection will prevent staining from oil and water-based stains, human excretions such as blood, urine, vomit and so much more.\n<br><br>\n• Provides full warranty on anything you can eat or drink<br>\n• Can be used on most fabrics<br>\n• Water based formula, no silicone, non-toxic<br>\n• Contains ultra violet inhibitors to help reduce fabric fading due to UV exposure from sunlight<br>\n• Unique formula penetrates deep into fibers to protect fabric from the inside out<br>\n• Provides a barrier against the abrasion of dirt and dust particles, increasing the fabric durability\n<br><br>\nMasterguard+ UV3® Quality Products was founded in 1989 in Southern California.  We have a wide range of retail coverage, including clientele ranging from North America to as far as South Africa. Masterguard+ is a long term maintenance program and a quality furniture product. Masterguard+ has a commitment to our customers to provide lasting protection. Please contact the Masterguard+ customer service department at 800-922-4273 with any questions or concerns."
+          }
+        },
+        "bdb6ff70-6f4e-409e-858a-613b38c4c84e": {
+          "type": "list_item",
+          "settings": {
+            "header": "cleaning tips & service",
+            "copy": "What Do I Do When Staining Occurs?<br><br>\nImmediately blot liquid stains gently with a clean, dry cloth to avoid stains from soaking into the furniture. If a dry stain occurs, gently agitate stain with a clean, dry cloth, and vacuum away any loose remains. If the stain is still apparent, you should call the Masterguard+ customer service department within 5 days of each stain occurring at 800-922-4273 for further assistance. (Refer to warranty for full coverage)."
+          }
+        },
+        "55738dd8-e6c4-4f76-903e-620f8fdfe5bd": {
+          "type": "list_item",
+          "settings": {
+            "header": "cleaning codes",
+            "copy": "<strong>W<\/strong> – Use water-based cleaner.  Spot clean this fabric with the foam of a water-based cleaning agent such as a mild detergent or commercial upholstery shampoo.  Use sparingly.  Avoid saturation.\n<br><br>\n \n<strong>S<\/strong> – Use solvent cleaner.   Spot clean this fabric with a mild water-free dry cleaning solvent available in local stores.  Use sparingly in a well ventilated room.  Caution: Water-based solvent cleaners may cause spotting and\/or shrinkage.  Solvent cleaning agents will not remove water stains.<br><br>\n\n \n<strong>SW<\/strong> – Use water-based or solvent cleaners.  Spot clean this fabric with dry-cleaning solvent, mild detergent or upholstery shampoo. <br><br>\n \n<strong>X<\/strong> – Vacuum only.  Clean this fabric with light brushing or vacuuming to prevent accumulation of dust and grime.  Water-based foam or solvent cleaners may cause excessive shrinking, spotting, or fading.<br><br>\n\nMasterguard+ repels stains and spills, and provides PROTECTION from sunlight.  Its special formula provided ASSURANCE that life’s surprises wont put a damper on your lifestyle."
+          }
+        },
+        "c76c6bd2-d86e-432a-8f41-fea9c5b57f35": {
+          "type": "list_item",
+          "settings": {
+            "header": "UV3® wood and leather protection",
+            "copy": "UV3® Wood Protection Program will protect your solid wood or wood veneer furniture with four types of protection:<br><br>\n\n• An agent to repel water and heat; protection from “rings” which can become permanent.<br>\n• A hard protective base for replacement of the woods natural oils; prevention from drying, cracking, splitting and surface scratches.<br>\n• A special furniture polish with no silicone; to prevent the wood from attracting dust.<br>\n• Our exclusive sunscreen formula, to resist fading.<br><br>\n\nReplenish &amp; Condition<br><br>\n \nUV3® formulas are combined specifically to actually replenish your wood furniture’s moisture content. Moisture loss from heat, air conditioning and sunlight are primary causes of deterioration.  UV3® keeps fine wood looking like new, longer.<br><br>\n\n \nYour UV3® Furniture Protection Package Includes:<br><br>\n• One 16oz bottle of our exclusive formula<br>\n• Two reusable application cloths<br>\n• Washable “Miracle Mitt” buffer<br>\n• UV3® Liquid protection formula now contains Teflon* for added protection<br>\n• 3 Year Limited Warranty**<br>\n• *Teflon is a registered trademark of E.I. du Pont de Nemours and company.<br><br>\n\n**Check warranty card for complete details.<br><br>\n\n   \nUV3® Leather Protection Program<br><br>\n \nLeather furniture needs to “breathe.” Like your skin, leather is also vulnerable to all the elements and needs proper maintenance. UV3’s Leather Protection program also provides you with a maintenance kit for the proper cleaning and conditioning of your leather furniture.<br><br>\n\n \nUV3® Leather Cleaner<br><br>\n \nLeather is one of the most durable covers you can buy, but it requires cleaning.  It collects airborne dust, grease, smoke and every day household stains. UV3® surface cleaner will safely remove all of these stains from the leather surface.<br><br>\n\n   \nUV3® Leather Conditioner<br><br>\n \nUV3® leather conditioner helps maintain the suppleness of leather and contains pure protein.  Unlike other conditioners that contain oils, UV3® conditioner will not attract dust.  It also has protective polymers to repel household stains.  UV3® conditioner is the best money can buy.  Five Year Warranty Included.<br><br>\n\n   \nUV3® Ink &amp; Lipstick Remover<br><br>\n \nLeather stain remover is designed to remove ballpoint pen, lipstick, crayon, grime, scuff marks, dirt and some types of permanent markers from semi-aniline dyed leather furniture. (Not recommended for naked leather).<br><br>\n\n   \nUV3® Rip &amp; Tear Protection<br><br>\n \nIn the event that an accidental tear, rip, burn or puncture occurs, UV3® will send a professional technician to repair the damage.  In the event it cannot be repaired, UV3® will replace the item with one identical or equal to in value.**<br><br>\n\n   \nYour UV3® Leather Maintenance Kit Includes:<br><br>\n• One 16oz bottle of cleaner<br>\n• One 16oz. bottle of conditioner<br>\n• One Ink &amp; Lipstick Remover<br>\n• Two reusable application cloths<br>\n• 5 Year Limited Warranty***<br><br>\n \n**Check warranty card for complete details.<br><br>\n\n***Renewable.  For more details on coverage, please check your warranty card.<br><br>"
+          }
+        }
+      },
+      "block_order": [
+        "74f1a99b-5bfd-4dab-acd3-02436ceb5d9f",
+        "7f72dcf5-4b13-42dd-b464-dc9e01359293",
+        "bdb6ff70-6f4e-409e-858a-613b38c4c84e",
+        "55738dd8-e6c4-4f76-903e-620f8fdfe5bd",
+        "c76c6bd2-d86e-432a-8f41-fea9c5b57f35"
+      ],
+      "settings": {
+        "heading": "clean and clear"
+      }
+    }
+  },
+  "order": [
+    "customer-delivery",
+    "16636025011230be39"
+  ]
+}

@@ -1,0 +1,60 @@
+<script>
+  window.shopUrl = '{{ request.origin }}';
+  window.routes = {
+    cart_add_url: '{{ routes.cart_add_url }}',
+    cart_change_url: '{{ routes.cart_change_url }}',
+    cart_update_url: '{{ routes.cart_update_url }}',
+    cart_url: '{{ routes.cart_url }}',
+    predictive_search_url: '{{ routes.predictive_search_url }}'
+  };
+
+  window.cartStrings = {
+    error: `{{ 'sections.cart.cart_error' | t }}`,
+    quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`
+  }
+
+  window.variantStrings = {
+    addToCart: `{{ 'products.product.add_to_cart' | t }}`,
+    soldOut: `{{ 'products.product.sold_out' | t }}`,
+    unavailable: `{{ 'products.product.unavailable' | t }}`,
+  }
+
+  window.accessibilityStrings = {
+    imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
+    shareSuccess: `{{ 'general.share.success_message' | t }}`,
+    pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
+    playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
+  }
+</script>
+
+{%- if settings.predictive_search_enabled -%}
+  <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% if template == 'collection' %}
+  {% render 'search-spring-script' %}
+{% endif %}
+
+{% comment %} ZMags {% endcomment %}
+{% comment %} <script defer="" type="text/javascript" src="//c.zmags.com/static/manifest.js"></script><script defer="" type="text/javascript" src="//c.zmags.com/static/vendor.js"></script><script defer="" type="text/javascript" src="//c.zmags.com/static/client.js"></script> {% endcomment %}
+
+{% comment %} Yotpo Reviews {% endcomment %}
+{% if template contains 'product' or template contains 'reviews' or template contains 'index' or template.name == 'page' %}
+  <script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/qDQoZLHZLDuZr91D09hmNdXhVGG6Fy5ycV35BZsr/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
+{% endif %}
+
+{%- comment -%} Shoptelligence {%- endcomment -%}
+<script type="module" src="https://apps.shoptelligence.com/service/latest/shoptelligence-cui-widget-scripts.js"></script>
+
+<!-- Listrak Analytics - Javascript Framework -->
+<script type="text/javascript">
+  {% if customer %}
+    var ltkCustObj = { "firstname": "{{customer.first_name}}", "lastname": "{{customer.last_name}}", "email": "{{customer.email}}"};
+  {% endif %}
+
+  (function (d, tid, vid) {
+  if (typeof _ltk != 'undefined') return; var js = d.createElement('script'); js.id = 'ltkSDK';
+  js.src = "https://cdn.listrakbi.com/scripts/script.js?m=" + tid + "&v=" + vid;
+  d.querySelector('head').appendChild(js);
+  })(document, '6VTPoZjwBghX', '1');
+</script>

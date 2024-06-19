@@ -1,0 +1,16 @@
+.promo-banner {
+  text-align: center;
+
+  a, span, p {
+    @include unstyled-link;
+    font-size: 1.2rem;
+  }
+
+  .promo-banner__news-banner {
+    padding-top: 2.25rem;
+  }
+  
+  .promo-banner__disclosure {
+    padding-top: 3rem;
+  }
+}

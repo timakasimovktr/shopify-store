@@ -1,0 +1,143 @@
+.media-backdrop {
+
+  &__img-content {
+    img {
+      display: block;
+      margin: 0 auto;
+      object-fit: cover;
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      aspect-ratio: 16/9;
+
+      @media screen and (max-width: 500px) {
+        aspect-ratio: 9/16;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__wrapper[data-layout=full] &__img-content {
+    max-width: 100%;
+  }
+  &__wrapper[data-layout=contained] {
+    max-width: 80%;
+    margin: 5rem auto;
+
+    @media screen and (max-width: 500px) {
+      max-width: calc(100% - 4rem);
+      margin: 2rem auto;
+    }
+  }
+  
+  &__background-content {
+    position: relative;
+    video {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( rgba(0,0,0,0), 60%, rgba(0,0,0, var(--overlay-opacity)) );
+  }
+
+  &__main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    max-width: 80%;
+    margin: 0 auto;
+    gap: 1.5rem;
+
+    @media screen and (max-width: 500px) {
+      max-width: 100%;
+    }
+
+    & > * {
+      margin: 0;
+      color: inherit
+    }
+
+    p, h2 {
+      color: var(--text-color, #fff)!important
+    }
+
+    a {
+      color: inherit
+    }
+
+    &--wrapper {
+      position: absolute;
+      display: flex;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 3rem;
+    }
+  }
+
+  &__ctas-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    &:empty {
+      display: none;
+    }
+  }
+
+  &__wrapper[data-alignment=left] &__main-content {
+    align-items: start;
+    margin-left: 0;
+    & > * {
+      text-align: left;
+    }
+  }
+  &__wrapper[data-alignment=left] &__ctas-wrapper {
+    justify-content: flex-start;
+  }
+
+  &__wrapper[data-alignment=center] &__main-content {
+    align-items: center;
+    margin: 0 auto;
+    & > * {
+      text-align: center;
+    }
+  }
+  &__wrapper[data-alignment=center] &__ctas-wrapper {
+    justify-content: center;
+  }
+
+  &__wrapper[data-alignment=right] &__main-content {
+    align-items: end;
+    margin-right: 0;
+    & > * {
+      text-align: right;
+    }
+  }
+  &__wrapper[data-alignment=right] &__ctas-wrapper {
+    justify-content: flex-end;
+  }
+
+  &__wrapper[data-position=top] &__main-content--wrapper {
+    align-items: flex-start;
+  }
+  &__wrapper[data-position=center] &__main-content--wrapper {
+    align-items: center;
+  }
+  &__wrapper[data-position=bottom] &__main-content--wrapper {
+    align-items: flex-end;
+  }
+}

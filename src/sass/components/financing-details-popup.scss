@@ -1,0 +1,72 @@
+#financing-details-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, .3);
+  opacity: 0;
+  transition: opacity .3s ease;
+
+  .financing-popup__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 2rem 3rem 2rem 2rem;
+    background-color: #fff;
+
+    @media only screen and (min-width: $responsive-medium) {
+      width: auto;
+      height: auto;
+      max-width: 700px;
+      max-height: 800px;
+    }
+
+    .kf-icon__close {
+      position: absolute;
+      right: .5rem;
+      top: .5rem;
+      width: 17px;
+      height: 17px;
+    }
+
+    table {
+      margin: 0 0 2rem 0;
+      width: 100%;
+
+      th {
+        background-color: rgb(var(--primary-color));
+        color: white;
+        font-weight: initial;
+        padding: 1rem;
+        text-align: start;
+        font-size: 1.2rem;
+
+        @media only screen and (min-width: $responsive-large) {
+          font-size: 1.6rem;
+        }
+      }
+
+      tr td {
+        color: rgb(var(--text-primary-color));
+        font-weight: 600;
+        font-size: 1.8rem;
+        padding: 1rem;
+      }
+
+      table, td, th {
+        border: 1px solid #5c666f;
+      }
+    }
+
+    .financing-popup__message * {
+      line-height: 2rem;
+      color: $color-dark-gray;
+    }
+  }
+}

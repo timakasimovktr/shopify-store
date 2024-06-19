@@ -1,0 +1,14 @@
+{%- liquid
+  if product_image.alt == product.title or  product_image.alt == ""
+    if product.metafields.product.Color
+      assign product_image_color = product.metafields.product.Color | append: '-'
+    endif
+    if product.metafields.product.Style
+      assign product_image_style = product.metafields.product.Style
+    endif
+    assign alt_tag = product_image_color | append: product.title | append: '-' | append: product_image_style
+    assign alt_tag = alt_tag | handleize
+  else
+    assign alt_tag = product_image.alt
+  endif
+-%}

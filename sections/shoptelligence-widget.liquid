@@ -1,0 +1,46 @@
+<div>
+  <shoptelligence-cui-widget
+    host="https://apps.shoptelligence.com/ui/latest"
+    apiKey="VmFH0fh4WkR5fGgbR5Yh1chGIhma2Juz"
+    anchorId="{{ product.id }}"
+    fontFamily="SourceSansPro"
+    displayLayout="left-right"
+    addToCartIcon="cart"
+    addToCart
+    ctaPositionY="120"
+    ctaButtonColor="{{ settings.primary_color }}"
+    socialSharing
+    showMore
+    removeItem
+    ctaButtonShow
+    hideEnsembleThumbnailsMobile
+    specialOffers
+    specialOffersAction="zipcode"
+    actionsMenuBackgroundColor="{{ settings.primary_color }}"
+    showMoreColor="{{ settings.primary_color }}"
+    occasionTabColor="#000000"
+    actionsMenuHoverBackgroundColor="{{ settings.primary_color }}"
+    actionsMenuItemBackgroundColor="{{ settings.primary_color }}"
+    actionsMenuItemHoverBackgroundColor="{{ settings.primary_color }}"
+  />
+</div>
+
+{% schema %}
+{
+  "name": "Shoptelligence Widget",
+  "class": "shoptelligence-cui-widget-container",
+  "settings" : [
+    {
+      "id": "enable",
+      "type": "checkbox",
+      "label": "Enable Widget?",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shoptelligence Widget"
+    }
+  ]
+}
+{% endschema %}

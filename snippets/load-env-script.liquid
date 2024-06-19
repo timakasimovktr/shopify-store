@@ -1,0 +1,15 @@
+{%- comment -%}
+Accepts:
+- script_name
+
+Usage:
+{% render 'load-env-script' with script_name: 'index' %}
+{%- endcomment -%}
+
+{% assign file_extension = '.js' %}
+{% if settings.shop_environment == 'production' %}
+  {% assign file_extension = '.min.js' %}
+{% endif %}
+
+{% assign full_name = script_name | append: file_extension %}
+<script src="{{ full_name | asset_url }}"></script>

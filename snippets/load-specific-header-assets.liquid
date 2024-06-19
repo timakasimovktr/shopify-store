@@ -1,0 +1,35 @@
+{%- liquid
+  case template
+    when 'product'
+      render 'load-env-style' with style_name: 'pdp'
+    when 'collection'
+      render 'load-env-style' with style_name: 'collection'
+    when 'stores'
+      render 'load-env-style' with style_name: 'stores'
+    when 'faq'
+      render 'load-env-style' with style_name: 'faq'
+    when 'page.about'
+      render 'load-env-style' with style_name: 'about'
+    when 'page.careers'
+      render 'load-env-style' with style_name: 'careers'
+    when 'customers/account'
+      render 'load-env-style' with style_name: 'account'
+    when 'cart'
+      render 'load-env-style' with style_name: 'cart'
+    when 'customers/login'
+      render 'load-env-style' with style_name: 'login'
+    when 'search'
+      render 'load-env-style' with style_name: 'search'
+    when 'page.reviews'
+      render 'load-env-style' with style_name: 'customer-reviews'
+    when 'page.wishlist-king'
+      render 'load-env-style' with style_name: 'wishlist-king'
+    else
+      render 'load-env-style' with style_name: 'index'
+  endcase
+-%}
+
+{%- comment -%} Non-template pages {%- endcomment -%}
+{% if canonical_url contains "apps/mywishlist" %}
+  {% render 'load-env-style' with style_name: 'wishlist' %}
+{% endif %}

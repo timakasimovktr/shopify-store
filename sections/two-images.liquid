@@ -1,0 +1,40 @@
+<section class="two-images">
+  <div class="two-images__image">
+    <img
+      src="{{section.settings.img_1 | img_url: 'master'}}"
+      alt="{{section.settings.img_1.alt}}"
+      style="object-position: {{ section.settings.img_1.presentation.focal_point }};"
+    />
+  </div>
+  <div class="two-images__image">
+    <img
+      src="{{section.settings.img_2 | img_url: 'master'}}"
+      alt="{{section.settings.img_2.alt}}"
+      style="object-position: {{ section.settings.img_2.presentation.focal_point }};"
+    />
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Two Images",
+    "settings": [
+      {
+        "id": "img_1",
+        "type": "image_picker",
+        "label": "Choose an Image 1"
+      },
+      {
+        "id": "img_2",
+        "type": "image_picker",
+        "label": "Choose an Image 2"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Two Images"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,14 @@
+@import "./../index";
+
+@import "../sections/about-history";
+@import "../sections/cart-drawer";
+@import "../sections/about-confidence";
+@import "../sections/about-timeline";
+@import "../sections/about-kanes-care";
+@import "../sections/about-join";
+@import "../sections/about-giving-back";
+
+*, body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}

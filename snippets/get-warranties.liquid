@@ -1,0 +1,71 @@
+{%- comment -%}
+Accepts:
+- current_product
+
+Usage:
+{% render 'get-warranties' with current_product: product %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product_handles = '' 
+  for packaged_item_json in current_product.metafields.product.package_skus_json
+    assign packaged_product = all_products[packaged_item_json[1].product]
+    if packaged_product.handle != blank
+      assign product_handles = product_handles | append: packaged_product.handle
+      unless forloop.last
+        assign product_handles = product_handles | append: '~'
+      endunless
+    endif
+  endfor
+
+  if product_handles == blank
+    assign product_handles = current_product.handle
+  endif
+
+  assign product_handles = product_handles | split: '~'
+-%}
+
+<script>
+  window.LC = window.LC || {};
+  window.LC.relatedWarranties = window.LC.relatedWarranties || [];
+
+  `{% for current_product_handle in product_handles %}`;
+    `{% if current_product_handle == current_product.handle %}`;
+      `{% assign current_loop_product = current_product %}`;
+    `{% else %}`;
+      `{% assign current_loop_product = all_products[current_product_handle] %}`;
+    `{% endif %}`;
+
+    warrantiesMetafield = `{{ current_loop_product.metafields.product.coverages}}`;
+
+    if(warrantiesMetafield){
+      warranties = JSON.parse(warrantiesMetafield);
+      warranties = warranties.map(w => {
+        return {
+          ...w,
+          coveredProductSku: `{{ current_loop_product.variants[0].sku }}`
+        };
+      });
+      
+      warranties.forEach(w => {
+        window.LC.relatedWarranties.push(w);
+      });
+    }
+  `{% endfor %}`;
+</script>
+<script type="application/json" data-related-warranties>
+  {%- liquid 
+    for current_product_handle in product_handles
+      if current_product_handle == current_product.handle
+        assign current_loop_product = current_product
+      else
+        assign current_loop_product = all_products[current_product_handle]
+      endif
+      if current_loop_product.metafields.product.coverages 
+        assign product_coverages = product_coverages | append: current_loop_product.metafields.product.coverages | append: ',' 
+      endif
+    endfor
+  -%}
+
+  {{product_coverages}}
+</script>

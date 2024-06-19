@@ -1,0 +1,44 @@
+.accordion {
+  summary {
+    position: relative;
+
+    .kf-icon__caret {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: transform .3s ease;
+    }
+  }
+
+  details[open] {
+    .kf-icon__caret {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.accordion {
+  .accordion__header {
+      display: block;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &-title {
+        display: block;
+      }
+
+      &-icon {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+  }
+
+  .accordion__content {
+    overflow: hidden;
+  }
+}

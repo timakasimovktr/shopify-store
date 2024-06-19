@@ -1,0 +1,113 @@
+<script>
+  window.LC = window.LC || {};
+  window.LC.packages = [];
+</script>
+
+{% assign related_handles_split = product.metafields.product.colorRelatedHandles.value | split: ',' %}
+{% assign related_products_count = related_handles_split.size | plus: 1 %}
+
+{% for related_product_index in (-1..related_products_count) %}
+  {%- liquid 
+      if forloop.first
+        assign related_product = product
+      else
+        assign related_product = all_products[related_handles_split[related_product_index]]
+        if related_handles_split[related_product_index] == blank
+          break
+        endif
+      endif
+
+      if related_product.metafields.product.package_skus_json == blank 
+        break
+      endif
+  -%}
+
+  <script>packagedProducts = [];</script>
+  
+  {%- liquid
+    assign separated_price_subtotal = 0
+    assign package_save = 0
+    assign package_price = related_product.price
+  -%}
+
+  {% for packaged_prod_index in (0..15) %}
+    {%- liquid 
+      assign string_index = packaged_prod_index | append: ''
+      assign package_skus_json = related_product.metafields.product.package_skus_json
+      assign package_sku = package_skus_json[string_index]
+    -%}
+    
+    {% if package_sku %}
+      {% assign packaged_product = all_products[package_sku.product] %}
+      {% assign money_packaged_product_price = packaged_product.price | money %}
+
+      {%- if packaged_product.title != blank -%}
+
+        {%- liquid 
+          assign width = packaged_product.metafields.product.assembledWidth
+          assign depth = packaged_product.metafields.product.assembledDepth
+          assign height = packaged_product.metafields.product.assembledHeight
+
+          if width and depth
+            assign product_dimensions = width | append: '" W x ' | append: depth | append: '" D'
+            
+            if height != blank
+              assign product_dimensions = product_dimensions | append: " x " | append: height | append: '" H'
+            endif
+          endif
+        -%}
+        
+        <script>
+          packagedProducts.push({
+            sku: `{{ packaged_product.variants[0].sku }}`,
+            title: `{{ packaged_product.title }}`,
+            link: `{{ packaged_product.url }}`,
+            dimensions: `{{ product_dimensions }}`,
+            qty: parseInt(`{{ package_sku.qty }}`),
+            tags: [
+              {%- for tag in packaged_product.tags -%}
+                `{{ tag }}`{%- unless forloop.last -%},{%- endunless -%}
+              {%- endfor -%}
+            ]
+          });
+
+          {% if packaged_product.price > 0 %}
+            packagedProducts[packagedProducts.length-1].price = `{{ money_packaged_product_price | replace: '.00', '' | replace: '.0', '' }}`;
+          {% else %}
+            packagedProducts[packagedProducts.length-1].price = `Inc.`;
+          {% endif %}
+        </script>
+      {%- endif -%}
+
+      {% assign separated_price_subtotal = packaged_product.price | times: package_sku.qty | plus: separated_price_subtotal%}
+      
+    {% endif %}
+
+  {% endfor %}
+
+  {% assign package_save = separated_price_subtotal | minus: product.price %}
+  
+  <script>
+    var package = {
+      variantId: {{ related_product.variants[0].id }},
+      packagedProducts: packagedProducts,
+      soldSeparately: parseFloat(`{{ separated_price_subtotal }}`)/100,
+      showSaveAmount: `{%- if package_save > 99 -%}true{% else %}false{% endif %}` == 'true',
+      saveAmount: parseFloat(`{{ package_save }}`)/100,
+      total: parseFloat(`{{ package_price }}`)/100
+    };
+    window.LC.packages.push(package);
+  </script>
+{% endfor %}
+
+<table class="package-details hidden">
+  <thead>
+    <tr>
+      <th>Package Item</th>
+      <th>Qty</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+  <tfoot></tfoot>
+</table>

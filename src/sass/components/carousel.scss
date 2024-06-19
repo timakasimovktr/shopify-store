@@ -1,0 +1,28 @@
+.glide {
+  .glide__btn {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+  
+    &.glide__prev {
+      left: 1%;
+      transform: translateY(-50%);
+  
+      @media screen and (min-width: $responsive-medium){
+        left: 5%;
+      }
+    }
+  
+    &.glide__next {
+      right: 1% ;
+      transform: translateY(-50%) rotate(180deg);
+      
+      @media screen and (min-width: $responsive-medium){
+        right: 5%;
+      }
+    }
+  }
+}

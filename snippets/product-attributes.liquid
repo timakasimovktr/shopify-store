@@ -1,0 +1,68 @@
+{%- comment -%}
+Accepts:
+- target_product
+
+Usage:
+{% render 'product-attributes' with target_product: product %}
+{%- endcomment -%}
+
+<ul class="p-0">
+  {%- if target_product.variants[0].sku != blank -%}
+    <li class="product-attributes__item sku-field">
+      <span class="key">SKU:</span>
+      <span class="value">{{ target_product.variants[0].sku }}</span>
+    </li>
+  {%- endif -%}
+
+  {%- if target_product.type != blank -%}
+    <li class="product-attributes__item type-field">
+      <span class="key">Type:</span>
+      <span class="value">{{ target_product.type | capitalize }}</span>
+    </li>
+  {%- endif -%}
+
+  {%- if target_product.metafields.product.Color != blank -%}
+    <li class="product-attributes__item color-field">
+      <span class="key">Color:</span>
+      <span class="value">{{ target_product.metafields.product.Color | capitalize }}</span>
+    </li>
+  {%- endif -%}
+
+  {%- if target_product.metafields.product.webfinish != blank -%}
+    <li class="product-attributes__item finish-field">
+      <span class="key">Finish:</span>
+      <span class="value">{{ target_product.metafields.product.webfinish | capitalize }}</span>
+    </li>
+  {%- endif -%}
+
+  {%- if target_product.metafields.product.covering != blank -%}
+    <li class="product-attributes__item covering-field">
+      <span class="key">Covering:</span>
+      <span class="value">{{ target_product.metafields.product.covering | capitalize }}</span>
+    </li>
+  {%- endif -%}
+
+  {%- if target_product.metafields.product.Material != blank -%}
+    <li class="product-attributes__item material-field">
+      <span class="key">Material:</span>
+      <span class="value">{{ target_product.metafields.product.Material | capitalize }}</span>
+    </li>
+  {%- endif -%}
+
+  {%- if target_product.metafields.product.Style != blank -%}
+    <li class="product-attributes__item style-field">
+      <span class="key">Style:</span>
+      <span class="value">{{ target_product.metafields.product.Style | capitalize }}</span>
+    </li>
+  {%- endif -%}
+
+  {%- if target_product.metafields.product.assembledDepth != blank -%}
+    {%- capture UOM -%}{%- if target_product.metafields.product.assembledUom == "Inches" -%}"{%- else -%}'{%- endif -%}{%- endcapture -%}
+      <li class="product-attributes__item dimensions-field">
+      <span class="key">Dimensions:</span>
+      <span class="value">
+        {{ target_product.metafields.product.assembledWidth }}{{ UOM }} W x {{ target_product.metafields.product.assembledDepth }}{{ UOM }} D{%- if target_product.metafields.product.assembledHeight != blank -%} x {{ target_product.metafields.product.assembledHeight }}{{ UOM }} H{% endif %}
+      </span>
+    </li>
+  {%- endif -%}
+</ul>

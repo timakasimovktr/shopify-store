@@ -1,0 +1,75 @@
+{%- comment -%}
+Accepts:
+- classes
+- url
+- breakpoints_and_widths ('400:600,800:1200,1200:1800') - This will result in [600x: 400w][1200x: 800w][1800x: 1200w]
+- default_size
+- alt
+- lazyload: true
+- focal_point
+
+Usage:
+{% render 'responsive-image'
+  with classes: '',
+  url: b.image | image_url,
+  breakpoints_and_widths: '400:600,1000:1500,1400:2100'
+  alt: b.title | escape
+  lazyload: true
+  focal_point: '25% 75%'
+%}
+{%- endcomment -%}
+
+{%- liquid
+  assign configs = breakpoints_and_widths | split: ','
+  assign srcset = ''
+  assign src = ''
+  assign sizes = ''
+-%}
+
+{% for config in configs %}
+  {% assign config_array = config | split: ':' %}
+
+  {% capture srcset %}{{srcset}} {{ url | image_url: width: config_array[1] }} {{ config_array[0] }}w{% endcapture %}
+
+  {%- capture sizes -%}{{sizes}}(min-width: {{config_array[0]}}px) {{config_array[1]}}px{%- endcapture -%}
+
+  {% if forloop.first %}
+    {% capture src %}{{ url | image_url: width: config_array[1] }}{% endcapture %}
+  {% endif %}
+  
+  {%- liquid
+    if forloop.last
+      assign sizes = sizes | append: ', ' | append: default_size
+    else
+      assign srcset = srcset | append: ', '
+      assign sizes = sizes | append: ', '
+    endif
+  -%}
+{% endfor %}
+
+{%- liquid 
+  assign focal_point_style = 'style="object-position: center"'
+  if focal_point
+    assign focal_point_style = 'style="object-position: ' | append: focal_point | append: '"'
+  endif
+-%}
+
+{% if lazyload %}
+  <img class="{{ classes }}" 
+    loading="lazy"
+    src="{{ 'blank.png' | asset_url }}"
+    data-src="{{ src }}"
+    data-srcset="{{ srcset }}"
+    data-sizes="{{ sizes }}"
+    alt="{{ alt }}"
+    {% if focal_point_style %}{{focal_point_style}}{% endif %}
+  />
+{% else %}
+  <img class="{{ classes }} lazyload"
+    src="{{ src }}"
+    srcset="{{ srcset }}"
+    sizes="{{ sizes }}"
+    alt="{{ alt }}"
+    {% if focal_point_style %}{{focal_point_style}}{% endif %}
+  />
+{% endif %}

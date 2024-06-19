@@ -1,0 +1,246 @@
+.legal{
+    margin: 0 auto;
+	ul {
+		padding: 0;
+		list-style: none;
+		li {
+			padding-bottom: 6px;
+			&:last-child {
+				padding-bottom: 50px;
+			}
+
+			h2.is-active {
+				background-color: #fff;
+				transition: 0.5s;
+				&::before {
+					opacity: 0;
+				}
+			}
+
+			p.is-open {
+				display: block !important;  
+				margin-top: -20px;
+				transition: 0.5s;
+				padding-top: 10px !important;
+				padding-bottom: 44px !important;
+			}
+		}
+	}
+}
+
+.legal-mobile{
+	h2 {
+		margin: 0;
+		-webkit-appearance: none;
+		background-color: #f8f8f8;
+		border: none;
+		display: block !important;
+		font-family: var(--font-heading-family);
+		font-size: 18px;
+		padding: 19px 44px 22px 44px;
+		position: relative;
+		text-align: left;
+		width: 100%;
+		transition: 0.5s;
+		&:focus {
+			outline: none;
+		}
+
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}
+
+.legal__heading {
+	font-size: 32px;
+	margin: 40px auto 40px;
+	max-width: 50%;
+	text-transform: uppercase;
+	position: relative;
+	text-align: center;
+    font-family: var(--font-heading-family);
+	color: rgb(var(--text-primary-color));
+	&::after {
+		background-color: rgb(var(--text-primary-color));
+		bottom: -10px;
+		content: "";
+		height: 1px;
+		left: 0;
+		margin: auto;
+		position: absolute;
+		right: 0;
+		width: 105px;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.legal-desktop{
+		display: none;
+	}
+	.legal-mobile{
+		display: block;
+	}
+	.legal{
+		padding: 0 20px;
+		h2 {
+			&::after {
+				background-color: rgb(var(--text-primary-color));
+				content: "";
+				position: absolute;
+				top: 48%;
+				-webkit-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+				-webkit-transition: opacity 300ms ease-in-out;
+				transition: opacity 300ms ease-in-out;
+				height: 1px;
+				left: 15px;
+				width: 13px;
+			}
+			&::before {
+				background-color: rgb(var(--text-primary-color));
+				content: "";
+				position: absolute;
+				top: 48%;
+				-webkit-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+				-webkit-transition: opacity 300ms ease-in-out;
+				transition: opacity 300ms ease-in-out;
+				height: 13px;
+				left: 21px;
+				width: 1px;
+			}
+		}
+		p {
+			overflow: hidden !important;
+			font-size: 14px;
+			line-height: 20px;
+			margin: 0;
+			padding-top: 0;
+			padding-bottom: 0;
+			padding-left: 44px;
+			padding-right: 30px;
+			transition: 0.5s;
+			height: 0px;
+			position: relative;
+			z-index: 2;
+		}
+	}
+	.legal__heading{
+		font-size: 22px;
+	}
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (max-width: 480px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: smaller-phone) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (max-width: 374px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.q {
+		display: inherit;
+	}
+	.legal__heading {
+		font-size: 35px;
+		margin-bottom: 77px;
+		&::after {
+			width: 183px;
+		}
+	}
+}
+@media only screen and (min-width: 768px)and (max-width: 1024px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: 768px)and (max-width: 979px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: 980px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: 1025px) {
+	.legal-desktop{
+		display: block;
+		padding: 0 50px !important;
+		h2 {
+			background-color: #fff;
+			font-size: 24px;
+			padding: 0;
+			font-family: var(--font-heading-family);
+			margin: 0;
+		}
+		p {
+			font-size: 16px;
+			overflow: hidden !important;
+			line-height: 23px;
+			display: block;
+			padding-left: 30px;
+			padding-top: 11px;
+			margin-top: 0 !important;
+			margin-bottom: 30px !important;
+			font-family: nimbus-sans,sans-serif;
+			color: #5c666f !important;
+		}
+	}
+	.legal-mobile{
+		display: none;
+	}
+	.q {
+		display: inherit;
+	}
+	.legal {
+		max-width: 1140px;
+	}
+	.legal__heading {
+		margin-top: 60px;
+	}	
+}
+@media only screen and (min-width: 1281px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (min-width: 1401px) {
+	.q {
+		display: inherit;
+	}
+
+    .legal{
+        padding-left: 104px;
+        padding-right: 104px;
+    }
+}
+@media only screen and (max-width: 1280px) {
+	.q {
+		display: inherit;
+	}
+}
+@media only screen and (max-width: 1400px) {
+	.q {
+		display: inherit;
+	}
+}

@@ -1,0 +1,166 @@
+#stores-container {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  overflow: hidden;
+
+  @media screen and (min-width: $responsive-large){
+    flex-wrap: nowrap;
+    margin-bottom: 8rem;
+  }
+
+  #stores-container__info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding: 0 2rem 0 6rem;
+    margin-bottom: 4rem;
+    margin-right: 3rem;
+
+    @media screen and (min-width: $responsive-large){
+      width: 25%;
+      min-width: 400px;
+      margin-bottom: 0;
+    }
+
+    &__title {
+      position: relative;
+      font-size: 5.2rem;
+      text-transform: lowercase;
+      color: $color-dark-gray;
+      font-family: var(--font-heading-family);
+      text-align: center;
+      margin: 0 0 2rem 0;
+
+      &::after {
+        content: ' ';
+        position: absolute;
+        bottom: 0;
+        width: 25%;
+        height: 2px;
+        background-color: rgb(var(--primary-color));
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        @media screen and (min-width: $responsive-large){
+          left: 0;
+          margin: 0;
+        }
+      }
+
+      @media screen and (min-width: $responsive-large){
+        padding-right: 40%;
+        text-align: initial;
+      }
+    }
+
+    &__desc {
+      text-align: center;
+
+      @media screen and (min-width: $responsive-large){
+        text-align: initial;
+        margin-bottom: 5rem;
+      }
+    }
+
+    .input-continue {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .stores-container__see-all {
+      margin: auto;
+      font-family: ltc-bodoni-175, serif;
+      font-weight: 700;
+      font-size: 2rem;
+      @include unstyled-link($color-dark-gray);
+
+      @media screen and (min-width: $responsive-large){
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+#stores-container #stores-container__slider {
+  width: 100%;
+  padding: 0 2rem;
+
+  @media screen and (min-width: $responsive-large){
+    max-width: 75%;
+  }
+
+  #store-locations__cards-container {
+    .store-location-card {
+      margin-right: 1.5rem !important;
+      background-color: #f8f8f8;
+      user-select: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+  
+      &__img-container {
+        display: block;
+        height: 215px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+  
+      &__body {
+        padding: 0 2rem 2rem 2rem;
+        color: $color-gray;
+
+        p {
+          margin: 0;
+        }
+
+        address {
+          font-size: 1.6rem;
+          line-height: 2rem;
+          font-style: initial;
+          margin-bottom: 1rem;
+        }
+  
+        .store-location-card {
+          &__title {
+            font-family: var(--font-heading-family);
+            font-size: 2.3rem;
+            text-transform: lowercase;
+            color: $color-gray;
+            font-weight: 400;
+          }
+
+          &__phone {
+            display: block;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+            font-style: initial;
+            @include unstyled-link($color-gray);
+            text-decoration: underline;
+            margin-bottom: 1rem;
+          }
+
+          &__hours {
+            display: block;
+            font-size: 1.6rem;
+            line-height: 2rem;
+            font-style: initial;
+            margin-bottom: 1rem;
+          }
+    
+          &__directions {
+            @include unstyled-link(rgb(var(--text-primary-color)));
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{% assign zipCodes = shop.metafields.global.zip.value %}
+{% assign ss = section.settings %}
+
+<div id="cart-page">
+  <h1 class="cart__title">your cart</h1>
+  <span class="hidden" id="cart-items-count">{{ cart.item_count }}</span>
+
+  <span class="cart__no-items-msg{% if cart.items.size > 0 %} hidden{% endif %}">
+    You have no items in your shopping cart.
+  </span>
+  <div class="panels-container{% if cart.items.size == 0 %} hidden{% endif %} page-width">
+    {% include 'cart-items', cartItems: cart.items %}
+
+    <div class="availability-panel">
+      <div class="subtotal-container">
+        <span>subtotal:</span>
+        <span id="subtotal-price">
+          {{ cart.total_price | money }}
+        </span>
+      </div>
+
+      <div class="availability">
+        <h2 class="availability__title">DELIVERY AS SOON AS</h2>
+
+        <div class="availability__radio-btns">
+          <input
+            class="kf-input"
+            id="shipping-method-delivery"
+            type="radio"
+            name="shipping-method"
+            value="delivery"
+            checked
+          >
+          <label for="shipping-method-delivery">Delivery</label>
+          <input
+            class="kf-input"
+            id="shipping-method-pickup"
+            type="radio"
+            name="shipping-method"
+            value="pickup"
+          >
+          <label for="shipping-method-pickup">Pickup</label>
+        </div>
+
+        <div class="availability__zip-code">
+        <form id="zipCode-form">
+          <input
+            id="zip-code-input"
+            type="number"
+            class="w-100"
+          >
+          <button type="submit" id="check-now-btn" href="#">Check Now</button>
+          <div class="loader-wrapper">
+            {% render 'icon' with icon_name: 'loader', classes: 'postalCodeSpinner' %}
+          </div>
+          </div>
+        </form>
+
+        <div class="shipping-rates" data-selected-option="delivery">
+          <div class="zip-error-msgs" data-zip-error>
+            <span id="invalid-zip-msg">This zip code is not valid</span>
+            <span id="outside-area-msg">This zip code is outside our delivery area</span>
+            <span id="other-zip-err-msg">Something went wrong. Please try again</span>
+            <span id="no-rates-msg">{{ ss.no_rates_msg }}</span>
+          </div>
+          <span id="cart-availability-msg" class="hidden">All items will be available together on:</span>
+          <form class="shipping-rate-options" data-option="delivery" id="delivery-rates"></form>
+          <form class="shipping-rate-options" data-option="pickup" id="pickup-rates"></form>
+        </div>
+
+        <div class="accepted-payment">
+          <div class="payment-heading">
+            <span>{{ ss.payment_methods_title }}</span>
+          </div>
+          <div class="payment-methods">
+            {% if ss.payment_method %}
+              <img
+                loading="lazy"
+                style="width: {{ss.image_width}}%;"
+                src="{{ section.settings.payment_method | image_url: width: 800 }}"
+                alt="Payment Method"
+              >
+            {% endif %}
+            {% if ss.enable_payment_methods_url %}
+              <div class="payment-link">
+                <a href="{{ ss.payment_methods_url }}" title="{{ ss.payment_methods_url_text }}">
+                  {{- ss.payment_methods_url_text -}}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <button disabled class="checkout-btn button button__primary w-100 cart-action">continue to checkout</button>
+        <a class="continue-shopping-btn button button__outline w-100" href="/">Continue shopping</a>
+      </div>
+    </div>
+  </div>
+
+  {% render 'warranty-modals' %}
+</div>
+
+<script>
+  window.Cart = {
+    section: `{{ section.id }}`,
+    format: {
+      availabilityThreshold: `{{ ss.availability_threshold_days }}`,
+      preOrderDateMsg: `{{ ss.pre_order_date_msg }}`,
+      availableNowDateMsg: `{{ ss.available_now_date_msg }}`,
+      noRatesMsg: `{{ ss.no_rates_msg }}`,
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_payment_methods",
+      "label": "Enable Payment Methods Block",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "payment_methods_title",
+      "label": "Payment Methods Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_payment_methods_url",
+      "label": "Enable Payment Methods Url",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "payment_method",
+      "label": "Payment Method Image"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "label": "Image Width",
+      "min": 30,
+      "max": 100,
+      "step": 1,
+      "default": 55,
+      "unit": "%"
+    },
+    {
+      "type": "text",
+      "id": "payment_methods_url_text",
+      "label": "Payment Methods Url Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "payment_methods_url",
+      "label": "Payment Methods Url"
+    },
+    {
+      "type": "header",
+      "content": "Availability date"
+    },
+    {
+      "type": "number",
+      "id": "availability_threshold_days",
+      "label": "Availability threshold days"
+    },
+    {
+      "type": "text",
+      "id": "pre_order_date_msg",
+      "label": "Message for Pre Order date",
+      "info": "You can use [[ date ]] to insert the product availability date"
+    },
+    {
+      "type": "text",
+      "id": "available_now_date_msg",
+      "label": "Message for Available Now date",
+      "info": "You can use [[ date ]] to insert the product availability date"
+    },
+    {
+      "type": "text",
+      "id": "no_rates_msg",
+      "label": "Message for no rates available"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cart"
+    }
+  ]
+}
+{% endschema %}

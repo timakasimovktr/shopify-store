@@ -1,0 +1,172 @@
+{% assign ss = section.settings %}
+{% assign collection_list = collection.metafields.grid_collections.grid_collections_list.value %}
+{% assign collection_list_red_bg = collection.metafields.grid_collections.grid_collections_list_red_bg.value %}
+{% assign grid_sale_text = collection.metafields.grid_sale_text.sale_text.value %}
+{% assign grid_sale_url = collection.metafields.grid_sale_url.sale_url.value %}
+
+<section class="grid_blocks">
+    <div class="page-width">
+        <div class="grid_blocks_header">
+          {% if ss.section_title != "" %}
+            {{ ss.section_title }}  
+          {% else %}
+            {{ collection.title }}
+          {% endif %}
+        </div>
+        <div class="grid_blocks_content">
+            {% for collection_value in collection_list %}             
+              <a title="{{collection_value.url}}" href="{{collection_value.url}}" class="grid_block">
+                <div class="grid_block_image">
+                  {% assign variable = collection_value.title %}
+                  {% assign grid_image_url = collection.metafields.grid_image[variable].value %}
+                  {% if grid_image_url %}
+                    <img
+                        loading="lazy"
+                        src="{{ grid_image_url }}"
+                        alt="{% if grid_image_url.alt %}{{ grid_image_url.alt }}{% else %}{{ grid_image_url }}{% endif %}"
+                    />
+                  {% endif %}
+                </div>
+                <div class="grid_block_text">
+                  <p>{{collection_value.title}}</p>
+                </div>
+              </a>
+            {% endfor %}
+            {% for block in section.blocks %}
+                {% assign bs = block.settings %}
+                <a title="{{ bs.collection_link }}" href="{{ bs.collection_link }}" class="grid_block" {% if bs.image_collection and bs.bg_color == "#f7f7f9" %} {% elsif bs.bg_color == "original" %} style="background: #f7f7f9;" {% else %} style="background: {{ bs.choosen_color }};"{% endif %}>
+                    <div class="grid_block_image">
+                        {% if bs.image_collection and bs.bg_color == "#f7f7f9" %}
+                          <img
+                              loading="lazy"
+                              src="{{ bs.image_collection | image_url: width: 200 }}" 
+                              alt="{% if bs.image_collection.alt %}{{ bs.image_collection.alt }}{% else %}{{ bs.image_collection }}{% endif %}"
+                          />
+                        {% endif %}
+                    </div>
+                    <div class="grid_block_text" {% if bs.bg_color == "color" %}style="border: 1px solid white;"{% endif %}>
+                        <p {% if bs.bg_color == "color" %} style="color: white;" {% else %} style="color: rgb(var(--text-primary-color));" {% endif %}>{{ bs.collection_label }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+            {% if grid_sale_text and grid_sale_url %}
+              <a title="{{ grid_sale_url }}" href="{{ grid_sale_url }}" class="grid_block" style="background: {{ss.bg_color_sale}};">
+                <div class="grid_block_text" style="border: 1px solid white;">
+                    <p style="color: white;">{{ grid_sale_text }}</p>
+                </div>
+              </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% style %}
+    .grid_blocks {
+        padding: {{ ss.section_padding }}px 0;
+    }
+    .grid_blocks_header {
+        text-align: {{ ss.section_title_position }};
+    }
+{% endstyle %}
+
+{% schema %}
+    {
+      "name": "Grid Blocks",
+      "settings": [
+        {
+          "type": "range",
+          "id": "section_padding",
+          "label": "Set padding",
+          "info": "Set padding for section",
+          "step": 1,
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "unit": "px"
+        },
+        {
+          "type": "text",
+          "id": "section_title",
+          "label": "Set section title",
+          "info": "Set section title."
+        },
+        {
+          "type": "select",
+          "id": "section_title_position",
+          "label": "Select section title position",
+          "info": "Select section title position.",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "type": "collection",
+          "name": "block",
+          "settings": [
+            {
+              "type": "image_picker",
+              "id": "image_collection",
+              "label": "Select Image",
+              "info": "Select an image to display."
+            },
+            {
+              "type": "text",
+              "id": "collection_label",
+              "label": "Collection Label"
+            },
+            {
+              "type": "url",
+              "id": "collection_link",
+              "label": "Collection Link"
+            },
+            {
+              "type": "select",
+              "id": "bg_color",
+              "label": "Select block type",
+              "info": "If you want change background color, remove image",
+              "default": "#f7f7f9",
+              "options": [
+                {
+                  "value": "#f7f7f9",
+                  "label": "Image"
+                },
+                {
+                  "value": "original",
+                  "label": "Original color"
+                },
+                {
+                  "value": "color",
+                  "label": "Your choosen color"
+                }
+              ]
+            },
+            {
+              "type": "color",
+              "id": "choosen_color",
+              "label": "Select block color",
+              "default": "#f7f7f9"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Grid Blocks"
+        }
+      ]
+    }
+{% endschema %}

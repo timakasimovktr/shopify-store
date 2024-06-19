@@ -1,0 +1,160 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+{% assign s = section.settings %}
+
+{% assign banner_background = collection.metafields.banner.background.value %}
+{% assign banner_background_color = collection.metafields.banner.background_color.value %}
+{% assign banner_title = collection.metafields.banner.banner_title.value %}
+{% assign banner_description = collection.metafields.banner.banner_description.value %}
+
+{%- style -%}
+  @media screen and (max-width: 749px) {
+    .collection-hero--with-image .collection-hero__inner {
+      padding-bottom: calc({{settings.media_shadow_vertical_offset | at_least: 0}}px + 2rem);
+    }
+  }
+{%- endstyle -%}
+
+<div class="main_banner page-width"
+  style="justify-content: {{ s.text_alignment }}; margin: calc({{ s.banner_margin }}px + 21px) auto;
+  {% if s.show_collection_image %}
+    {% if banner_background %}
+      background: url('{{ banner_background }}') 50% 50% / cover;
+    {% else %}
+      {% if collection.image %}
+        background: url('{{collection.image | image_url: width: 1000 }}') 50% 50% / cover;
+      {% else %}
+        background: {{s.background_color}};
+      {% endif  %}
+    {% endif %}
+    padding: {{ s.banner_padding }}px {{ s.banner_side_padding }}px;
+  {% else %}
+    {% if banner_background_color %}
+      background: {{banner_background_color}};
+    {% else %}
+      background: {{s.background_color}};
+    {% endif %}
+    padding: {{ s.padding_no_image }}px {{ s.banner_side_padding }}px;
+  {% endif %}
+">
+  <div class="{% if collection.image == nil and banner_background == nil %}banner_text_without_image{% elsif s.show_collection_image != true %}banner_text_without_image{% else %}banner_text{% endif %}">
+    <h3 style="color: {{ s.title_color }}; text-align: {% if s.text_alignment == 'flex-start' %}left{% else if s.text_alignment == 'flex-end' %}right{% else %}center{% endif %};">
+      {% if banner_title %}
+        {{- banner_title | escape -}}
+      {% else %}
+        {{- collection.title | escape -}}
+      {% endif %}
+    </h3>
+    {% if s.show_collection_description %}
+      <p style="color: {{ s.description_color }}; text-align: {% if s.text_alignment == 'flex-start' %}left{% else if s.text_alignment == 'flex-end' %}right{% else %}center{% endif %};">
+        {% if banner_description %}
+          {{- banner_description | escape -}}
+        {% endif %}
+      </p>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "range",
+      "id": "banner_padding",
+      "label": "Banner Padding (TOP & BOTTOM)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_no_image",
+      "label": "Banner Padding - No Image (TOP & BOTTOM)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "banner_side_padding",
+      "label": "Banner Padding (LEFT & RIGHT)",
+      "min": 40,
+      "max": 200,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "banner_margin",
+      "label": "Banner Margin (TOP & BOTTOM)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "Enable Banner Image",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "transparent"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#000000"
+    }
+  ]
+}
+{% endschema %}

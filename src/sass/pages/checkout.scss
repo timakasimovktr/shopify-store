@@ -1,0 +1,364 @@
+@import './../variables';
+@import './../mixins';
+@import './../utilities';
+@import './../components/index';
+@import './../partials/index';
+@import './../icons';
+@import "../sections/cart-drawer";
+
+/* --------------- General ---------------*/
+input[type=radio]:checked,
+.input-checkbox {
+  border-color: black !important;
+}
+
+button {
+  border-radius: 3px;
+  color: white;
+  background-color: black !important;
+
+  &[disabled] {
+    background-color: gray !important;
+  }
+}
+
+.field__icon button {
+  border-radius: 0 3px 3px 0;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+select:focus {
+  border-color: black !important;
+  -webkit-box-shadow: 0 0 0 1px black !important;
+  box-shadow: 0 0 0 1px black !important;
+}
+
+a {
+  @include unstyled-link(black);
+}
+
+/* --------------- ---------------*/
+
+.order-summary-toggle__inner {
+  @media screen and (max-width: $responsive-large){
+    .order-summary-toggle__icon,
+    .order-summary-toggle__dropdown {
+      fill: white !important;
+    }
+  
+    .order-summary-toggle__text,
+    .total-recap__final-price {
+      color: white  !important;
+    }
+  }
+}
+
+.main {
+  .main__header {
+    a {
+      @include unstyled-link($color-gray);
+    }
+  }
+  
+  .section--contact-information {
+    a {
+      @include unstyled-link(black);
+    }
+  }
+  
+  .synchrony-gateway-container {
+    padding: 2.5rem 2.5rem 0 2.5rem;
+  
+    .financing-payment-details {
+      display: block;
+      margin-bottom: 2rem;
+      @media screen and (min-width: $responsive-large){
+        display: flex;
+      }
+  
+      .financing-payment-details__info {
+        margin: auto 2rem auto 0;
+  
+        .financing-payment-details__info-header {
+          font-size: .9rem;
+          font-weight: 700;
+        }
+  
+        .financing-payment-details__info-subheader {
+          font-size: .75rem;
+        }
+      }
+  
+      .financing-payment-details__img {
+        width: 150px;
+        border-radius: 6px;
+      }
+    }
+  
+    .financing-payment-offer__wrap {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba($color-gray, .3);
+  
+      &:last-child {
+        border-bottom: none;
+      }
+  
+      .financing-payment-offer__body {
+        margin-bottom: 1.5rem;
+  
+        a {
+          @include unstyled-link(black);
+        }
+      }
+  
+      .financing-payment-details__info-header {
+        font-size: .9rem;
+        font-weight: 700;
+      }
+  
+      .financing-payment-offer__btn {
+        padding: .75rem 2rem;
+        text-transform: uppercase;
+        min-width: 250px;
+
+        .kf-icon__spinner {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 40px;
+          height: 40px;
+
+          rect {
+            fill: white;
+          }
+        }
+      }
+    }
+  }
+  
+  .step__footer {
+    svg path {
+      fill: black;
+    }
+  }
+}
+
+.sidebar {
+  .product__description__property {
+    display: none;
+  }
+
+  .order-summary__sections {
+    .order-summary__section--20-percent-required {
+      background-color: #cde8f7;
+      border: none !important;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .saving-amount-msg {
+      font-weight: 600;
+      color: #21bb21;
+      font-size: .75rem;
+    }
+  }
+}
+
+#cart-confirmation-modal-backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background-color: rgba(black, .3);
+  z-index: 999;
+
+  transition: opacity .3s ease;
+
+  &.shown {
+    opacity: 1;
+  }
+
+  #cart-confirmation-modal {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 615px;
+    max-height: 100%;
+    padding: 1rem;
+    background-color: white;
+    box-sizing: border-box;
+
+    @media screen and (min-width: $responsive-medium){
+      width: 60%;
+      height: 80%;
+    }
+
+    @media screen and (min-width: $responsive-large){
+      width: 60%;
+      height: 60%;
+    }
+
+    @media screen and (min-width: $responsive-xl){
+      width: 40%;
+      height: 60%;
+    }
+
+    hr {
+      margin: 1.5rem 0;
+    }
+
+    .kf-icon__close {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+
+    .modal__title {
+      font-size: 1.4rem;
+      color: $color-dark-gray;
+      margin-bottom: 1rem;
+    }
+
+    .modal__description {
+      font-size: .75rem;
+      margin-bottom: 2rem;
+    }
+
+    .modal-cart-items {
+      height: fit-content;
+      padding-top: 1rem;
+      overflow-y: auto;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+
+      .cart-item__img-container {
+        position: relative;
+        flex-shrink: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 60px;
+        height: 60px;
+        border-radius: 3px;
+        margin-right: 1.5rem;
+
+        .cart-item__qty-bubble {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 18px;
+          height: 18px;
+          text-align: center;
+          color: white;
+          font-weight: 600;
+          font-size: .8rem;
+          background-color: $color-gray;
+          border-radius: 50%;
+          padding: 0.1rem;
+          transform: translate(50%, -50%);
+        }
+      }
+
+      .cart-item__info {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        .cart-item__title,
+        .cart-item__price {
+          font-weight: 600;
+        }
+
+        .cart-item__price {
+          min-width: 90px;
+          margin-left: auto;
+          text-align: right;
+        }
+      }
+    }
+
+    .modal-cart-totals {
+      margin-bottom: 2rem;
+
+      @media screen and (min-width: $responsive-large) {
+        width: 60%;
+        margin-left: auto;
+      }
+      
+      .cart-totals__line {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+        color: $color-dark-gray;
+
+        &.cart-total-space {
+          margin-top: 2rem;
+        }
+
+        &.cart-total {
+          color: black;
+        }
+
+        &.cart-installments {
+          color: #30bd30;
+        }
+      }
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: end;
+      margin-top: auto;
+
+      .button__primary,
+      .button__outline {
+        min-width: 200px;
+        color: white !important;
+        text-transform: uppercase;
+      }
+      
+      .button__primary {
+        background-color: black !important;
+        font-weight: 600;
+      }
+
+      .button__outline {
+        color: black !important;
+      }
+    }
+  }
+}
+
+.synchrony-error-msg {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 1rem;
+  background: rgb(255, 219, 219);
+  padding: 1rem;
+  border-radius: 3px;
+  color: black;
+  border: 1px solid red;
+  opacity: 0;
+  transition: opacity .3s ease;
+
+  &.opaque {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        "h3 {text-transform: capitalize; font-family: Poppins;}"
+      ],
+      "settings": {
+        "banner_padding": 20,
+        "padding_no_image": 15,
+        "banner_side_padding": 40,
+        "banner_margin": 10,
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "background_color": "#ffffff",
+        "text_alignment": "center",
+        "title_color": "#25cad3",
+        "description_color": "#000000"
+      }
+    },
+    "16601494219ea22a2d": {
+      "type": "promo-banner",
+      "disabled": true,
+      "settings": {
+        "banner_text": "",
+        "banner_link": "",
+        "enable": true,
+        "disclosure_text": "Monthly payments shown with 60 Month Special Financing. Limited time. Check individual offers for details.",
+        "disclosure_link": "",
+        "disclosure_enable": true
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "1bcbc42e-2aac-441c-920e-b5692c53b3f1": {
+          "type": "tag",
+          "settings": {
+            "title": "LABEL | Coming Soon",
+            "product_tag": "ComingSoon",
+            "product_tag_label": "Coming Soon",
+            "product_tag_text_color": "#FFFFFF",
+            "product_tag_background_color": "#000000"
+          }
+        },
+        "75d5cb40-cf13-41fd-828a-e4ddae6ca9db": {
+          "type": "tag",
+          "settings": {
+            "title": "LABEL | New",
+            "product_tag": "NewProduct",
+            "product_tag_label": "New",
+            "product_tag_text_color": "#FFFFFF",
+            "product_tag_background_color": "#000000"
+          }
+        },
+        "f09081e0-46f0-4158-94ad-bc6a9c73fe93": {
+          "type": "tag",
+          "settings": {
+            "title": "TAG | FreeShipping",
+            "product_tag": "FreeShipping",
+            "product_tag_label": "Free Shipping",
+            "product_tag_text_color": "#FFFFFF",
+            "product_tag_background_color": "#000000"
+          }
+        },
+        "89d31660-b911-4876-b7c2-e2a1e7aa4372": {
+          "type": "collection",
+          "settings": {
+            "title": "LABEL | Special Offer",
+            "product_collection": "closeout-deals",
+            "product_collection_label": "Special Offer",
+            "product_collection_text_color": "#f8f509",
+            "product_collection_background_color": "#bb2626"
+          }
+        }
+      },
+      "block_order": [
+        "1bcbc42e-2aac-441c-920e-b5692c53b3f1",
+        "75d5cb40-cf13-41fd-828a-e4ddae6ca9db",
+        "f09081e0-46f0-4158-94ad-bc6a9c73fe93",
+        "89d31660-b911-4876-b7c2-e2a1e7aa4372"
+      ],
+      "custom_css": [
+        "h3 {font-family: Poppins;}"
+      ],
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 3,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "results_mode": "infinite",
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "16601494219ea22a2d",
+    "product-grid"
+  ]
+}
